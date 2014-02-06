@@ -1,0 +1,22 @@
+body {
+	background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%);
+	background-image: linear-gradient(rgb(130, 173, 219) 0%, rgb(235, 178, 177) 100%);
+	height: 100%;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	text-align: center;
+}
+
+ol {
+  text-align: center;
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  *zoom:1; /* hasLayout ie7 trigger */
+  vertical-align: bottom;
+  width: 100%;
+
+}
+
+ 
