@@ -1,6 +1,7 @@
-#button {
-	margin: 195px 110px;
+#my_button {
+	margin: 215px 100px;
 	width: 135px;
+	height: 40px;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	background: linear-gradient(#F2F2F2 70%, #E5E5E5);
@@ -9,8 +10,8 @@
 #container {
 	position: relative;
 	margin: 0 auto;
-	width: 500px;
-	height: 500px;
+	width: 405px;
+	height: 400px;
 }
 
 #word1 {
@@ -40,18 +41,24 @@
 
 #word6 {
 	top: -50px;
-	left: 400px;
+	left: 375px;
 }
 
 #word7 {
 	top: -100px;
-	left: 500px;
+	left: 450px;
+}
+
+#directions {
+	position: absolute;
+	text-align: center;
+	margin-top: 180px;
 }
 
 .rainy-weather {
   margin: 200px auto;
   width: 350px;
-  height: 200px;
+  height: 100px;
   position: relative;
 }
  
@@ -96,11 +103,20 @@ body {
 	margin: 0;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-weight: 100;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+#my_button p {
+	margin-top: -3px;
+	font-weight: 100;
+    font-size: 16px;
+    line-height: 40px;
 }
 
 .word {
-	padding-top: 14px;
+	padding-top: 5px;
 }
 
 .oval {
@@ -118,4 +134,16 @@ body {
 	vertical-align: middle;
 	z-index: 100;
 	box-shadow: 0 3px 5px rgba(0,0,0, 0.3);
+}
+
+ol {
+  font-size: 16px;
+  text-align: center;
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  *zoom:1; /* hasLayout ie7 trigger */
+  vertical-align: bottom;
+  width: 100%;
+
 }

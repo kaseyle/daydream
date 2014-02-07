@@ -11,8 +11,8 @@ function initializePage() {
       drop: dropListener,
       out: outListner     
     });
-    $( "#button" ).button().click(clickListener);
-    $( "#button" ).attr('disabled', 'disabled');
+    $( "#my_button" ).button().click(clickListener);
+    $( "#my_button" ).attr('disabled', 'disabled');
 }
 
 function dropListener(event, ui) {
@@ -24,7 +24,7 @@ function dropListener(event, ui) {
 	}
 	console.log(words);
 	if (words.length > 0) {
-		$( "#button" ).removeAttr('disabled');
+		$( "#my_button" ).removeAttr('disabled');
 	}
 	if (words.length >= maxWords) {
 		$( ".draggable.outside" ).draggable("option", "revert", "valid");
@@ -39,7 +39,7 @@ function outListner(event, ui) {
 	}
 	console.log(words);
 	if (words.length == 0) {
-		$( "#button" ).attr('disabled', 'disabled');
+		$( "#my_button" ).attr('disabled', 'disabled');
 	}
 	if (words.length < maxWords) {
 		$( ".draggable" ).draggable("option", "revert", "false");
