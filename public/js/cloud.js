@@ -17,10 +17,10 @@ function initializePage() {
 
 function dropListener(event, ui) {
 	//$( this ).find( "p" ).html( "Dropped!" );
-	$(ui.draggable).removeClass("outside");
 	var word = $(ui.draggable).find("p").text();
 	if (words.indexOf(word) == -1 && words.length < maxWords) {
 		words.push(word);
+		$(ui.draggable).removeClass("outside");
 	}
 	console.log(words);
 	if (words.length > 0) {
