@@ -25,7 +25,7 @@ function initializePage() {
 	var firstClick = true;
 	$(document).click(function(e) {
 		console.log("You clicked the bar!");
-		e.preventDefault();
+		//e.preventDefault();
 		var mouseX = e.pageX;
 		var mouseY = e.pageY;
 
