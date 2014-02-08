@@ -1,98 +1,129 @@
 #my_button {
-	margin: 215px 100px;
-	width: 135px;
+	text-align: center;
+	width: 130px;
 	height: 40px;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	background: linear-gradient(#F2F2F2 70%, #E5E5E5);
 }
 
+#button_div {
+	position: relative;
+	margin: 0px auto;
+	top: 415px;
+	width: 130px;
+}
+
 #container {
 	position: relative;
 	margin: 0 auto;
-	width: 405px;
-	height: 400px;
+	height: 100%;
+	width: 310px;
 }
 
 #word1 {
-	top: -120px;
-	left: -75px;
+	top: 5px;
+	left: 5px;
 }
 
 #word2 {
-	top: -50px;
-	left: 25px;
+	top: 80px;
+	left: 45px;
 }
 
 #word3 {
-	top: -150px;
-	left: 100px;
+	top: 35px;
+	left: 95px;
 }
 
 #word4 {
-	top: -90px;
-	left: 200px;
+	top: 90px;
+	left: 140px;
 }
 
 #word5 {
-	top: -120px;
-	left: 300px;
+	top: 15px;
+	left: 185px;
 }
 
 #word6 {
-	top: -50px;
-	left: 375px;
+	top: 60px;
+	left: 230px;
 }
 
 #word7 {
-	top: -100px;
-	left: 450px;
+	top: 130px;
+	left: 5px;
+}
+
+#word8 {
+	top: 200px;
+	left: 25px;
+}
+
+#word9 {
+	top: 140px;
+	left: 90px;
+}
+
+#word10 {
+	top: 190px;
+	left: 130px;
+}
+
+#word11 {
+	top: 135px;
+	left: 190px;
+}
+
+#word12 {
+	top: 180px;
+	left: 225px;
 }
 
 #directions {
-	position: absolute;
+	position: relative;
+	margin: 0px auto;
 	text-align: center;
-	margin-top: 180px;
+	font-size: 14px;
+	top: 415px;
 }
 
 .rainy-weather {
-  margin: 200px auto;
-  width: 350px;
-  height: 100px;
-  position: relative;
-}
+  	position: relative;
+  	width: 300px;
+  	margin: 0px auto;
+  	top: 325px;
+  }
  
 .cloud-main {
-  width: 350px;
-  height: 130px;
-  background: #f2f2f2;
-  border-radius: 100em;
-  position: absolute;
-  z-index: 10;
-  top: 50px;
-  box-shadow: 0 3px 5px rgba(0,0,0, 0.3);
-  background: linear-gradient(#F2F2F2 70%, #E5E5E5);
+	position: absolute;
+  	width: 300px;
+  	height: 90px;
+  	background: #f2f2f2;
+  	border-radius: 100em;
+  	z-index: 10;
+  	box-shadow: 0 3px 5px rgba(0,0,0, 0.3);
+  	background: linear-gradient(#F2F2F2 70%, #E5E5E5);
 }
  
 .cloud-center {
-  width: 180px;
-  height: 180px;
-  margin: 0 auto;
+  width: 140px;
+  height: 140px;
   background: #F2F2F2;
   position: absolute;
   border-radius: 100em;
-  top: -30px;
+  top: -80px;
   right: 50px;
 }
  
 .cloud-left {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto;
+  width: 90px;
+  height: 90px;
   background: #F2F2F2;
   position: absolute;
   border-radius: 100em;
-  top: 0;
+  top: -50px;
   right: 160px;
 }
 
@@ -104,28 +135,28 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	font-weight: 100;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 40px;
 }
 
 #my_button p {
 	margin-top: -3px;
 	font-weight: 100;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 40px;
 }
 
 .word {
-	padding-top: 5px;
+	margin-top: -2px;
 }
 
 .oval {
 	position: absolute;
-   	width: 100px; 
-   	height: 50px; 
-   	-moz-border-radius: 100px / 50px; 
-   	-webkit-border-radius: 100px / 50px; 
-   	border-radius: 100px / 50px;
+   	width: 70px; 
+   	height: 35px; 
+   	-moz-border-radius: 80px / 40px; 
+   	-webkit-border-radius: 80px / 40px; 
+   	border-radius: 80px / 40px;
    	background: #c9dbe9;
 	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
 	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
@@ -137,13 +168,20 @@ body {
 }
 
 ol {
-  font-size: 16px;
-  text-align: center;
-  float:none;
-  display:inline-block;
-  *display:inline; /* ie7 fix */
-  *zoom:1; /* hasLayout ie7 trigger */
-  vertical-align: bottom;
-  width: 100%;
+	position: fixed;
+	bottom: 0;
+  	font-size: 16px;
+  	text-align: center;
+  	width: 100%;
+}
 
+.active {
+	position: relative;
+	margin: 0 auto;
+	width: 155px;
+}
+
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
 }

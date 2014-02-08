@@ -7,7 +7,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/cloud.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=320, initial-scale=1">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
     // <script src="/js/jquery-ui-1.10.4.custom.js"></script> -->  
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    
+  <script src="jquery.ui.touch-punch.min.js"></script> 
   </head>
   <body>
 
@@ -50,7 +50,27 @@
     </div>
 
     <div class="draggable oval outside" id="word7">
-      <p class="word">Meditative</p>
+      <p class="word">Thoughtful</p>
+    </div>
+
+    <div class="draggable oval outside" id="word8">
+      <p class="word">Laugh</p>
+    </div>
+
+    <div class="draggable oval outside" id="word9">
+      <p class="word">Appreciate</p>
+    </div>
+
+    <div class="draggable oval outside" id="word10">
+      <p class="word">Learn</p>
+    </div>
+
+    <div class="draggable oval outside" id="word11">
+      <p class="word">Explore</p>
+    </div>
+
+    <div class="draggable oval outside" id="word12">
+      <p class="word">Interactive</p>
     </div>
 
     <!-- <div id="burst-12">
@@ -58,14 +78,14 @@
     </div> -->
 
     <div class="rainy-weather">
-      <p id="directions">Drag in up to four words to start daydreaming...</p>
       <div class="cloud-main droppable"></div>
       <div class="cloud-center droppable"></div>
       <div class="cloud-left droppable"></div>
-
-      <button id="my_button"><p>Build Daydream</p></button>
     </div>
+    <p id="directions">Drag in up to four words to start daydreaming...</p>
+    <div id="button_div"><button id="my_button"><p>Build Daydream</p></button></div>
 
+    <div id="nagivation_bar">
     <ol class="nav nav-pills">
       <li class = "active">
         <a href="/clock" style="background-color: rgba(182, 128, 128, 0.13);">
@@ -74,15 +94,13 @@
         </a>
       </li>
       <li class = "active">
-        <a href = "/" style="background-color: rgba(182, 128, 128, 0.13);"> DAYDREAM </a>
-      </li>
-      <li class = "active">
         <a href="#" style="background-color: rgba(182, 128, 128, 0.13);">
           <span class="glyphicon glyphicon-cloud"></span>
             Change Words
         </a>
       </li>
     </ol>
+    </div>
  
 
   </div>
