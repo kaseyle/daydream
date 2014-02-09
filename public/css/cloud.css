@@ -100,17 +100,16 @@
 	position: absolute;
   	width: 300px;
   	height: 90px;
-  	background: #f2f2f2;
+  	background: #F0EFF7;
   	border-radius: 100em;
   	z-index: 10;
   	box-shadow: 0 3px 5px rgba(0,0,0, 0.3);
-  	background: linear-gradient(#F2F2F2 70%, #E5E5E5);
 }
  
 .cloud-center {
   width: 140px;
   height: 140px;
-  background: #F2F2F2;
+  background: #F0EFF7;
   position: absolute;
   border-radius: 100em;
   top: -80px;
@@ -120,7 +119,7 @@
 .cloud-left {
   width: 90px;
   height: 90px;
-  background: #F2F2F2;
+  background: #F0EFF7;
   position: absolute;
   border-radius: 100em;
   top: -50px;
