@@ -1,0 +1,28 @@
+{
+	"words": {
+		"alone": [],
+		"friends": [],
+		"inside": [],
+		"outside": [],
+		"active": [],
+		"quiet": [],
+		"tactile": [],
+		"explore": [],
+		"reflect": [],
+		"think": [],
+		"learn": []
+	},
+	"times": {
+		"2": [],
+		"5": [],
+		"10": [],
+		"15": [],
+		"30": [],
+		"60": []
+	},
+	"activities_array": ["yoga"],
+	"activities_object": ["yoga": 1]
+}
+
+
+

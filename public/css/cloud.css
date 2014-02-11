@@ -14,13 +14,6 @@
 	width: 130px;
 }
 
-#container {
-	position: relative;
-	margin: 0 auto;
-	height: 100%;
-	width: 310px;
-}
-
 #word1 {
 	top: 5px;
 	left: 5px;
@@ -126,27 +119,18 @@
   right: 160px;
 }
 
-body {
-	background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%);
-	background-image: linear-gradient(rgb(130, 173, 219) 0%, rgb(235, 178, 177) 100%);
-	height: 100%;
-	margin: 0;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	font-weight: 100;
-    font-size: 14px;
-    line-height: 40px;
-}
-
 #my_button p {
 	margin-top: -3px;
 	font-weight: 100;
     font-size: 14px;
     line-height: 40px;
+    color: black;
 }
 
 .word {
 	margin-top: -2px;
+	color: black;
+	font-size: 14px;
 }
 
 .oval {
@@ -164,23 +148,4 @@ body {
 	vertical-align: middle;
 	z-index: 100;
 	box-shadow: 0 3px 5px rgba(0,0,0, 0.3);
-}
-
-ol {
-	position: fixed;
-	bottom: 0;
-  	font-size: 16px;
-  	text-align: center;
-  	width: 100%;
-}
-
-.active {
-	position: relative;
-	margin: 0 auto;
-	width: 155px;
-}
-
-@viewport{
-    zoom: 1.0;
-    width: extend-to-zoom;
 }
