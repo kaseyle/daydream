@@ -33,6 +33,12 @@ h1 {
 h2, h3 {
 	color: #EEEEEE;
  	font-size: 22px;
+ 	margin: auto;
+ 	position:relative;
+}
+
+h3 {
+	top: 350px;
 }
 
 p {
