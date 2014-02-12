@@ -1,28 +1,30 @@
 {
-	"words": {
-		"alone": [],
-		"friends": [],
-		"inside": [],
-		"outside": [],
-		"active": [],
-		"quiet": [],
-		"tactile": [],
-		"explore": [],
-		"reflect": [],
-		"think": [],
-		"learn": []
+	"tags": {
+		"alone": [0],
+		"friends": [0],
+		"inside": [0],
+		"outside": [0],
+		"active": [0],
+		"quiet": [0],
+		"tactile": [0],
+		"explore": [0],
+		"reflect": [0],
+		"think": [0],
+		"learn": [0]
 	},
 	"times": {
-		"2": [],
-		"5": [],
-		"10": [],
-		"15": [],
-		"30": [],
-		"60": []
+		"2": [0],
+		"5": [0],
+		"10": [0],
+		"15": [0],
+		"30": [0],
+		"60": [0]
 	},
 	"activities_array": ["yoga"],
-	"activities_object": ["yoga": 1]
+	"activities_object": {"yoga": 0}
 }
+
+
 
 
 
