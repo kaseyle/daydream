@@ -113,8 +113,12 @@ function clickListener(event) {
 	var index = activities[Math.floor(Math.random() * activities.length)];
 	var activity = data["activities_array"][index];
 	var url = "/" + activity + "?" + "word1=" + words[0];
-	for (var i = 1; i < words.length; i++) {
-		url += "&word" + (i+1) + "=" + words[i];
+	for (var i = 1; i < 4; i++) {
+		if (i < words.length) {
+			url += "&word" + (i+1) + "=" + words[i];	
+		} else {
+			url += "&word" + (i+1) + "=";
+		}
 	}
 	window.location = url;
 }

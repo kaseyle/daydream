@@ -5,6 +5,13 @@
 	width: 310px;
 }
 
+#words {
+	border-bottom: 1px solid #FFFFFF;
+	background-color: rgba(107, 200, 229, 0.39);
+	font-size: 14px;
+	line-height: 30px;
+}
+
 body {
     background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%);
     background-image: linear-gradient(rgb(130, 173, 219) 0%, rgb(235, 178, 177) 100%);
@@ -13,7 +20,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-size: 14px;
-    color: #EEEEEE;
+    color: #FFFFFF;
     line-height: 40px;
 }
 
@@ -23,26 +30,23 @@ body, h1, h2, h3, p {
 }
 
 h1 {
-	color: #FFFFFF;
 	font-style: italic;
     font-size: 34px;
     text-transform: uppercase;
-    border-bottom: 1px solid #EEEEEE;
+    margin-top: -2px;
 }
 
 h2, h3 {
-	color: #EEEEEE;
  	font-size: 22px;
  	margin: auto;
  	position:relative;
 }
 
 h3 {
-	top: 350px;
+	top: 300px;
 }
 
 p {
-	color: #EEEEEE;
 	font-size: 16px;
 }
 

@@ -1,3 +1,4 @@
 exports.view = function (req, res) {
-	res.render('cloudGazing');
+	data = require('./basic')(req)();
+	res.render('cloudGazing', data);
 }
