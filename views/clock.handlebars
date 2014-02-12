@@ -6,6 +6,7 @@
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/basic.css" rel="stylesheet">
     <link href="/css/clock.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -18,9 +19,9 @@
   </head>
   <body>
 
+   <div id="container"> 
 
-    <br/>
-    <br/>
+
     <br/>
     <br/>
 
@@ -28,26 +29,13 @@
         <h1>How much time do you have?</h1>
       </div>
 
-      <br/>
-
       <div class = "simpletext" id="instructions">
       <p> click in the box <p>
       </div>
 
-          <br/> 
-
       <div class="timetext">
-        <p> now &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          2m &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-          5m &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-          10m &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          15m &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-        30m &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-        1hr <p>
+        0 2m 5m 10m 15m 30m 60m
       </div>
-
-      <br/>
-      <br/>
 
       <div class="box">
       </div>
@@ -57,19 +45,27 @@
 
       <br/>
       <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
 
      <div class = "simpletext" id="timechosen">
       <p> 0 minutes <p>
       </div>
 
+    <div id="nagivation_bar">
     <ol class="nav nav-pills">
-      <li class = "active"><a href="/cloud"><span class="glyphicon glyphicon-cloud"></span> NEXT</a></li>
+      <li class = "active">
+        <a href="#">
+          <span class="glyphicon glyphicon-time"></span>  
+          Change Time
+        </a>
+      </li>
+      <li class = "active">
+        <a href="/cloud">
+          <span class="glyphicon glyphicon-cloud"></span>
+          Change Words
+        </a>
+      </li>
     </ol>
+    </div>
 
     </div>
 
@@ -79,5 +75,7 @@
     
     <script src="/js/clock.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+
+  </div>
   </body>
 </html>
