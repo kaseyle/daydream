@@ -1,14 +1,14 @@
 {
 	"tags": {
-		"alone": [0,1,2],
-		"friends": [0,1,2],
-		"inside": [0,2],
-		"outside": [0,1,2],
+		"alone": [0,1,2,3],
+		"friends": [0,1,2,3],
+		"inside": [0,2,3],
+		"outside": [0,1,2,3],
 		"active": [0],
-		"quiet": [0,1,2],
+		"quiet": [0,1,2,3],
 		"tactile": [],
 		"explore": [1],
-		"reflect": [2],
+		"reflect": [2,3],
 		"think": [],
 		"learn": [],
 		"blank": []
@@ -21,8 +21,8 @@
 		"30": [0],
 		"60": [0]
 	},
-	"activities_array": ["yoga", "cloudGazing", "reflect_day"],
-	"activities_object": {"yoga": 0, "cloudGazing": 1, "reflect_day": 2}
+	"activities_array": ["yoga", "cloudGazing", "reflect_day", "meditate"],
+	"activities_object": {"yoga": 0, "cloudGazing": 1, "reflect_day": 2, "meditate": 3}
 }
 
 
