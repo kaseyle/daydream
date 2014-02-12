@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var cloud = require('./routes/cloud');
 var clock = require('./routes/clock');
 var yoga = require('./routes/yoga');
+var cloudGazing = require('./routes/cloudGazing');
 // Example route
 // var user = require('./routes/user');
 
