@@ -1,0 +1,12 @@
+#swipe {
+	position: relative;
+	margin: 0 auto;
+	width: 200px;
+	height: 40px;
+	background-color: rgba(53, 185, 247, 0.5);
+}
+
+#swipe.swipe {
+	background-color: rgba(53, 185, 247, 1);
+}
+

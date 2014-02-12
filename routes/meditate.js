@@ -1,4 +1,5 @@
+
 exports.view = function (req, res) {
 	data = require('./basic')(req)();
-	res.render('yoga', data);
+	res.render('meditate', data);
 }

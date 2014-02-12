@@ -3,5 +3,5 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-	window.setTimeout(function() {window.location = "/cloud"}, 2000)
+	window.setTimeout(function() {window.location = "/clock"}, 2000)
 }

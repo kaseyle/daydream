@@ -6,27 +6,26 @@
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/basic.css" rel="stylesheet">
     <link href="/css/cloud.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=320, initial-scale=1">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-<!--  
-   // <script src="/js/jquery-1.10.2.js"></script>
-    // <script src="/js/jquery-ui-1.10.4.custom.js"></script> -->  
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    
+  <script src="/js/jquery.ui.touch-punch.min.js"></script> 
+
   </head>
   <body>
 
   <div id="container">
 
     <div class="draggable oval outside" id="word1">
-      <p class="word">Active</p>
+      <p class="word">Alone</p>
     </div>
 
     <div class="draggable oval outside" id="word2">
@@ -34,23 +33,43 @@
     </div>
 
     <div class="draggable oval outside" id="word3">
-      <p class="word">Alone</p>
-    </div>
-
-    <div class="draggable oval outside" id="word4">
-      <p class="word">Quiet</p>
-    </div>
-
-    <div class="draggable oval outside" id="word5">
       <p class="word">Inside</p>
     </div>
 
-    <div class="draggable oval outside" id="word6">
+    <div class="draggable oval outside" id="word4">
       <p class="word">Outside</p>
     </div>
 
+    <div class="draggable oval outside" id="word5">
+      <p class="word">Active</p>
+    </div>
+
+    <div class="draggable oval outside" id="word6">
+      <p class="word">Quiet</p>
+    </div>
+
     <div class="draggable oval outside" id="word7">
-      <p class="word">Meditative</p>
+      <p class="word">Tactile</p>
+    </div>
+
+    <div class="draggable oval outside" id="word8">
+      <p class="word">Explore</p>
+    </div>
+
+    <div class="draggable oval outside" id="word9">
+      <p class="word">Reflect</p>
+    </div>
+
+    <div class="draggable oval outside" id="word10">
+      <p class="word">Think</p>
+    </div>
+
+    <div class="draggable oval outside" id="word11">
+      <p class="word">Learn</p>
+    </div>
+
+    <div class="draggable oval outside" id="word12">
+      <p class="word">Blank</p>
     </div>
 
     <!-- <div id="burst-12">
@@ -58,21 +77,30 @@
     </div> -->
 
     <div class="rainy-weather">
-      <p id="directions">Drag in up to four words to start daydreaming...</p>
       <div class="cloud-main droppable"></div>
       <div class="cloud-center droppable"></div>
       <div class="cloud-left droppable"></div>
-
-      <button id="my_button"><p>Build Daydream</p></button>
     </div>
+    <p id="directions">Drag in up to four words to start daydreaming...</p>
+    <div id="button_div"><button id="my_button"><p>Build Daydream</p></button></div>
 
+    <div id="nagivation_bar">
     <ol class="nav nav-pills">
-      <li class = "active"> <a href="/clock"><span class="glyphicon glyphicon-time"></span>  Change Time</a></li>
-      <li class = "active"> <a> DAYDREAM </a></li>
-      <li class = "active"><a href="/cloud"><span class="glyphicon glyphicon-cloud"></span>  Change Words</a></l>
+      <li class = "active">
+        <a href="/clock">
+          <span class="glyphicon glyphicon-time"></span>  
+          Change Time
+        </a>
+      </li>
+      <li class = "active">
+        <a href="#">
+          <span class="glyphicon glyphicon-cloud"></span>
+          Change Words
+        </a>
+      </li>
     </ol>
+    </div>
  
-
   </div>
     <!-- <div id="clouds">
       <div class="cloud x1"></div>
