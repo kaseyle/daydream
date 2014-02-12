@@ -1,17 +1,17 @@
 var data = {
 	"tags": {
-		"alone": [0,1],
-		"friends": [0,1],
-		"inside": [0,1],
-		"outside": [0,1],
-		"active": [0,1],
-		"quiet": [0,1],
-		"tactile": [0,1],
-		"explore": [0,1],
-		"reflect": [0,1],
-		"think": [0,1],
-		"learn": [0,1],
-		"blank": [],
+		"alone": [0,1,2],
+		"friends": [0,1,2],
+		"inside": [0,2],
+		"outside": [0,1,2],
+		"active": [0],
+		"quiet": [0,1,2],
+		"tactile": [],
+		"explore": [1],
+		"reflect": [2],
+		"think": [],
+		"learn": [],
+		"blank": []
 	},
 	"times": {
 		"2": [0],
@@ -21,8 +21,8 @@ var data = {
 		"30": [0],
 		"60": [0]
 	},
-	"activities_array": ["yoga", "cloudGazing"],
-	"activities_object": {"yoga": 0, "cloudGazing": 1}
+	"activities_array": ["yoga", "cloudGazing", "reflect_day"],
+	"activities_object": {"yoga": 0, "cloudGazing": 1, "reflect_day": 2}
 }
 
 var words = new Array();
