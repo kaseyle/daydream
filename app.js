@@ -14,7 +14,8 @@ var cloud = require('./routes/cloud');
 var clock = require('./routes/clock');
 var yoga = require('./routes/yoga');
 var cloudGazing = require('./routes/cloudGazing');
-var reflect_day = require('./routes/reflect_day')
+var reflect_day = require('./routes/reflect_day');
+var meditate = require('./routes/meditate');
 // Example route
 // var user = require('./routes/user');
 
@@ -48,6 +49,7 @@ app.get('/yoga', yoga.view);
 app.get('/cloudGazing', cloudGazing.view);
 app.get('/reflect_day', reflect_day.view);
 app.get('/data', data.getJson);
+app.get('/meditate', meditate.view);
 // Example route
 // app.get('/users', user.list);
 
