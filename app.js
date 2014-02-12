@@ -43,6 +43,7 @@ app.get('/', index.view);
 app.get('/clock', clock.view);
 app.get('/cloud', cloud.view);
 app.get('/yoga', yoga.view);
+app.get('/cloudGazing', cloudGazing.view);
 // Example route
 // app.get('/users', user.list);
 
