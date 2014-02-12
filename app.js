@@ -8,6 +8,7 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+var data = require('./routes/data');
 var index = require('./routes/index');
 var cloud = require('./routes/cloud');
 var clock = require('./routes/clock');
@@ -46,6 +47,7 @@ app.get('/cloud', cloud.view);
 app.get('/yoga', yoga.view);
 app.get('/cloudGazing', cloudGazing.view);
 app.get('/reflect_day', reflect_day.view);
+app.get('/data', data.getJson);
 // Example route
 // app.get('/users', user.list);
 

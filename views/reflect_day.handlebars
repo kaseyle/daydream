@@ -10,9 +10,6 @@
     <link href="/css/basic.css" rel="stylesheet">
     <link href="/css/reflect_day.css" rel="stylesheet">
     <meta name="viewport" content="width=320, initial-scale=1">
-
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
   </head>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -34,13 +31,13 @@
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
         <li class = "active">
-          <a href="/clock">
+          <a href="/clock" data-ajax="false">
             <span class="glyphicon glyphicon-time"></span>  
             Change Time
           </a>
         </li>
         <li class = "active">
-          <a href="/cloud">
+          <a href="/cloud" data-ajax="false">
             <span class="glyphicon glyphicon-cloud"></span>
             Change Words
           </a>
@@ -51,7 +48,15 @@
   </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script>
+      $(document).bind("mobileinit", function(){
+        console.log("mobileinit!!!");
+        $.mobile.loadingMessage = false;
+      });
+    </script>
+    <script src="//code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
     <script src="/js/reflect_day.js"></script>
   </body>
 </html>

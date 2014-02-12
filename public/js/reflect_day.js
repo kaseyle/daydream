@@ -22,7 +22,6 @@ function initializePage() {
     	event.preventDefault();
     	swipe(event);
     }
-     
 }
 
 function swipe(event) {

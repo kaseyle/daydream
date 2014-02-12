@@ -1,29 +1,4 @@
-var data = {
-	"tags": {
-		"alone": [0,1,2],
-		"friends": [0,1,2],
-		"inside": [0,2],
-		"outside": [0,1,2],
-		"active": [0],
-		"quiet": [0,1,2],
-		"tactile": [],
-		"explore": [1],
-		"reflect": [2],
-		"think": [],
-		"learn": [],
-		"blank": []
-	},
-	"times": {
-		"2": [0],
-		"5": [0],
-		"10": [0],
-		"15": [0],
-		"30": [0],
-		"60": [0]
-	},
-	"activities_array": ["yoga", "cloudGazing", "reflect_day"],
-	"activities_object": {"yoga": 0, "cloudGazing": 1, "reflect_day": 2}
-}
+var data = {}
 
 var words = new Array();
 var maxWords = 4;
@@ -42,21 +17,9 @@ function initializePage() {
     $( "#my_button" ).button().click(clickListener);
     $( "#my_button" ).attr('disabled', 'disabled');
 
-    /*Handlebars.registerHelper("each_with_index", function(array, fn) {
-		var buffer = "";
-		for (var i = 0, j = array.length; i < j; i++) {
-			var item = array[i];
-	 
-			// stick an index property onto the item, starting with 1, may make configurable later
-			item.index = i+1;
-	 
-			// show the inside of the block
-			buffer += fn(item);
-		}
-	 
-		// return the finished buffer
-		return buffer;
-	});*/
+    $.getJSON("/data", function(json) {
+    	data = json;
+    });
 }
 
 function dropListener(event, ui) {
