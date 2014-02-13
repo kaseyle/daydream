@@ -19,6 +19,8 @@ var meditate = require('./routes/meditate');
 var quotes = require('./routes/quotes');
 var places = require('./routes/places');
 var zumba = require('./routes/zumba');
+var breathing = require('./routes/breathing');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -55,7 +57,11 @@ app.get('/data', data.getJson);
 app.get('/meditate', meditate.view);
 app.get('/quotes', quotes.view);
 app.get('/places', places.view);
+<<<<<<< HEAD
 app.get('/zumba', zumba.view);
+=======
+app.get('/breathing', breathing.view);
+>>>>>>> e57b7a4d4ec87dc5f029640bc57fb7ec85ab0d46
 // Example route
 // app.get('/users', user.list);
 
