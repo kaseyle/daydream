@@ -57,11 +57,8 @@ app.get('/data', data.getJson);
 app.get('/meditate', meditate.view);
 app.get('/quotes', quotes.view);
 app.get('/places', places.view);
-<<<<<<< HEAD
 app.get('/zumba', zumba.view);
-=======
 app.get('/breathing', breathing.view);
->>>>>>> e57b7a4d4ec87dc5f029640bc57fb7ec85ab0d46
 // Example route
 // app.get('/users', user.list);
 
