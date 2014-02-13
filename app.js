@@ -17,6 +17,7 @@ var cloudGazing = require('./routes/cloudGazing');
 var reflect_day = require('./routes/reflect_day');
 var meditate = require('./routes/meditate');
 var quotes = require('./routes/quotes');
+var places = require('./routes/places');
 // Example route
 // var user = require('./routes/user');
 
@@ -52,6 +53,7 @@ app.get('/reflect_day', reflect_day.view);
 app.get('/data', data.getJson);
 app.get('/meditate', meditate.view);
 app.get('/quotes', quotes.view);
+app.get('/places', places.view);
 // Example route
 // app.get('/users', user.list);
 

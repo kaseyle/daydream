@@ -1,0 +1,27 @@
+#swipe {
+	position: relative;
+	margin: -10px auto;
+	width: 200px;
+	height: 40px;
+
+	/* fallback */
+  	background-color: rgba(53, 185, 247, 0);
+
+  	/* Safari 4-5, Chrome 1-9 */
+  	/* Can't specify a percentage size? Laaaaaame. */
+  	background: -webkit-gradient(radial, center center, 0, center center, 460, rgba(53, 185, 247, 0.5), rgba(53, 185, 247, 0));
+
+  	/* Safari 5.1+, Chrome 10+ */
+  	background: -webkit-radial-gradient(circle, rgba(53, 185, 247, 0.5), rgba(53, 185, 247, 0));
+
+  	/* Firefox 3.6+ */
+  	background: -moz-radial-gradient(circle, rgba(53, 185, 247, 0.5), rgba(53, 185, 247, 0));
+
+  	/* IE 10 */
+  	background: -ms-radial-gradient(circle, rgba(53, 185, 247, 0.5), rgba(53, 185, 247, 0));
+}
+
+#image {
+	height: 250px;
+	max-width: 310px;
+}
