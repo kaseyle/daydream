@@ -1,12 +1,22 @@
 #swipe {
 	position: relative;
-	margin: 0 auto;
+	margin: 10px auto;
 	width: 200px;
 	height: 40px;
-	background-color: rgba(53, 185, 247, 0.5);
-}
 
-#swipe.swipe {
-	background-color: rgba(53, 185, 247, 1);
-}
+	/* fallback */
+  	background-color: rgba(53, 185, 247, 0);
 
+  	/* Safari 4-5, Chrome 1-9 */
+  	/* Can't specify a percentage size? Laaaaaame. */
+  	background: -webkit-gradient(radial, center center, 0, center center, 460, rgba(53, 185, 247, 0.5), rgba(53, 185, 247, 0));
+
+  	/* Safari 5.1+, Chrome 10+ */
+  	background: -webkit-radial-gradient(circle, rgba(53, 185, 247, 0.5), rgba(53, 185, 247, 0));
+
+  	/* Firefox 3.6+ */
+  	background: -moz-radial-gradient(circle, rgba(53, 185, 247, 0.5), rgba(53, 185, 247, 0));
+
+  	/* IE 10 */
+  	background: -ms-radial-gradient(circle, rgba(53, 185, 247, 0.5), rgba(53, 185, 247, 0));
+}
