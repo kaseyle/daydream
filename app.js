@@ -20,6 +20,11 @@ var quotes = require('./routes/quotes');
 var places = require('./routes/places');
 var zumba = require('./routes/zumba');
 var breathing = require('./routes/breathing');
+var yogicBreathing = require('./routes/yogicBreathing');
+var nap = require('./routes/nap');
+var massage = require('./routes/massage');
+var stars = require('./routes/stars');
+var cook = require('./routes/cook');
 
 // Example route
 // var user = require('./routes/user');
@@ -57,8 +62,13 @@ app.get('/data', data.getJson);
 app.get('/meditate', meditate.view);
 app.get('/quotes', quotes.view);
 app.get('/places', places.view);
-app.get('/zumba', zumba.view);
 app.get('/breathing', breathing.view);
+app.get('/zumba', zumba.view);
+app.get('/yogicBreathing', yogicBreathing.view);
+app.get('/nap', nap.view);
+app.get('/massage', massage.view);
+app.get('/stars', stars.view);
+app.get('/cook', cook.view);
 // Example route
 // app.get('/users', user.list);
 
