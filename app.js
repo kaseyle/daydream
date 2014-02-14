@@ -35,6 +35,7 @@ var flowers = require('./routes/flowers');
 var music = require('./routes/music');
 var gum = require('./routes/gum');
 var toeTensing = require('./routes/toeTensing');
+var guidedImagry = require('./routes/guidedImagry');
 
 
 // Example route
@@ -90,6 +91,7 @@ app.get('/flowers', flowers.view);
 app.get('/music', music.view);
 app.get('/gum', gum.view);
 app.get('/toeTensing', toeTensing.view);
+app.get('/guidedImagry', guidedImagry.view);
 // Example route
 // app.get('/users', user.list);
 
