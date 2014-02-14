@@ -25,6 +25,7 @@ var nap = require('./routes/nap');
 var massage = require('./routes/massage');
 var stars = require('./routes/stars');
 var cook = require('./routes/cook');
+var positiveThinking = require('./routes/positiveThinking');
 
 // Example route
 // var user = require('./routes/user');
@@ -69,6 +70,7 @@ app.get('/nap', nap.view);
 app.get('/massage', massage.view);
 app.get('/stars', stars.view);
 app.get('/cook', cook.view);
+app.get('/positiveThinking', positiveThinking.view);
 // Example route
 // app.get('/users', user.list);
 

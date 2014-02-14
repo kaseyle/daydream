@@ -2,13 +2,13 @@
 
 <html>
   <head>
-    <title>Massage</title>
+    <title>Postive Thinking</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/basic.css" rel="stylesheet">
-    <link href="/css/massage.css" rel="stylesheet">
+    <link href="/css/reflect_day.css" rel="stylesheet">
     <meta name="viewport" content="width=320, initial-scale=1">
   </head>
 
@@ -18,34 +18,26 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-  
-    
+
+
   <body>
   <div id="container">
     <p id="words">{{text}}</p>
-    <h1 id="title">Massage Circle</h1>
-    <h2 id="instructions">Get in a circle and give each other massages.</h2> 
-
-  
-
-    <h3 id="quote"></h3>
-    <div>
-      <iframe 
-      width="320" height="280" src="http://www.youtube.com/embed/zJkGoRCArkk?rel=0"
-      frameborder="0" allowfullscreen>
-      </iframe>
-    </div>
-      
+    <h1 id="title">Positive Thinking Tips</h1>
+    <br/>
+    <h2 id="directions">Turn your CAN'TS into CANS: From "why do I always get bad grades" to "Next time I will do better".</h2>
+    <br/>
+    <div id="swipe">Swipe</div>
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
         <li class = "active">
-          <a href="/clock">
+          <a href="/clock" data-ajax="false">
             <span class="glyphicon glyphicon-time"></span>  
             Change Time
           </a>
         </li>
         <li class = "active">
-          <a href="/cloud">
+          <a href="/cloud" data-ajax="false">
             <span class="glyphicon glyphicon-cloud"></span>
             Change Words
           </a>
@@ -53,11 +45,18 @@
       </ol>
     </div>
 
-
   </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->  
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script>
+      $(document).bind("mobileinit", function(){
+        console.log("mobileinit!!!");
+        $.mobile.loadingMessage = false;
+      });
+    </script>
+    <script src="//code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+    <script src="/js/positiveThinking.js"></script>
   </body>
 </html>
