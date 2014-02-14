@@ -36,6 +36,7 @@ var music = require('./routes/music');
 var gum = require('./routes/gum');
 var toeTensing = require('./routes/toeTensing');
 var guidedImagry = require('./routes/guidedImagry');
+var quietEars = require('./routes/quietEars');
 
 
 // Example route
@@ -92,6 +93,7 @@ app.get('/music', music.view);
 app.get('/gum', gum.view);
 app.get('/toeTensing', toeTensing.view);
 app.get('/guidedImagry', guidedImagry.view);
+app.get('/quietEars', quietEars.view);
 // Example route
 // app.get('/users', user.list);
 
