@@ -1,16 +1,16 @@
 {
 	"tags": {
-		"alone": [0,1,2,3,4,5, 6],
-		"friends": [0,1,2,3,4,5],
-		"inside": [0,2,3,4,5, 6],
-		"outside": [0,1,2,3,4,5, 6],
-		"active": [0, 6],
-		"quiet": [0,1,2,3,4,5, 6],
+		"alone": [0,1,2,3,4,5,6,7,8,10,11,12,13],
+		"friends": [0,1,2,3,4,5,6,7,8,9,11,12],
+		"inside": [0,2,3,4,5,6,7,8,9,10,12,13],
+		"outside": [0,1,2,3,4,5,6,7,8,9,11,13],
+		"active": [0,7,12],
+		"quiet": [0,1,2,3,4,5,6,8,10,11,13],
 		"tactile": [],
 		"explore": [1,5],
 		"reflect": [2,3,4],
-		"think": [],
-		"learn": [4],
+		"think": [13],
+		"learn": [4,11,12],
 		"blank": []
 	},
 	"times": {
@@ -21,6 +21,9 @@
 		"30": [0],
 		"60": [0]
 	},
-	"activities_array": ["yoga", "cloudGazing", "reflect_day", "meditate", "quotes", "places", "breathing"],
-	"activities_object": {"yoga": 0, "cloudGazing": 1, "reflect_day": 2, "meditate": 3, "quotes": 4, "places": 5, "breathing": 6}
+	"activities_array": ["yoga", "cloudGazing", "reflect_day", "meditate", "quotes", "places",
+	"breathing", "zumba", "yogicBreathing", "massage", "nap", "stars", "cook", "positiveThinking"],
+	"activities_object": {"yoga": 0, "cloudGazing": 1, "reflect_day": 2, "meditate": 3, "quotes": 4, "places": 5,
+	 "breathing": 6, "zumba": 7, "yogicBreathing": 8,"massage": 9, "nap":10, "stars":11, "cook":12,
+	 "positiveThinking": 13}
 }
