@@ -1,16 +1,16 @@
 var urls = [
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/aries20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/taurus20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/gemini20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/cancer20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/leo20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/virgo20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/libra20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/scorpio20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/sagittarius20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/capricorn20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/aquarius20.jpg";
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/pisces20.jpg";
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/aries20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/taurus20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/gemini20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/cancer20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/leo20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/virgo20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/libra20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/scorpio20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/sagittarius20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/capricorn20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/aquarius20.jpg",
+	"http://www.astrologyweekly.com/zodiac-pictures/constellation/pisces20.jpg"
 ]
 
 var index = 1;
