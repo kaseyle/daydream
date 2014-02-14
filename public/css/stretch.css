@@ -1,0 +1,14 @@
+
+.youtube-player{
+	position: fixed;
+	top: 100px;
+}
+.video iframe {
+	position: absolute;
+	bottom: 30;
+	left: 0;
+	right: 0;
+	top: 120px;
+	width: 100%
+}
+

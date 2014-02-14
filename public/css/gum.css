@@ -1,0 +1,13 @@
+#face {
+	background-position: center;
+	width: 300px;
+	height: 300px;
+}
+
+#gum {
+	position: absolute;
+	left: 80px;
+	top: 270px;
+	width: 100px;
+	height: 100px;
+}

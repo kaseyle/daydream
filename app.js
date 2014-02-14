@@ -26,6 +26,15 @@ var massage = require('./routes/massage');
 var stars = require('./routes/stars');
 var cook = require('./routes/cook');
 var positiveThinking = require('./routes/positiveThinking');
+var stretch = require('./routes/stretch');
+var powerstance = require('./routes/powerstance');
+var riddle = require('./routes/riddle');
+var joke = require('./routes/joke');
+var run = require('./routes/run');
+var flowers = require('./routes/flowers');
+var music = require('./routes/music');
+var gum = require('./routes/gum');
+
 
 // Example route
 // var user = require('./routes/user');
@@ -71,6 +80,14 @@ app.get('/massage', massage.view);
 app.get('/stars', stars.view);
 app.get('/cook', cook.view);
 app.get('/positiveThinking', positiveThinking.view);
+app.get('/stretch', stretch.view);
+app.get('/powerstance', powerstance.view);
+app.get('/riddle', riddle.view);
+app.get('/joke', joke.view);
+app.get('/run', run.view);
+app.get('/flowers', flowers.view);
+app.get('/music', music.view);
+app.get('/gum', gum.view);
 // Example route
 // app.get('/users', user.list);
 
