@@ -24,8 +24,3 @@
 	"activities_array": ["yoga", "cloudGazing", "reflect_day", "meditate", "quotes", "places", "breathing"],
 	"activities_object": {"yoga": 0, "cloudGazing": 1, "reflect_day": 2, "meditate": 3, "quotes": 4, "places": 5, "breathing": 6}
 }
-
-
-
-
-
