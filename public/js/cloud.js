@@ -51,15 +51,15 @@ function outListner(event, ui) {
 	var word = $(ui.draggable).find("p").text();
 	if (words.indexOf(word) > -1) {
 		words.splice( words.indexOf(word), 1 );
+		$( "#directions ").text("Drag in up to four words to start daydreaming...");
+		$( "#directions ").css('color', 'white');
+		$( "#directions ").css('font-weight', '100');
 	}
 	$(ui.draggable).draggable("option", "revert", "valid");
 	if (words.length == 0) {
 		//$( "#my_button" ).attr('disabled', 'disabled');
 		$("#finish").addClass("disabled");
 	}
-	$( "#directions ").text("Drag in up to four words to start daydreaming...");
-	$( "#directions ").css('color', 'white');
-	$( "#directions ").css('font-weight', '100');
 }
 
 function getActivities() {
