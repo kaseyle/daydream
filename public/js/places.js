@@ -1,16 +1,16 @@
 var urls = [
-	"http://daydreaming.herokuapp.com/images/places_1.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_2.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_3.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_4.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_5.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_6.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_7.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_8.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_9.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_10.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_11.jpeg",
-	"http://daydreaming.herokuapp.com/images/places_12.jpeg"
+	"http://daydreaming.herokuapp.com/images/places_1.jpg",
+	"http://daydreaming.herokuapp.com/images/places_2.jpg",
+	"http://daydreaming.herokuapp.com/images/places_3.jpg",
+	"http://daydreaming.herokuapp.com/images/places_4.jpg",
+	"http://daydreaming.herokuapp.com/images/places_5.jpg",
+	"http://daydreaming.herokuapp.com/images/places_6.jpg",
+	"http://daydreaming.herokuapp.com/images/places_7.jpg",
+	"http://daydreaming.herokuapp.com/images/places_8.jpg",
+	"http://daydreaming.herokuapp.com/images/places_9.jpg",
+	"http://daydreaming.herokuapp.com/images/places_10.jpg",
+	"http://daydreaming.herokuapp.com/images/places_11.jpg",
+	"http://daydreaming.herokuapp.com/images/places_12.jpg"
 ]
 
 var names = [

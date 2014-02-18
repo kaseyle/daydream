@@ -1,15 +1,15 @@
 var urls = [
-	"http://daydreaming.herokuapp.com/images/quotes_1.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_2.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_3.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_4.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_5.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_6.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_7.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_8.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_9.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_10.jpeg",
-	"http://daydreaming.herokuapp.com/images/quotes_11.jpeg"
+	"http://daydreaming.herokuapp.com/images/quotes_1.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_2.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_3.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_4.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_5.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_6.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_7.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_8.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_9.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_10.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_11.jpg"
 ]
 
 var index = 1;
