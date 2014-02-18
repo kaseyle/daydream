@@ -14,8 +14,8 @@ function initializePage() {
       drop: dropListener,
       out: outListner     
     });
-    $( "#my_button" ).button().click(clickListener);
-    $( "#my_button" ).attr('disabled', 'disabled');
+    $( "#finish" ).button().click(clickListener);
+    //$( "#my_button" ).attr('disabled', 'disabled');
 
     $.getJSON("/data", function(json) {
     	data = json;
@@ -30,17 +30,20 @@ function dropListener(event, ui) {
 		var activities = getActivities();
 		if (activities.length == 0) {
 			words.pop();
-			$( "#directions ").text("Sorry! There are no daydreams for that combination.");
+			$( "#directions ").text("Sorry! There are no daydreams for that combo.");
 			$( "#directions ").css('color', 'black');
+			$( "#directions ").css('font-weight', '200');
 		} else {
 			$(ui.draggable).draggable("option", "revert", "false");
 			$( "#directions ").text("Drag in up to four words to start daydreaming...");
 			$( "#directions ").css('color', 'white');
+			$( "#directions ").css('font-weight', '100');
 		}
 	}
 	console.log(words);
 	if (words.length > 0) {
-		$( "#my_button" ).removeAttr('disabled');
+		//$( "#my_button" ).removeAttr('disabled');
+		$("#finish").removeClass("disabled");
 	}
 }
 
@@ -51,8 +54,12 @@ function outListner(event, ui) {
 	}
 	$(ui.draggable).draggable("option", "revert", "valid");
 	if (words.length == 0) {
-		$( "#my_button" ).attr('disabled', 'disabled');
+		//$( "#my_button" ).attr('disabled', 'disabled');
+		$("#finish").addClass("disabled");
 	}
+	$( "#directions ").text("Drag in up to four words to start daydreaming...");
+	$( "#directions ").css('color', 'white');
+	$( "#directions ").css('font-weight', '100');
 }
 
 function getActivities() {
@@ -72,6 +79,12 @@ function getActivities() {
 
 function clickListener(event) {
 	event.preventDefault();
+	if (words.length == 0) {
+		$( "#directions ").css('color', 'black');
+		$( "#directions ").css('font-weight', '200');
+		$( "#directions ").text("Please drag in at least one word.");
+		return;
+	}
 	var activities = getActivities();
 	var index = activities[Math.floor(Math.random() * activities.length)];
 	var activity = data["activities_array"][index];

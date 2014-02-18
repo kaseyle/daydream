@@ -149,3 +149,7 @@
 	z-index: 100;
 	box-shadow: 0 3px 5px rgba(0,0,0, 0.3);
 }
+
+.nav-pills>li.active>a.disabled {
+	background-color: rgba(53, 185, 247, 0.2);
+}
