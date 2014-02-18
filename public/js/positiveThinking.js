@@ -27,6 +27,7 @@ function initializePage() {
 }
 
 function swipe(event) {
+	console.log("SWIPE");
 	$( event.target ).addClass( "swipe" );
 	$( "#directions" ).css('visibility','hidden');
 	setTimeout(function() {nextPrompt(event)}, 2000);

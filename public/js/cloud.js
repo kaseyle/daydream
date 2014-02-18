@@ -86,7 +86,9 @@ function clickListener(event) {
 		return;
 	}
 	var activities = getActivities();
-	var index = activities[Math.floor(Math.random() * activities.length)];
+	var rand = Math.random();
+	console.log(rand);
+	var index = activities[Math.floor(rand * activities.length)];
 	var activity = data["activities_array"][index];
 	var url = "/" + activity + "?" + "word1=" + words[0];
 	for (var i = 1; i < 4; i++) {

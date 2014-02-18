@@ -21,6 +21,8 @@
   
     
   <body>
+  <p hidden id="back">/{{back}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
+  <p hidden id="forward">/{{forward}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <div id="container">
     <p id="words">{{text}}</p>
     <h1 id="title">Nap</h1>
@@ -33,13 +35,13 @@
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
         <li class = "active">
-          <a href="/clock">
+          <a href="/clock" data-ajax="false">
             <span class="glyphicon glyphicon-time"></span>  
             Change Time
           </a>
         </li>
         <li class = "active">
-          <a href="/cloud">
+          <a href="/cloud" data-ajax="false">
             <span class="glyphicon glyphicon-cloud"></span>
             Change Words
           </a>
@@ -53,5 +55,12 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
+    <script>
+      $(document).bind("mobileinit", function(){
+        $.mobile.loadingMessage = false;
+      });
+    </script>
+    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
+    <script src="/js/basic.js"></script>
   </body>
 </html>
