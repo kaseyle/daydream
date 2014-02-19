@@ -78,3 +78,10 @@ function createMarker(place) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+var js = document.createElement("script");
+
+js.type = "text/javascript";
+js.src = "./basic.js";
+
+addBindings('#map-canvas');
