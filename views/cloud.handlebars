@@ -21,6 +21,8 @@
 
   </head>
   <body>
+  <p hidden id="back">/{{back}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
+  <p hidden id="forward">/{{forward}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
 
   <div id="container">
 
@@ -82,7 +84,7 @@
       <div class="cloud-left droppable"></div>
     </div>
     <p id="directions">Drag in up to four words to start daydreaming...</p>
-    <div id="button_div"><button id="my_button"><p>Build Daydream</p></button></div>
+    <!-- <div id="button_div"><button id="my_button"><p>Build Daydream</p></button></div> -->
 
     <div id="nagivation_bar">
     <ol class="nav nav-pills">
@@ -93,9 +95,9 @@
         </a>
       </li>
       <li class = "active">
-        <a href="#">
-          <span class="glyphicon glyphicon-cloud"></span>
-          Change Words
+        <a href="#" class="disabled" id="finish">
+          <span class="glyphicon glyphicon-ok-sign"></span>
+          Finish
         </a>
       </li>
     </ol>

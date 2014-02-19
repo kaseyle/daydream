@@ -1,15 +1,15 @@
 var urls = [
-	"http://media-cache-ec0.pinimg.com/736x/0f/7d/4c/0f7d4c3b12f5e238f7fe1e81b1672ec6.jpg",
-	"http://media-cache-ec0.pinimg.com/736x/d9/3b/65/d93b65cd7bbc1105883080c4cee02cd2.jpg",
-	"http://media-cache-ak0.pinimg.com/736x/5e/22/58/5e2258d513870ad4f70bc6afaf187c3e.jpg",
-	"http://media-cache-ak0.pinimg.com/736x/14/66/20/146620cf546daef13280b6458d377b30.jpg",
-	"http://media-cache-ec0.pinimg.com/736x/fb/92/25/fb922576a878ef59b9ba48e9851ebaca.jpg",
-	"http://media-cache-ec0.pinimg.com/736x/d7/c5/e6/d7c5e60537f12f978c6bff1b98bd5963.jpg",
-	"http://media-cache-cd0.pinimg.com/736x/53/5b/7e/535b7e231920885749b72fdac4d59336.jpg",
-	"http://media-cache-ak0.pinimg.com/736x/d6/0c/94/d60c943132000c58b62cef85fe1834eb.jpg",
-	"http://media-cache-ec0.pinimg.com/736x/88/01/6a/88016a3e3f2a81fba2ec32d307ca77dd.jpg",
-	"http://media-cache-ak0.pinimg.com/736x/53/bd/2f/53bd2f2790122f3f52f4626fe06f0fe9.jpg",
-	"http://media-cache-ak0.pinimg.com/736x/c7/10/6a/c7106a5592a75d9c0200ca314dbd9e7a.jpg"
+	"http://daydreaming.herokuapp.com/images/quotes_1.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_2.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_3.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_4.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_5.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_6.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_7.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_8.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_9.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_10.jpg",
+	"http://daydreaming.herokuapp.com/images/quotes_11.jpg"
 ]
 
 var index = 1;

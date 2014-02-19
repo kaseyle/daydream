@@ -21,6 +21,8 @@
 
 
   <body>
+  <p hidden id="back">/{{back}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
+  <p hidden id="forward">/{{forward}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <div id="container">
     <p id="words">{{text}}</p>
     <h1 id="title">Magical Places</h1>
@@ -51,11 +53,11 @@
     <script src="/js/bootstrap.min.js"></script>
     <script>
       $(document).bind("mobileinit", function(){
-        console.log("mobileinit!!!");
         $.mobile.loadingMessage = false;
       });
     </script>
-    <script src="//code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
     <script src="/js/places.js"></script>
+    <script src="/js/basic.js"></script>
   </body>
 </html>

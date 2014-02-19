@@ -39,6 +39,7 @@ var guidedImagry = require('./routes/guidedImagry');
 var quietEars = require('./routes/quietEars');
 var reflect_life = require('./routes/reflect_life');
 var draw = require('./routes/draw');
+var article = require('./routes/article');
 
 
 // Example route
@@ -98,6 +99,8 @@ app.get('/guidedImagry', guidedImagry.view);
 app.get('/quietEars', quietEars.view);
 app.get('/reflect_life', reflect_life.view);
 app.get('/draw', draw.view);
+app.get('/article', article.view);
+
 // Example route
 // app.get('/users', user.list);
 

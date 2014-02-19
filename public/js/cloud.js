@@ -14,8 +14,8 @@ function initializePage() {
       drop: dropListener,
       out: outListner     
     });
-    $( "#my_button" ).button().click(clickListener);
-    $( "#my_button" ).attr('disabled', 'disabled');
+    $( "#finish" ).button().click(clickListener);
+    //$( "#my_button" ).attr('disabled', 'disabled');
 
     $.getJSON("/data", function(json) {
     	data = json;
@@ -30,17 +30,20 @@ function dropListener(event, ui) {
 		var activities = getActivities();
 		if (activities.length == 0) {
 			words.pop();
-			$( "#directions ").text("Sorry! There are no daydreams for that combination.");
+			$( "#directions ").text("Sorry! There are no daydreams for that combo.");
 			$( "#directions ").css('color', 'black');
+			$( "#directions ").css('font-weight', '200');
 		} else {
 			$(ui.draggable).draggable("option", "revert", "false");
 			$( "#directions ").text("Drag in up to four words to start daydreaming...");
 			$( "#directions ").css('color', 'white');
+			$( "#directions ").css('font-weight', '100');
 		}
 	}
 	console.log(words);
 	if (words.length > 0) {
-		$( "#my_button" ).removeAttr('disabled');
+		//$( "#my_button" ).removeAttr('disabled');
+		$("#finish").removeClass("disabled");
 	}
 }
 
@@ -48,10 +51,14 @@ function outListner(event, ui) {
 	var word = $(ui.draggable).find("p").text();
 	if (words.indexOf(word) > -1) {
 		words.splice( words.indexOf(word), 1 );
+		$( "#directions ").text("Drag in up to four words to start daydreaming...");
+		$( "#directions ").css('color', 'white');
+		$( "#directions ").css('font-weight', '100');
 	}
 	$(ui.draggable).draggable("option", "revert", "valid");
 	if (words.length == 0) {
-		$( "#my_button" ).attr('disabled', 'disabled');
+		//$( "#my_button" ).attr('disabled', 'disabled');
+		$("#finish").addClass("disabled");
 	}
 }
 
@@ -72,8 +79,16 @@ function getActivities() {
 
 function clickListener(event) {
 	event.preventDefault();
+	if (words.length == 0) {
+		$( "#directions ").css('color', 'black');
+		$( "#directions ").css('font-weight', '200');
+		$( "#directions ").text("Please drag in at least one word.");
+		return;
+	}
 	var activities = getActivities();
-	var index = activities[Math.floor(Math.random() * activities.length)];
+	var rand = Math.random();
+	console.log(rand);
+	var index = activities[Math.floor(rand * activities.length)];
 	var activity = data["activities_array"][index];
 	var url = "/" + activity + "?" + "word1=" + words[0];
 	for (var i = 1; i < 4; i++) {
