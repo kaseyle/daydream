@@ -1,10 +1,4 @@
 
-#paintBox
-{
-  	border:1px solid black;
-  	background-color: white;
-  	width:100%;
-}
 #clearBtn {
 	text-align: center;
 	width: 130px;
@@ -28,3 +22,10 @@
     color: black;
 }
 
+
+#canvasSignature {
+	position: relative;
+	background-color: white;
+	width: 300px;
+	border: 100px;
+}
