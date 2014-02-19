@@ -1,0 +1,11 @@
+body
+{
+  margin:20px;
+  padding:0;
+}
+#paintBox
+{
+  border:1px solid #9a9a9a;
+  width:100%;
+}
+
