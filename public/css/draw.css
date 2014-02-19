@@ -5,7 +5,30 @@ body
 }
 #paintBox
 {
-  border:1px solid #9a9a9a;
+  border:1px solid white;
+  background-color: white;
   width:100%;
+}
+#clearBtn {
+	text-align: center;
+	width: 130px;
+	height: 40px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	background: linear-gradient(#F2F2F2 70%, #E5E5E5);
+}
+
+#button_div {
+	position: relative;
+	margin: 0px auto;
+	top: 50px;
+	width: 130px;
+}
+#clearBtn p {
+	margin-top: -3px;
+	font-weight: 100;
+    font-size: 14px;
+    line-height: 40px;
+    color: black;
 }
 
