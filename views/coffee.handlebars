@@ -2,13 +2,13 @@
 
 <html>
   <head>
-    <title>Article</title>
+    <title>Coffee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/basic.css" rel="stylesheet">
-    <link href="/css/article.css" rel="stylesheet">
+    <link href="/css/coffee.css" rel="stylesheet">
     <meta name="viewport" content="width=320, initial-scale=1">
   </head>
 
@@ -25,8 +25,10 @@
   <p hidden id="forward">/{{forward}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <div id="container">
     <p id="words">{{text}}</p>
-    <h1 id="title">Upworthy</h1>
-    <div id="overflow"><iframe id="article" src="http://www.upworthy.com/random">Error: Embedded data could not be displayed.</iframe></div>
+    <h1 id="title">Grab a Coffee</h1>
+    <h3>Nearest coffee shops to you!</h3>
+    <div><div id="map-canvas"/></div></div>
+
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
         <li class = "active">
@@ -47,6 +49,8 @@
   </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=true">
+    </script>
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script>
@@ -56,5 +60,6 @@
     </script>
     <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
     <script src="/js/basic.js"></script>
+    <script src="/js/coffee.js"></script>
   </body>
 </html>

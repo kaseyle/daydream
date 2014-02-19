@@ -1,41 +1,36 @@
+$.event.special.swipe.horizontalDistanceThreshold = 60;
 
-  console.log("INIT");
+doBind();
 
-  doBind();
+addBindings('#swipe');
 
-  if ($('#swipe').length > 0) {
-    $('#swipe').on('touchstart', function(){
+function addBindings(name) {
+  if ($(name).length > 0) {
+    $(name).on('touchstart', function(){
         // When user touches the slider handle, temporarily unbind the page turn handlers
         doUnbind();
         setTimeout( function() {doBind();}, 1000 );
     });
 
-    $('#swipe').on('mousedown', function(){
+    $(name).on('mousedown', function(){
         // When user touches the slider handle, temporarily unbind the page turn handlers
         doUnbind();
         setTimeout( function() {doBind();}, 1000 );
     });
 
-    $('#swipe').on('touchend', function(){
+    $(name).on('touchend', function(){
         //When the user let's go of the handle, rebind the controls for page turn
         // Put in a slight delay so that the rebind does not happen until after the swipe has been triggered
         setTimeout( function() {doBind();}, 100 );
     });
 
-    $('#swipe').on('mouseup', function(){
-        //When the user let's go of the handle, rebind the controls for page turn
-        // Put in a slight delay so that the rebind does not happen until after the swipe has been triggered
-        setTimeout( function() {doBind();}, 100 );
-    });
-
-
-    $(window).on('mouseup', function(){
+    $(name).on('mouseup', function(){
         //When the user let's go of the handle, rebind the controls for page turn
         // Put in a slight delay so that the rebind does not happen until after the swipe has been triggered
         setTimeout( function() {doBind();}, 100 );
     });
   }
-
+}
 
 function doBind() {
   console.log("Binded!");
