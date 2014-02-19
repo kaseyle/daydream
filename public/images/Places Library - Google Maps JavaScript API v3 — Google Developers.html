@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)https://developers.google.com/maps/documentation/javascript/places#place_search_requests -->
+<html lang="en" class="devsite"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <script src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/cb=gapi.loaded_1" async=""></script><script src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/plusone.js" gapi_processed="true"></script><script async="" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/analytics.js"></script><script>(function(){function d(a){this.t={};this.tick=function(a,c,b){var d=void 0!=b?b:(new Date).getTime();this.t[a]=[d,c];if(void 0==b)try{window.console.timeStamp("CSI/"+a)}catch(e){}};this.tick("start",null,a)}var a;window.performance&&(a=window.performance.timing);var f=a?new d(a.responseStart):new d;window.jstiming={Timer:d,load:f};if(a){var c=a.navigationStart,e=a.responseStart;0<c&&e>=c&&(window.jstiming.srt=e-c)}if(a){var b=window.jstiming.load;0<c&&e>=c&&(b.tick("_wtsrt",void 0,c),b.tick("wtsrt_",
+"_wtsrt",e),b.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),b&&0<c&&(b.tick("_tbnd",void 0,window.chrome.csi().startE),b.tick("tbnd_","_tbnd",c))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,b&&0<c&&(b.tick("_tbnd",void 0,window.external.startE),b.tick("tbnd_","_tbnd",c))),a&&(window.jstiming.pt=a)}catch(g){}})();window.gettext=function(d){return d};window.interpolate=function(d,a){return d.replace(/%s/g,function(){return String(a.shift())})};
+</script>
+    
+      
+        <link rel="stylesheet" type="text/css" href="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/screen-docs.css">
+      
+      
+      <link rel="stylesheet" type="text/css" id="screen-foot" data-href="/_static/bbe5bfc230/css/screen-foot.css" href="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/screen-foot.css">
+    
+    <link rel="shortcut icon" href="https://developers.google.com/_static/bbe5bfc230/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://developers.google.com/_static/bbe5bfc230/images/apple-touch-icon.png">
+    <link href="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/css" rel="stylesheet" type="text/css">
+    
+    
+    
+      <link rel="search" type="application/opensearchdescription+xml" title="Google Developers" href="https://developers.google.com/search/opensearch.xml">
+    
+    <script src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="/_static/bbe5bfc230/js/html5shim/html5.js"></script>
+    <![endif]-->
+
+    
+  <script type="text/javascript">
+    var contentTimer = new window.jstiming.Timer();
+
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  
+  <title>Places Library - Google Maps JavaScript API v3 — Google Developers</title>
+  
+  
+
+
+  
+  </head><body class="two-column docs"><div id="StayFocusd-infobar" style="display: none; top: 5519px;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a href="https://developers.google.com/maps/documentation/javascript/places#" id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://developers.google.com/maps/documentation/javascript/places#" id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div><input id="project-analytics" type="hidden" value="UA-42966870-1">
+  
+
+  
+    
+    
+    
+    
+<link href="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/local_extensions.css" rel="stylesheet" type="text/css">
+<link href="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/common.css" rel="stylesheet" type="text/css">
+
+  
+
+
+    
+
+    <style>
+    
+    </style>
+
+  
+  
+    
+    <div id="sandbar">
+      
+      
+
+
+
+
+
+<header id="gc-googlebar">
+
+  <a id="gc-logo" href="https://developers.google.com/">
+    <img src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/developers-logo.svg" alt="Google">
+  </a>
+<script>
+if (navigator.userAgent.match(/msie/i) && navigator.appVersion.indexOf['8'] ==0) {
+  $('#gc-logo img').attr({src:'/_static/bbe5bfc230/images/developers-logo.png'});
+}
+</script>
+
+  <div class="gc-social">
+    
+    <span class="signed-in">
+      <div>
+        <a class="email" href="https://plus.google.com/me">kaseyle@stanford.edu</a>
+        <a href="https://www.google.com/accounts/Logout?continue=https://developers.google.com/maps/documentation/javascript/places&service=ahsid">Sign out</a>
+      </div>
+      <img src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/silhouette36.png">
+    </span>
+    
+  </div>
+
+  <form class="gc-search" action="https://developers.google.com/search/results" method="GET">
+    <div class="searchbox" style="width: 464px;">
+      
+      
+        <span class="button button-blue mini">Google Maps JavaScript API v3<pre>  X</pre></span>
+      
+      <input type="text" name="q" class="q" id="q" value="" placeholder="Search" autocomplete="off" style="width: 263px;">
+    </div>
+    <button class="button button-blue" style="top: 0px; left: 479px;">
+      <img src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/search.png" alt="Search">
+    </button>
+    
+      <input type="hidden" name="p" id="search_project" value="/maps/documentation/javascript">
+    
+  </form>
+
+</header>
+
+
+<script>
+  
+  (function() { var a=window.devsite||{};window.devsite=a;a.location=window.location;a.reloadWindow=function(){a.location.reload()};a.setTimeout=function(b,c){return window.setTimeout.apply(window,arguments)};a.clearTimeout=function(b){window.clearTimeout.apply(window,arguments)};a.setInterval=function(b,c){return window.setInterval.apply(window,arguments)};a.clearInterval=function(b){window.clearInterval.apply(window,arguments)};a.addEventListener=function(b,c,d){(window.addEventListener||window.attachEvent)(b,c,d)};
+a.inProd=function(){return Boolean(a.location.hostname.match(/\.google\.com$/)&&!a.location.hostname.match(/\.corp\.google\.com$/))};a.openWindow=window.open;a.devsite=a.devsite||{};a.devsite.HOSTNAME=a.inProd()?"//developers.google.com":"";a.devsite.dialogConfig={autoOpen:!1,modal:!0,show:"fade",dialogClass:"msgDialog",closeText:"",resizable:!1,draggable:!1,zIndex:9999};a.KD_FADE_LONG=218;a.KD_FADE_SHORT=130;a.progress=a.progress||{};a.progress.INTERVAL_TIME_MS=460;a.progress.MAX_LOOP=100;a.progress.RIGHT_MARGIN=6;a.progress.TOP_MARGIN=5;
+a.progress.kennedyProgressDot=function(b){a.progress.circleInnerHtml='<span class="mask first"><span class="base"></span><span class="mover"></span></span><span class="mask second"><span class="base"></span><span class="mover"></span></span>';a.progress.spinnerHtml='<div class="circle initial"><span class="mask"><span class="mover"></span></span></div><div class="circle red"></div><div class="circle yellow"></div><div class="circle green"></div><div class="circle blue"></div>';var c=$("<div></div>").prop("id",
+"loader").prop("class","yellow").html(a.progress.spinnerHtml);c.find(".red").html(a.progress.circleInnerHtml);c.find(".blue").html(a.progress.circleInnerHtml);c.find(".green").html(a.progress.circleInnerHtml);c.find(".yellow").html(a.progress.circleInnerHtml);c.css({position:"absolute",right:a.progress.RIGHT_MARGIN+"px",top:a.progress.TOP_MARGIN+"px"});b.append(c);b=function(){this.colorIndex=-1;this.colors=["red","yellow","green","blue"];this.loader=c;this.loopCount=0;this.shouldStop=!1};b.prototype.start=
+function(){var b=this;this.loader.removeClass();this.loader.addClass("firstTime");this.interval=setInterval(function(){b.loop()},a.progress.INTERVAL_TIME_MS)};b.prototype.loop=function(){this.loopCount+=1;this.loader.hasClass("firstTime")?(this.loader.removeClass("firstTime"),this.loader.addClass("initial")):this.loader.hasClass("stopped")?(this.loader.removeClass("stopped"),this.loader.addClass("finishing")):this.loader.hasClass("finishing")?(clearInterval(this.interval),c.remove()):(this.colorIndex=
+(this.colorIndex+1)%this.colors.length,this.loader.removeClass(),this.loader.addClass(this.colors[this.colorIndex]),(this.shouldStop||this.loopCount>a.progress.MAX_LOOP)&&this.loader.addClass("stopped"))};b.prototype.stop=function(){this.shouldStop=!0};var d=new b;return b={start:function(){$.fx.off||d.start()},clear:function(){c.remove()},error:function(){d.stop()}}};a.progress=a.progress||{};
+a.progress.progressDot=function(b){function c(){e+=1;100>e&&f.animate({opacity:"toggle"},a.KD_FADE_LONG,c)}var d=6,f=b.parent().find(".progress");f.remove();f=$("<div></div>").addClass("progress");f.css({position:"absolute","border-radius":d+"px",border:d+"px solid #3D9400",right:d+"px",top:b.parent().height()/2-d+"px",width:0,height:0});b.parent().append(f);var e=0;return b={start:function(){$.fx.off||c()},clear:function(){f.remove()},error:function(){f.stop();f.css({opacity:1,border:d+"px solid #DD4B39"})}}};a.location=window.location;a.setTimeout=function(){return window.setTimeout.apply(window,arguments)};a.clearTimeout=function(){window.clearTimeout.apply(window,arguments)};a.localInit=function(){a.search.init()};a.search={KEY_ESC:27,fadeTime:a.KD_FADE_SHORT,keyDelay:300};
+a.search.init=function(){window.devsite.search.initResultHandlers();var b=$(".gc-search");b.submit(function(){if(window.devsite.geo){var c=window.devsite.geo.lat+","+window.devsite.geo.lon,c=$('<input type="hidden" name="l"/>').val(c);b.append(c)}});var c=$("#q");c.unbind("keyup click");c.bind("keyup click",function(c){a.search.timeout&&a.clearTimeout(a.search.timeout);$(this).val()&&c.keyCode!=a.search.KEY_ESC?a.search.timeout=a.setTimeout(function(){a.search.updateResults()},a.search.keyDelay):
+a.search.removeAutocomplete()});var c=$(".searchbox").children(".button"),d=$("#restrict input");(d.is(":checked")||0==d.length&&0!=c.length)&&a.search.grow();$("body").delegate("#restrict input","click",function(){$(this).is(":checked")?a.search.grow($("#restrict input").val()):a.search.shrink();a.search.updateResults();$("#q").focus()})};
+a.search.initResultHandlers=function(){$(".search-results .result").unbind("click");$(".search-results .result").click(function(){var b={type:$(this).data("type"),url:$(this).data("url"),hl:$(this).data("hl"),q:$(this).data("q")};$.post("/search/go",b,function(c){c&&(a.location.href=c)});return!1})};a.search.fadeOutIfExists=function(b,c,d){b&&b.length?b.fadeOut(c,d):d()};a.search.removeAutocomplete=function(){var b=$(".search-autocomplete");b.remove();a.search.lastQ=null};
+a.search.grow=function(b){var c=$("#q"),d=$(".searchbox"),f=$(".gc-search").children("button"),e=d.children(".button");if(b){var e=c.val(),g=$(".results").data("query-match");g&&c.val(e.substr(g.length+1));e=$("<span></span>");e.addClass("button button-blue mini");e.text($("#restrict").find("span").text());e.data("query-match",g);d.prepend(e);g=$("<input />");g.attr({id:"search_project",type:"hidden",name:"p",value:b});$(".gc-search").append(g)}e.append($("<pre>  X</pre>"));g=$(".searchbox").width();
+b=e.outerWidth(!0);var k=d.outerWidth(!0)+b;d.css("width",k+"px");c.css("width",g+"px");c=f.offset();c.left+=b+10;f.offset(c);f=function(){a.search.shrink();$("#q").focus()};e.click(f)};
+a.search.shrink=function(){var b=$("#q"),c=$(".searchbox"),d=c.children("input"),f=c.children(".button"),e=f.data("query-match");e&&d.val($.trim(e)+" "+d.val());d=$(".gc-search").children("button");$("#restrict input").prop("checked",!1);$("#search_project").remove();e=f.outerWidth(!0);f.remove();f=d.offset();f.left-=e+10;c.css("width","");b.css("width","100%");d.offset(f)};
+a.search.updateResults=function(){var b=$(".searchbox"),c=$("#q"),d=$("#search_project"),f={q:$.trim(c.val()||"")};window.devsite.geo&&(f.l=window.devsite.geo.lat+","+window.devsite.geo.lon);d&&d.val()&&(f.p=escape(d.val()));if(!a.search.lastQ||a.search.lastQ.q!=f.q||a.search.lastQ.p!=f.p){a.search.lastQ=f;a.search.xhr&&a.search.xhr.abort();var e=$(".search-results");f.n=e.data("n")||4;var g=a.progress.kennedyProgressDot(b);g.start();a.search.xhr=$.get("/search/results",f,function(d){g.clear();d&&
+($("#what-q").text(f.q),e=$(".search-results"),a.search.fadeOutIfExists(e,a.search.fadeTime,function(){e.empty();if($.trim(d).length){if(!e.length){e=$("<div></div>").addClass("search-results search-autocomplete").data("n",4);$("body").append(e);var g=b.offset();e.css({position:"absolute",top:g.top+b.outerHeight()+3,left:g.left})}e.append(d);var g=$("#search-next"),h=e.children(".results").data("c");g.length?h?(g.attr("href","/search/results?c="+encodeURIComponent(h)+"&q="+encodeURIComponent(f.q)),
+g.show()):g.hide():$("#search-full").show();$("body").bind("click.searchAutocomplete",function(b){$.contains(e.get(0),b.target)||e.is(b.target)||c.is(b.target)||!e.hasClass("search-autocomplete")||(a.search.removeAutocomplete(),$(this).unbind("click.searchAutocomplete"))});a.search.initResultHandlers();e.fadeIn(a.search.fadeTime)}}))});a.search.xhr.error(function(){g.error()})}};
+ })();
+  
+
+  if (window.jQuery) {
+    $(document).ready(function() {
+      if (window.devsite && window.devsite.search) {
+        window.devsite.search.init();
+      }
+
+      var loginLink = $('#loginLink');
+      if (loginLink.length > 0) {
+        loginLink.click(devsite.devsite.login);
+      }
+    });
+  }
+</script>
+
+      
+    </div>
+    
+
+    
+    <div id="gc-wrapper" itemscope="" itemtype="http://schema.org/Article">
+      
+      <input id="gc-analytics" type="hidden" value="UA-24532603-1">
+      
+
+      
+
+      <div id="gc-topnav">
+        <div>
+
+          
+          
+
+          <ul>
+
+            
+            
+
+            
+            
+            
+            
+            <li class=""><a href="https://developers.google.com/">Home</a></li>
+            
+            <li class="active"><a href="https://developers.google.com/products/">Products</a></li>
+            
+            <li class=""><a href="https://developers.google.com/events/">Conferences</a></li>
+            
+            <li class=""><a href="https://developers.google.com/showcase/">Showcase</a></li>
+            
+            <li class=""><a href="https://developers.google.com/live/">Live</a></li>
+            
+            <li class=""><a href="https://developers.google.com/groups/">Groups</a></li>
+            
+
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+
+      
+      
+      
+        <div id="gc-appbar">
+          
+          
+
+<h1>
+  <a href="https://developers.google.com/maps/documentation/javascript">Google Maps JavaScript API v3</a>
+</h1>
+
+
+
+<div class="plusone-container">
+  <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1392790992317" name="I0_1392790992317" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+</div>
+
+
+
+<div class="google-feedback-container">
+  
+  <a href="" class="google-feedback" data-p="81777" data-b="" data-context="Maps JS API v3">Feedback on this document</a>
+</div>
+
+
+
+ 
+
+          
+        </div>
+      
+      
+
+      
+        
+      <div id="gc-main" class="main">
+        
+        
+  
+  
+      
+      
+      <div id="gc-sidebar">
+        
+
+  
+
+
+
+  <nav class="gc-toc"><ul><li class=""><a class="tlw-control tlw-expanded" title="▾">▾</a><span class="tlw-title tlw-control-title" data-title="Developer&#39;s Guide">Developer's Guide</span><ul><li class=""><a href="https://developers.google.com/maps/documentation/javascript/tutorial" data-title="Getting Started"><span>Getting Started</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/usage" data-title="Usage Limits and Billing"><span>Usage Limits and Billing</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/basics" data-title="Concepts"><span>Concepts</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/events" data-title="Events"><span>Events</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/controls" data-title="Controls"><span>Controls</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/styling" data-title="Styles"><span>Styles</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a href="https://developers.google.com/maps/documentation/javascript/overlays" data-title="Drawing on the Map" class="tlw-title"><span>Drawing on the Map</span></a><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/markers" data-title="Markers"><span>Markers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/infowindows" data-title="Info Windows"><span>Info Windows</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/shapes" data-title="Shapes"><span>Shapes</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/symbols" data-title="Symbols"><span>Symbols</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/groundoverlays" data-title="Ground Overlays"><span>Ground Overlays</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/customoverlays" data-title="Custom Overlays"><span>Custom Overlays</span></a></li></ul></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/layers" data-title="Layers"><span>Layers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/maptypes" data-title="Map Types"><span>Map Types</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Services">Services</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/directions" data-title="Directions"><span>Directions</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/distancematrix" data-title="Distance Matrix"><span>Distance Matrix</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/elevation" data-title="Elevation"><span>Elevation</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/geocoding" data-title="Geocoding"><span>Geocoding</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/maxzoom" data-title="Maximum Zoom Imagery"><span>Maximum Zoom Imagery</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/streetview" data-title="Street View"><span>Street View</span></a></li></ul></li><li class=""><a class="tlw-control tlw-expanded" title="▾">▾</a><span class="tlw-title tlw-control-title" data-title="Libraries">Libraries</span><ul><li class=""><a href="https://developers.google.com/maps/documentation/javascript/libraries" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/advertising" data-title="AdSense Library"><span>AdSense Library</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/drawing" data-title="Drawing Library"><span>Drawing Library</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/geometry" data-title="Geometry Library"><span>Geometry Library</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/layers#PanoramioLibrary" data-title="Panoramio Library"><span>Panoramio Library</span></a></li><li class="active"><a class="tlw-control tlw-expanded" title="▾">▾</a><a href="https://developers.google.com/maps/documentation/javascript/places" data-title="Places Library" class="tlw-title"><span>Places Library</span></a><ul><li class=""><a href="https://developers.google.com/maps/documentation/javascript/places-autocomplete" data-title="Autocomplete for Addresses and Search"><span>Autocomplete for Addresses and Search</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a href="https://developers.google.com/maps/documentation/javascript/visualization" data-title="Visualization Library" class="tlw-title"><span>Visualization Library</span></a><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/mapsenginelayers" data-title="Maps Engine Layers"><span>Maps Engine Layers</span></a></li></ul></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/layers#WeatherLayer" data-title="Weather Library"><span>Weather Library</span></a></li></ul></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a href="https://developers.google.com/maps/documentation/javascript/reference" data-title="API Reference" class="tlw-title"><span>API Reference</span></a><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/3.exp/reference" data-title="3.exp (3.16)"><span>3.exp (3.16)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/reference" data-title="Release (3.15)"><span>Release (3.15)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/3.14/reference" data-title="Frozen (3.14)"><span>Frozen (3.14)</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><a href="https://developers.google.com/maps/documentation/javascript/examples/" data-title="Code Samples" class="tlw-title"><span>Code Samples</span></a><ul style="display: none;"><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Basics">Basics</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/map-simple" data-title="Simple map"><span>Simple map</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/map-simple-refresh" data-title="Visual Refresh"><span>Visual Refresh</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/map-coordinates" data-title="Showing pixel and tile coordinates"><span>Showing pixel and tile coordinates</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/map-geolocation" data-title="Geolocation"><span>Geolocation</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/map-language" data-title="Localizing the map"><span>Localizing the map</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/map-rtl" data-title="Right-to-left languages"><span>Right-to-left languages</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/map-simple-async" data-title="Asynchronous loading"><span>Asynchronous loading</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/map-projection-simple" data-title="Custom map projections"><span>Custom map projections</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Events">Events</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/event-simple" data-title="Simple click event"><span>Simple click event</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/event-closure" data-title="Using closures in event listeners"><span>Using closures in event listeners</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/event-arguments" data-title="Accessing arguments in UI events"><span>Accessing arguments in UI events</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/event-properties" data-title="Getting properties with event handlers"><span>Getting properties with event handlers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/event-domListener" data-title="Listening to DOM events"><span>Listening to DOM events</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Controls">Controls</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/control-disableUI" data-title="Disabling the default UI"><span>Disabling the default UI</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/control-simple" data-title="Adding controls to the map"><span>Adding controls to the map</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/control-options" data-title="Control options"><span>Control options</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/control-positioning" data-title="Control positioning"><span>Control positioning</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/control-custom" data-title="Custom controls"><span>Custom controls</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/control-custom-state" data-title="Adding state to controls"><span>Adding state to controls</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Styles">Styles</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/maptype-styled-simple" data-title="Simple styled maps"><span>Simple styled maps</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/maptype-styled-complex" data-title="Complex styled maps"><span>Complex styled maps</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Drawing on the Map">Drawing on the Map</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/marker-simple" data-title="Simple markers"><span>Simple markers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/marker-remove" data-title="Removing markers"><span>Removing markers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/icon-simple" data-title="Simple marker icons"><span>Simple marker icons</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/icon-complex" data-title="Complex marker icons"><span>Complex marker icons</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/marker-animations" data-title="Marker animations"><span>Marker animations</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/marker-animations-iteration" data-title="Marker animations with setTimeout()"><span>Marker animations with setTimeout()</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple" data-title="Info windows"><span>Info windows</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max" data-title="Info windows with maxWidth"><span>Info windows with maxWidth</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/polyline-simple" data-title="Simple polylines"><span>Simple polylines</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/polyline-remove" data-title="Removing polylines"><span>Removing polylines</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/polyline-complex" data-title="Complex polylines"><span>Complex polylines</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-simple" data-title="Simple polygons"><span>Simple polygons</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-arrays" data-title="Polygon arrays"><span>Polygon arrays</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-autoclose" data-title="Polygon auto-completion"><span>Polygon auto-completion</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/circle-simple" data-title="Circles"><span>Circles</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/rectangle-simple" data-title="Rectangles"><span>Rectangles</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/rectangle-zoom" data-title="Rectangle zoom"><span>Rectangle zoom</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/user-editable-shapes" data-title="User-editable shapes"><span>User-editable shapes</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-draggable" data-title="Draggable polygons"><span>Draggable polygons</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/rectangle-event" data-title="Listening to events"><span>Listening to events</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/groundoverlay-simple" data-title="Ground overlays"><span>Ground overlays</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-remove" data-title="Removing overlays"><span>Removing overlays</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-simple" data-title="Custom overlays"><span>Custom overlays</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-hideshow" data-title="Showing/hiding overlays"><span>Showing/hiding overlays</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/marker-symbol-predefined" data-title="Predefined marker symbols"><span>Predefined marker symbols</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/marker-symbol-custom" data-title="Custom marker symbols"><span>Custom marker symbols</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-animate" data-title="Animated symbols"><span>Animated symbols</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-arrow" data-title="Arrows (symbols)"><span>Arrows (symbols)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-custom" data-title="Custom symbols on a line"><span>Custom symbols on a line</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-dashed" data-title="Dashed lines (symbols)"><span>Dashed lines (symbols)</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Layers">Layers</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-kml" data-title="KML layers"><span>KML layers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-kml-features" data-title="KML feature details"><span>KML feature details</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-heatmap" data-title="Heatmaps"><span>Heatmaps</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-mapsengine" data-title="Maps Engine layers"><span>Maps Engine layers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-dynamicmapsengine" data-title="Dynamic Maps Engine layers"><span>Dynamic Maps Engine layers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-simple" data-title="Fusion Tables layers"><span>Fusion Tables layers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-query" data-title="Fusion Tables queries"><span>Fusion Tables queries</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-heatmap" data-title="Fusion Tables heatmaps"><span>Fusion Tables heatmaps</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-styling" data-title="Fusion Tables styling"><span>Fusion Tables styling</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-georss" data-title="GeoRSS layers"><span>GeoRSS layers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-traffic" data-title="Traffic layer"><span>Traffic layer</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-transit" data-title="Transit layer"><span>Transit layer</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-weather" data-title="Weather layer"><span>Weather layer</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling" data-title="Bicycle layer"><span>Bicycle layer</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-panoramio" data-title="Panoramio layer"><span>Panoramio layer</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-panoramio-tags" data-title="Restricting photos by tag (Panoramio layer)"><span>Restricting photos by tag (Panoramio layer)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-panoramio-widget" data-title="Panoramio Widget API"><span>Panoramio Widget API</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="MapTypes">MapTypes</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/maptype-base" data-title="Basic map types"><span>Basic map types</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/maptype-overlay" data-title="Overlay map types"><span>Overlay map types</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/maptype-image" data-title="Image map types"><span>Image map types</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/maptype-image-overlay" data-title="Overlaying an image map type"><span>Overlaying an image map type</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/aerial-simple" data-title="45° imagery"><span>45° imagery</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/aerial-rotation" data-title="Rotating 45° imagery"><span>Rotating 45° imagery</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Services">Services</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple" data-title="Geocoding service"><span>Geocoding service</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse" data-title="Reverse geocoding"><span>Reverse geocoding</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/geocoding-region-es" data-title="Region code biasing (ES)"><span>Region code biasing (ES)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/geocoding-region-us" data-title="Region code biasing (US)"><span>Region code biasing (US)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/directions-simple" data-title="Directions service"><span>Directions service</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/directions-panel" data-title="Displaying text directions with setPanel()"><span>Displaying text directions with setPanel()</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/directions-complex" data-title="Directions service (complex)"><span>Directions service (complex)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/directions-travel-modes" data-title="Travel modes in directions"><span>Travel modes in directions</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/directions-waypoints" data-title="Waypoints in directions"><span>Waypoints in directions</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/directions-draggable" data-title="Draggable directions"><span>Draggable directions</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/distance-matrix" data-title="Distance Matrix service"><span>Distance Matrix service</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/elevation-simple" data-title="Elevation service"><span>Elevation service</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/elevation-paths" data-title="Showing elevation along a path"><span>Showing elevation along a path</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-simple" data-title="Street View service"><span>Street View service</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-embed" data-title="Street View containers"><span>Street View containers</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-overlays" data-title="Overlays within Street View"><span>Overlays within Street View</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-events" data-title="Street View events"><span>Street View events</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-controls" data-title="Street View controls"><span>Street View controls</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-service" data-title="Directly accessing Street View data"><span>Directly accessing Street View data</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-simple" data-title="Custom Street View panoramas"><span>Custom Street View panoramas</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/streetview-custom-tiles" data-title="Custom Street View panorama tiles"><span>Custom Street View panorama tiles</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/maxzoom-simple" data-title="Maximum Zoom imagery service"><span>Maximum Zoom imagery service</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Libraries">Libraries</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/ads-adunit" data-title="Adsense: Maps Ad Unit"><span>Adsense: Maps Ad Unit</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/ads-adunit-format" data-title="Adsense: Maps Ad Unit formats"><span>Adsense: Maps Ad Unit formats</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/drawing-tools" data-title="Drawing: Drawing tools"><span>Drawing: Drawing tools</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/geometry-headings" data-title="Geometry: Navigation functions (heading)"><span>Geometry: Navigation functions (heading)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/geometry-encodings" data-title="Geometry: Encoding methods"><span>Geometry: Encoding methods</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/poly-containsLocation" data-title="Geometry: containsLocation()"><span>Geometry: containsLocation()</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-panoramio" data-title="Panoramio: Panoramio Layer"><span>Panoramio: Panoramio Layer</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-panoramio-tags" data-title="Panoramio: Restricting photos by tag (Panoramio layer)"><span>Panoramio: Restricting photos by tag (Panoramio layer)</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-panoramio-widget" data-title="Panoramio: Panoramio Widget API"><span>Panoramio: Panoramio Widget API</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Places">Places</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/place-search" data-title="Place searches"><span>Place searches</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/place-details" data-title="Place details"><span>Place details</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination" data-title="Place search pagination"><span>Place search pagination</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/place-radar-search" data-title="Search for up to 200 places with Radar Search"><span>Search for up to 200 places with Radar Search</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete" data-title="Place Autocomplete"><span>Place Autocomplete</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform" data-title="Autocomplete address form"><span>Autocomplete address form</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch" data-title="Autocomplete hotel search"><span>Autocomplete hotel search</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/places-searchbox" data-title="Places search box"><span>Places search box</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/places-queryprediction" data-title="Retrieving autocomplete predictions"><span>Retrieving autocomplete predictions</span></a></li></ul></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-weather" data-title="Weather: Weather Layer"><span>Weather: Weather Layer</span></a></li></ul></li><li class=""><a href="https://developers.google.com/maps/documentation/javascript/demogallery" data-title="Demo Gallery"><span>Demo Gallery</span></a></li></ul></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="More Resources">More Resources</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/articles" data-title="Articles"><span>Articles</span></a></li><li class=""><a href="http://code.google.com/p/gmaps-api-issues/issues/list?can=2&q=apitype:Javascript3&colspec=ID+Type+Status+Introduced+Fixed+Summary+Internal+Stars&cells=tiles" data-title="Known Issues"><span>Known Issues</span></a></li><li class=""><a href="http://code.google.com/p/gmaps-api-issues/wiki/JavascriptMapsAPIv3Changelog" data-title="Changelog"><span>Changelog</span></a></li><li class=""><a href="http://code.google.com/p/google-maps-utility-library-v3/" data-title="Utility Library"><span>Utility Library</span></a></li></ul></li><li class=""><a href="http://googlegeodevelopers.blogspot.com/" data-title="Blog"><span>Blog</span></a></li><li class=""><a href="https://developers.google.com/maps/support/" data-title="Support"><span>Support</span></a></li><li class=""><a href="https://developers.google.com/maps/faq" data-title="FAQ"><span>FAQ</span></a></li></ul><hr><ul><li class=""><span class="tlw-title" data-title="----------">----------</span></li></ul><hr><ul><li class=""><a href="https://developers.google.com/maps/documentation/business/guide" data-title="Google Maps API for Business"><span>Google Maps API for Business</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Maps API Web Services">Maps API Web Services</span><ul style="display: none;"><li class=""><a href="https://developers.google.com/maps/documentation/webservices" data-title="Introduction"><span>Introduction</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/directions" data-title="Directions API"><span>Directions API</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/distancematrix" data-title="Distance Matrix API"><span>Distance Matrix API</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/elevation" data-title="Elevation API"><span>Elevation API</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/geocoding" data-title="Geocoding API"><span>Geocoding API</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/timezone" data-title="Time Zone API"><span>Time Zone API</span></a></li></ul></li><li class=""><a href="https://developers.google.com/places/" data-title="Google Places API"><span>Google Places API</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/staticmaps/" data-title="Static Maps API"><span>Static Maps API</span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/streetview/" data-title="Street View Image API"><span>Street View Image API</span></a></li><li class=""><a href="https://developers.google.com/earth/documentation" data-title="Earth API"><span>Earth API</span></a></li><li class=""><a class="tlw-control tlw-collapsed">▸</a><span class="tlw-title tlw-control-title" data-title="Deprecated APIs">Deprecated APIs</span><ul style="display: none;"><li class="deprecated"><a href="https://developers.google.com/maps/documentation/javascript/v2/" data-title="Maps JavaScript v2"><span>Maps JavaScript v2<sup>Deprecated</sup></span></a></li><li class=""><a href="https://developers.google.com/maps/documentation/flash/intro" data-title="Maps API for Flash"><span>Maps API for Flash</span></a></li><li class="deprecated"><a href="https://developers.google.com/maps/documentation/localsearch" data-title="Local Search"><span>Local Search<sup>Deprecated</sup></span></a></li></ul></li></ul></nav>
+
+
+
+      </div>
+      
+
+      <div id="gc-content">
+        
+        <div>
+  
+          
+  
+  <h1 itemprop="name" class="page-title">Places Library</h1>
+  
+  <div itemprop="articleBody">
+  
+    
+    <div id="maps-topnav">
+  <div id="maps-topnav-inner">
+    <h3 class="global-home"><a href="https://developers.google.com/">Developers</a></h3>
+<span class="nav-separator">›</span> 
+<h3 class="global-home"><a href="https://developers.google.com/maps">Google Maps API</a></h3>
+<span class="nav-separator">›</span>
+
+    <h3 class="global-home active"><a href="https://developers.google.com/maps/documentation/javascript/">Web</a></h3>
+    <span class="nav-separator">›</span>
+    <ul>
+      <li><a href="https://developers.google.com/maps/documentation/javascript/tutorial">Get Started</a></li>
+      <li class="active"><a href="https://developers.google.com/maps/documentation/javascript/basics">Documentation</a></li>
+      <li><a href="https://developers.google.com/maps/documentation/javascript/reference">Reference</a></li>
+      <li><a href="https://developers.google.com/maps/showcase">Showcase</a></li>
+<li><a href="https://developers.google.com/maps/support/">Support</a></li>
+<li><a href="https://googlegeodevelopers.blogspot.com/">Blog</a></li>
+
+    </ul>
+    <ul id="maps-devsite-nav">
+  <li><a href="https://developers.google.com/groups">GDG</a></li>
+  <li><a href="https://developers.google.com/live">Live</a></li>
+</ul>
+
+  </div>
+</div>
+
+
+
+<ol class="toc">
+  <li><a href="https://developers.google.com/maps/documentation/javascript/places#overview">Overview</a></li>
+  <li><a href="https://developers.google.com/maps/documentation/javascript/places#loading_the_library">Loading the Library</a>
+    <ul><li><a href="https://developers.google.com/maps/documentation/javascript/places#LogoRequirements">Logo Requirements</a></li></ul>
+  </li>
+  <li><a href="https://developers.google.com/maps/documentation/javascript/places#place_searches">Place Searches</a>
+    <ol>
+      <li><a href="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/Places Library - Google Maps JavaScript API v3 — Google Developers.html">Nearby Search Requests</a></li>
+      <li><a href="https://developers.google.com/maps/documentation/javascript/places#radar_search_requests">Radar Search</a></li>
+      <li><a href="https://developers.google.com/maps/documentation/javascript/places#TextSearchRequests">Text Search Requests</a></li>
+      <li><a href="https://developers.google.com/maps/documentation/javascript/places#place_search_responses">Search Responses</a></li>
+      <li><a href="https://developers.google.com/maps/documentation/javascript/places#PlaceSearchPaging">Accessing Additional Results</a></li>
+    </ol>
+  </li>
+  <li><a href="https://developers.google.com/maps/documentation/javascript/places#place_details">Place Details</a>
+    <ol>
+      <li><a href="https://developers.google.com/maps/documentation/javascript/places#place_details_requests">Place Details Requests</a></li>
+      <li><a href="https://developers.google.com/maps/documentation/javascript/places#place_details_responses">Place Details Responses</a></li>
+    </ol>
+  </li>
+  <li><a href="https://developers.google.com/maps/documentation/javascript/places#places_photos">Places Photos</a></li>
+</ol>
+
+<h2 id="overview">Overview</h2>
+
+<p>The Google Places JavaScript library's functions enable your application
+  to search for Places (defined in this API as establishments, geographic
+  locations, or prominent points of interest) contained within a defined area,
+  such as the bounds of a map, or around a fixed point.</p>
+
+<div id="places_autocomplete"></div>
+<div id="adding_autocomplete"></div>
+<div id="changing_the_search_area"></div>
+<div id="changing_the_placeholder_text"></div>
+<div id="place_autocomplete_service"></div>
+<div id="getting_place_information"></div>
+<div id="places_searchbox"></div>
+
+<p>The Google Places API offers an autocomplete feature which you can use
+  to give your applications the type-ahead-search behavior of the Google Maps
+  search field. When a user starts typing an address, autocomplete will
+  fill in the rest. For more information, see the
+  <a href="https://developers.google.com/maps/documentation/javascript/places-autocomplete">autocomplete
+  documentation</a>.</p>
+
+<h2 id="loading_the_library">Loading the Library</h2>
+
+<p>The Places service is a self-contained library, separate
+  from the main Maps API JavaScript code. To use the functionality contained
+  within this library, you must first load it using the <code>libraries</code>
+  parameter in the Maps API bootstrap URL:</p>
+
+<pre class="prettyprint notranslate"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"http://maps.googleapis.com/maps/api/js?</span><strong><span class="atv">libraries=places</span></strong><span class="atv">&amp;sensor=</span><var><span class="atv">true_or_false</span></var><span class="atv">"</span><span class="tag">&gt;&lt;/script&gt;</span></pre>
+
+<p>See the <a href="https://developers.google.com/maps/documentation/javascript/libraries">
+  Libraries Overview</a> for more information.</p>
+
+<h3 id="LogoRequirements">Logo Requirements</h3>
+
+<p>If your application displays Places API data on a map, that map must be
+provided by Google.</p>
+
+<p>If your application displays Places API data on a page or view that does not
+also display a Google Map, you must show a "Powered by Google" logo with that
+data. For example, if your application displays a list of Places on one tab,
+and a Google Map with those Places on another tab, the first tab must show the
+"Powered by Google" logo.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>For use on a white background</th>
+      <th>For use on any non-white background</th>
+    </tr>
+    <tr>
+      <td>
+        <img src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/powered-by-google-on-white2.png">
+      </td>
+      <td class="blackbg">
+        <img src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/powered-by-google-on-non-white2.png">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following ZIP file contains the "Powered by Google" logo in the correct
+  sizes for desktop, Android and iOS applications. You may not resize or modify
+  these logos in any way.</p>
+
+<p><strong>Download:</strong>
+  <a href="https://developers.google.com/places/documentation/images/powered-by-google.zip">
+  powered-by-google.zip</a>
+</p>
+
+<h2 id="place_searches">Place Searches</h2>
+
+<p>With the Places Service you can perform four kinds of searches:</p>
+<ul>
+  <li><a href="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/Places Library - Google Maps JavaScript API v3 — Google Developers.html"><strong>Nearby Search</strong></a>
+   returns a list of nearby Places based on a user's location.</li>
+  <li><a href="https://developers.google.com/maps/documentation/javascript/places#radar_search_requests"><strong>Radar Search</strong></a>
+    returns a large list of Places within a specified search radius, but with
+    less detail than either Nearby Search or Text Search.</li>
+  <li><a href="https://developers.google.com/maps/documentation/javascript/places#TextSearchRequests"><strong>Text Search</strong></a>
+    returns a list of nearby Places based on a search string, eg. "Pizza".</li>
+  <li><a href="https://developers.google.com/maps/documentation/javascript/places#place_details"><strong>Place Details requests</strong></a>
+    return more detailed information about a specific Place, including
+    user reviews.</li>
+</ul>
+
+<p>The information returned can include establishments — such as
+  restaurants, stores, and offices — as well as 'geocode' results, which
+  indicate addresses, political areas such as towns and cities, and other
+  points of interest.</p>
+
+<h3 id="place_search_requests">Nearby Search Requests</h3>
+
+<p>A Nearby Search lets you search for Places within a specified area by
+  keyword or type. A Nearby Search must always include a location, which can
+  be specified in one of two ways:
+  </p><ul>
+    <li>a <a href="https://developers.google.com/maps/documentation/javascript/reference#LatLngBounds">
+      <code>LatLngBounds</code>.</a></li>
+    <li>a circular area defined as the combination of the <code>location</code>
+      property — specifying the center of the circle as a
+      <code>LatLng</code> object — and a radius, measured in meters.</li>
+  </ul>
+<p></p>
+
+<p>A Places Nearby search is initiated with a call to the
+  <a href="https://developers.google.com/maps/documentation/javascript/reference#PlacesService"><code>
+  PlacesService</code></a>'s <code>nearbySearch()</code> method, which will
+  return an array of
+  <a href="https://developers.google.com/maps/documentation/javascript/reference#PlaceResult"><code>
+  PlaceResult</code></a> objects. Note that the <code>nearbySearch()</code>
+  method replaces the <code>search()</code> method as of version 3.9.</p>
+
+<pre class="prettyprint notranslate"><span class="pln">service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br>service</span><span class="pun">.</span><span class="pln">nearbySearch</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span></pre>
+
+<p>This method takes a request with the following fields:</p>
+
+<ul>
+  <li>Either of:
+    <ul>
+      <li><code>bounds</code>, which must be a
+        <code>google.maps.LatLngBounds</code> object defining the rectangular
+        search area; or</li>
+      <li>a <code>location</code> and a <code>radius</code>; the former takes a
+        <code>google.maps.LatLng</code> object, and the latter takes a simple
+        integer, representing the circle's radius in meters. The maximum
+        allowed radius is 50 000 meters.</li>
+    </ul>
+  </li>
+  <li><code>keyword</code> (<em>optional</em>) — A term to be matched
+    against all available fields, including but not limited to name, type, and
+    address, as well as customer reviews and other third-party content.</li>
+  <li><code>minPriceLevel</code> and <code>maxPriceLevel</code>
+    (<em>optional</em>) — Restricts results to only those places within
+    the specified range. Valid values range between 0
+    (most affordable) to 4 (most expensive), inclusive.</li>
+  <li><code>name</code> (<em>optional</em>) — A term to be matched
+    against the names of Places. Results will be restricted to those
+    containing the passed name value. Note that a Place may have additional
+    names associated with it, beyond its listed name. The API will try to match
+    the passed <code>name</code> value against all of these names; as a result,
+    Places may be returned in the results whose <em>listed</em> names do not
+    match the search term, but whose associated names do.</li>
+  <li><code>openNow</code> (<em>optional</em>)  — A boolean value,
+    indicating that the Places service should only return those Places that
+    are open for business at the time the query is sent. Places that do not
+    specify opening hours in the Google Places database will not be
+    returned if you include this parameter in your query. Setting
+    <code>openNow</code> to <code>false</code> has no effect.</li>
+  <li><code>rankBy</code> (<em>optional</em>) — Specifies the order in
+    which results are listed. Possible values are:
+    <ul>
+      <li><code>google.maps.places.RankBy.PROMINENCE</code> (default). This
+        option sorts results based on their importance. Ranking will
+        favor prominent places within the set radius over nearby
+        places that match but that are less prominent. Prominence can be
+        affected by a Place's ranking in Google's index, the number of
+        <a href="https://developers.google.com/places/documentation/actions#bump">Place Bumps</a>
+        from your application, global popularity, and other factors. When
+        <code>google.maps.places.RankBy.PROMINENCE</code> is
+        specified, the <code>radius</code> parameter is required.</li>
+      <li><code>google.maps.places.RankBy.DISTANCE</code>. This option
+        sorts results in ascending order by their distance from the specified
+        <code>location</code> (required). A custom radius and/or bounds is not
+        supported in conjunction with <code>RankBy.DISTANCE</code>. When
+        <code>RankBy.DISTANCE</code> is specified, one or more of
+        <code>keyword</code>, <code>name</code>, or <code>types</code> is
+        required.</li>
+    </ul>
+  </li>
+  <li><code>types</code> (<em>optional</em>) — An array containing one or
+    more of the supported types listed in the
+    <a href="https://developers.google.com/places/documentation/supported_types">Google
+      Places API: Supported Place Types</a> list. The service will return
+      results that match any of the specified types.</li>
+</ul>
+
+<p>You must also pass a callback method to <code>nearbySearch()</code>, to
+  handle the results object and
+  <code>google.maps.places.PlacesServiceStatus</code> response.</p>
+
+
+<pre class="prettyprint notranslate"><span class="kwd">var</span><span class="pln"> map</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> service</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> infowindow</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> initialize</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> pyrmont </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(-</span><span class="lit">33.8665433</span><span class="pun">,</span><span class="lit">151.1956316</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; center</span><span class="pun">:</span><span class="pln"> pyrmont</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">15</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; location</span><span class="pun">:</span><span class="pln"> pyrmont</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; radius</span><span class="pun">:</span><span class="pln"> </span><span class="str">'500'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; types</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'store'</span><span class="pun">]</span><span class="pln"><br>&nbsp; </span><span class="pun">};</span><span class="pln"><br><br>&nbsp; service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br>&nbsp; service</span><span class="pun">.</span><span class="pln">nearbySearch</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> callback</span><span class="pun">(</span><span class="pln">results</span><span class="pun">,</span><span class="pln"> status</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">status </span><span class="pun">==</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesServiceStatus</span><span class="pun">.</span><span class="pln">OK</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> results</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> place </span><span class="pun">=</span><span class="pln"> results</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; createMarker</span><span class="pun">(</span><span class="pln">results</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span></pre>
+
+<p><a href="https://developers.google.com/maps/documentation/javascript/examples/place-search">View
+  example (place-search.html)</a></p>
+
+<h3 id="radar_search_requests">Radar Search Requests</h3>
+
+<p>A Radar Search lets you search for Places within a specified search radius
+  by keyword, type or name. The Radar Search will return more results than a
+  Nearby Search or Text Search, but the results will contain less detail -
+  only the Place reference and a <code>LatLng</code> object. You can get
+  more information about any of the Places in the response with the
+  <code>PlacesService.getDetails()</code> method.</p>
+
+<p>A Places Radar Search is initiated with a call to the
+  <a href="https://developers.google.com/maps/documentation/javascript/reference#PlacesService"><code>
+  PlacesService</code></a>'s <code>radarSearch()</code> method, which will
+  return an array of up to 200
+  <a href="https://developers.google.com/maps/documentation/javascript/reference#PlaceResult"><code>
+  PlaceResult</code></a> objects. <code>PlaceResult</code> objects returned by
+  <code>radarSearch()</code> will only include the <code>geometry.location
+  </code> and <code>reference</code> properties.</p>
+
+<pre class="prettyprint notranslate"><span class="pln">service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br>service</span><span class="pun">.</span><span class="pln">radarSearch</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span></pre>
+
+<p>This method takes a request with the following fields:</p>
+
+<ul>
+  <li>Either of:
+    <ul>
+      <li><code>bounds</code>, which must be a
+        <code>google.maps.LatLngBounds</code> object defining the rectangular
+        search area; or</li>
+      <li>a <code>location</code> and a <code>radius</code>; the former takes a
+        <code>google.maps.LatLng</code> object, and the latter
+        takes a simple integer, representing the circle's radius in
+        meters. The maximum allowed radius is 50 000 meters.</li>
+    </ul>
+  </li>
+  <li>At least one of: <ul>
+  <li><code>keyword</code> (<em>optional</em>) — A term to be matched
+    against all available fields, including but not limited to name, type, and
+    address, as well as customer reviews and other third-party content.</li>
+  <li><code>name</code> (<em>optional</em>) — A term to be matched
+    against the names of Places. Results will be restricted to those
+    containing the passed name value. Note that a Place may have additional
+    names associated with it, beyond its listed name. The API will try to match
+    the passed <code>name</code> value against all of these names; as a result,
+    Places may be returned in the results whose <em>listed</em> names do not
+    match the search term, but whose associated names do.</li>
+  <li><code>types</code> (<em>optional</em>) — An array containing one or
+    more of the supported types listed in the
+    <a href="https://developers.google.com/places/documentation/supported_types">Google
+      Places API: Supported Place Types</a> list. The service will return
+      results that match any of the specified types.</li>
+  </ul></li>
+  <li>Optionally:
+    <ul>
+      <li><code>minPriceLevel</code> and <code>maxPriceLevel</code>
+        (<em>optional</em>) — Restricts results to only those places
+        within the specified price level. Valid values are in the range from 0
+        (most affordable) to 4 (most expensive), inclusive.</li>
+      <li><code>openNow</code> — A boolean value,
+        indicating that the Places service should only return those Places that
+        are open for business at the time the query is sent. Places that do not
+        specify opening hours in the Google Places database will not be
+        returned if you include this parameter in your query. Setting
+        <code>openNow</code> to <code>false</code> has no effect.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>You must also pass a callback method to <code>radarSearch()</code>, to
+  handle the <code>PlaceResults</code> object and
+  <code>google.maps.places.PlacesServiceStatus</code>.</p>
+
+
+<pre class="prettyprint notranslate"><span class="kwd">var</span><span class="pln"> map</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> service</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> initialize</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map-canvas'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; center</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(-</span><span class="lit">33.8668283734</span><span class="pun">,</span><span class="pln"> </span><span class="lit">151.2064891821</span><span class="pun">),</span><span class="pln"><br>&nbsp; &nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">15</span><span class="pln"><br>&nbsp; </span><span class="pun">});</span><span class="pln"><br><br>&nbsp; infoWindow </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">InfoWindow</span><span class="pun">();</span><span class="pln"><br>&nbsp; service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="kwd">event</span><span class="pun">.</span><span class="pln">addListenerOnce</span><span class="pun">(</span><span class="pln">map</span><span class="pun">,</span><span class="pln"> </span><span class="str">'bounds_changed'</span><span class="pun">,</span><span class="pln"> performSearch</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> performSearch</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; bounds</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">.</span><span class="pln">getBounds</span><span class="pun">(),</span><span class="pln"><br>&nbsp; &nbsp; keyword</span><span class="pun">:</span><span class="pln"> </span><span class="str">'best view'</span><span class="pln"><br>&nbsp; </span><span class="pun">};</span><span class="pln"><br>&nbsp; service</span><span class="pun">.</span><span class="pln">radarSearch</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> callback</span><span class="pun">(</span><span class="pln">results</span><span class="pun">,</span><span class="pln"> status</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">status </span><span class="pun">!=</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesServiceStatus</span><span class="pun">.</span><span class="pln">OK</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; alert</span><span class="pun">(</span><span class="pln">status</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> result</span><span class="pun">;</span><span class="pln"> result </span><span class="pun">=</span><span class="pln"> results</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; position</span><span class="pun">:</span><span class="pln"> result</span><span class="pun">.</span><span class="pln">geometry</span><span class="pun">.</span><span class="pln">location<br>&nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br>google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="kwd">event</span><span class="pun">.</span><span class="pln">addDomListener</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="str">'load'</span><span class="pun">,</span><span class="pln"> initialize</span><span class="pun">);</span></pre>
+
+<p><a href="https://developers.google.com/maps/documentation/javascript/examples/place-radar-search">View
+  example (place-radar-search.html)</a></p>
+
+<h3 id="TextSearchRequests">Text Search Requests</h3>
+
+<p>The Google Places Text Search Service is a web service that returns
+  information about a set of Places based on a string — for example
+  "pizza in New York" or "shoe stores near Ottawa". The service responds with
+  a list of Places matching the text string and any location bias that has
+  been set. The search response will include a list of Places. You can send a
+  Place Details request for more information about any of the Places in the
+  response.</p>
+
+<p>Text Searches are initiated with a call to the
+  <code>PlacesService</code>'s <code>textSearch()</code> method.
+
+</p><pre class="prettyprint notranslate"><span class="pln">service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br>service</span><span class="pun">.</span><span class="pln">textSearch</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span></pre>
+
+<p>This method takes a request with the following fields:</p>
+
+<ul>
+  <li><code>query</code> (<em>required</em>) The text string on which to
+    search, for example: "restaurant". The Places service will return candidate
+    matches based on this string and order the results based on their
+    perceived relevance.</li>
+  <li>Optionally:
+    <ul>
+      <li><code>openNow</code> — A boolean value,
+        indicating that the Places service should only return those Places that
+        are open for business at the time the query is sent. Places that do not
+        specify opening hours in the Google Places database will not be
+        returned if you include this parameter in your query. Setting
+        <code>openNow</code> to <code>false</code> has no effect.</li>
+      <li><code>minPriceLevel</code> and <code>maxPriceLevel</code>
+        — Restricts results to only those places within
+        the specified price level. Valid values are in the range from 0
+        (most affordable) to 4 (most expensive), inclusive.</li>
+      <li>Either of:
+        <ul>
+          <li><code>bounds</code> — A
+            <code>google.maps.LatLngBounds</code> object defining the rectangle
+            in which to search; or</li>
+          <li>a <code>location</code> and a <code>radius</code> — The
+            former takes a <code>google.maps.LatLng</code> object, and
+            the latter takes a simple integer, representing
+            the circle's radius in meters. The maximum allowed radius is
+            50 000 meters.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>You may bias results to a specified circle by passing a
+  <code>location</code> and a <code>radius</code> parameter. This will
+  instruct the Places service to prefer showing results within that circle;
+  results outside of the defined area may still be displayed.</p>
+
+<p>You must also pass a callback method to <code>textSearch()</code>, to
+  handle the results object and a
+  <code>google.maps.places.PlacesServiceStatus</code> response.</p>
+
+<pre class="prettyprint notranslate"><span class="kwd">var</span><span class="pln"> map</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> service</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> infowindow</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> initialize</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> pyrmont </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(-</span><span class="lit">33.8665433</span><span class="pun">,</span><span class="lit">151.1956316</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; center</span><span class="pun">:</span><span class="pln"> pyrmont</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">15</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; location</span><span class="pun">:</span><span class="pln"> pyrmont</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; radius</span><span class="pun">:</span><span class="pln"> </span><span class="str">'500'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; query</span><span class="pun">:</span><span class="pln"> </span><span class="str">'restaurant'</span><span class="pln"><br>&nbsp; </span><span class="pun">};</span><span class="pln"><br><br>&nbsp; service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br>&nbsp; service</span><span class="pun">.</span><span class="pln">textSearch</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> callback</span><span class="pun">(</span><span class="pln">results</span><span class="pun">,</span><span class="pln"> status</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">status </span><span class="pun">==</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesServiceStatus</span><span class="pun">.</span><span class="pln">OK</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> results</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">var</span><span class="pln"> place </span><span class="pun">=</span><span class="pln"> results</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; createMarker</span><span class="pun">(</span><span class="pln">results</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span></pre>
+
+
+
+<h3 id="place_search_responses">Search Responses</h3>
+
+<h4 id="place_search_status_codes">Status Codes</h4>
+
+<p>The <code>PlacesServiceStatus</code> response object contains the status of
+  the request, and may contain debugging information to help you track down
+  why the Place request failed. Possible status values are:</p>
+
+<ul>
+  <li><code>ERROR</code>: There was a problem contacting the Google
+    servers.</li>
+  <li><code>INVALID_REQUEST</code>: This request was invalid.</li>
+  <li><code>OK</code>: The response contains a valid result.</li>
+  <li><code>OVER_QUERY_LIMIT</code>: The webpage has gone over its request
+    quota.</li>
+  <li><code>REQUEST_DENIED</code>: The webpage is not allowed to use the
+    PlacesService.</li>
+  <li><code>UNKNOWN_ERROR</code>: The PlacesService request could not be
+    processed due to a server error. The request may succeed if you try again.
+  </li>
+  <li><code>ZERO_RESULTS</code>: No result was found for this request.</li>
+</ul>
+
+<h4 id="place_search_results">Place Search Results</h4>
+
+<p>The <code>nearbySearch()</code> and <code>textSearch()</code> functions
+  return an array of
+  <a href="https://developers.google.com/maps/documentation/javascript/reference#PlaceResult">
+  <code>PlaceResult</code></a> objects. Each <code>PlaceResult</code> object
+  has the following properties:</p>
+
+<ul>
+  <li><code>formatted_address</code> is a string containing the human-readable
+    address of this place. Often this address is equivalent to the "postal
+    address". The <code>formatted_address</code> property is only returned
+    for a <a href="https://developers.google.com/maps/documentation/javascript/places#TextSearchRequests">Text Search</a>.</li>
+  <li><code>geometry</code>: The Place's geometry-related information. This
+    includes:
+    <ul>
+      <li><code>location</code> provides the latitude and longitude of the
+        Place.</li>
+      <li><code>viewport</code> defines the preferred viewport on the map when
+        viewing this Place.</li>
+    </ul>
+  </li>
+  <li><code>html_attributions</code>: An array of attributions that you should
+    display when displaying the search results. Each entry in the array contains
+    the HTML text for a single attribution. <strong>Note:</strong> This is an
+    aggregation of all the attributions for the entire search response. All
+    <code>PlaceResult</code> objects in the response therefore contain
+    identical attribution lists.</li>
+  <li><code>icon</code>: URL to an image resource that can be used to
+    represent this Place's type.</li>
+  <li><code>id</code>: contains a unique identifier denoting this
+    place. This identifier may not be used to retrieve information about this
+    place, but can be used to consolidate data about this Place, and to verify
+    the identity of a Place across separate searches. As ids can occasionally
+    change, it's recommended that the stored id for a Place be compared with
+    the id returned in later Details requests for the same Place, and updated
+    if necessary.</li>
+  <li><code>name</code>: The Place's name.</li>
+  <li><code>opening_hours</code> may contain the following information:
+  <ul><li><code>open_now</code> is a boolean value indicating if the Place
+    is open at the current time.</li></ul>
+  </li>
+  <li><code>rating</code> contains the Place's rating, from 0.0 to 5.0, based
+    on user reviews.</li>
+  <li><code>reference</code> contains a token that can be used to query the
+    Details service in future. This token may differ from the reference used
+    in the request to the Details service. It is recommended that stored
+    references for Places be regularly updated. Although this token uniquely
+    identifies the Place, the converse is not true: a Place may have many
+    valid reference tokens.</li>
+  <li><code>types</code>: An array of types for this Place (e.g.,
+    <code>["political", "locality"]</code> or <code>["restaurant",
+      "establishment"]</code>).</li>
+  <li><code>vicinity</code>: A simplified address for the Place, including
+    the street name, street number, and locality, but not the
+    province/state, postal code, or country. For example, Google's Sydney,
+    Australia office has a <code>vicinity</code> value of <code>5/48 Pirrama
+      Road, Pyrmont</code>.</li>
+</ul>
+
+<h4 id="PlaceSearchPaging">Accessing Additional Results</h4>
+
+<p>By default, each Place search returns up to
+  20 <code>establishment</code> results
+  per query; however, each search can return as many as 60 results, split
+  across three pages. Additional pages are available via the
+  <code>PlaceSearchPagination</code> object. In order to access additional
+  pages you must capture the <code>PlaceSearchPagination</code> object via a
+  callback function. The <code>PlaceSearchPagination</code> object is defined
+  as:</p>
+
+<ul>
+  <li><code>hasNextPage</code> a boolean property that indicates if further
+    results are available. <code>true</code> when there is an additional
+    results page.</li>
+  <li><code>nextPage()</code> a function that will return the next set of
+    results. After executing a search, you must wait two
+    seconds before the next page of results will be available.</li>
+</ul>
+
+<p>To see the next set of results, call <code>nextPage</code>.
+  Each page of results must be displayed before displaying the next page of
+  results. Note that each search counts as a single request against your
+  usage limits.</p>
+
+<p>The example below demonstrates how to alter your callback function to
+  capture the <code>PlaceSearchPagination</code> object, so that you can issue
+  multiple search requests.</p>
+
+<pre class="prettyprint notranslate"><span class="kwd">var</span><span class="pln"> map</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> service</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> resultList</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> initialize</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> pyrmont </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(-</span><span class="lit">33.8665433</span><span class="pun">,</span><span class="lit">151.1956316</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'map'</span><span class="pun">),</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; center</span><span class="pun">:</span><span class="pln"> pyrmont</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; zoom</span><span class="pun">:</span><span class="pln"> </span><span class="lit">15</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">});</span><span class="pln"><br><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; location</span><span class="pun">:</span><span class="pln"> pyrmont</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; radius</span><span class="pun">:</span><span class="pln"> </span><span class="str">'5000'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; types</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'store'</span><span class="pun">]</span><span class="pln"><br>&nbsp; </span><span class="pun">};</span><span class="pln"><br><br>&nbsp; service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; service</span><span class="pun">.</span><span class="pln">nearbySearch</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">results</span><span class="pun">,</span><span class="pln"> status</span><span class="pun">,</span><span class="pln"> pagination</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">status </span><span class="pun">!=</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesServiceStatus</span><span class="pun">.</span><span class="pln">OK</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span><span class="kwd">return</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; resultList</span><span class="pun">.</span><span class="pln">addPlaces</span><span class="pun">(</span><span class="pln">results</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">pagination</span><span class="pun">.</span><span class="pln">hasNextPage</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; resultList</span><span class="pun">.</span><span class="pln">button</span><span class="pun">.</span><span class="pln">onClick </span><span class="pun">=</span><span class="pln"> pagination</span><span class="pun">.</span><span class="pln">nextPage</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; </span><span class="pun">});</span><span class="pln"><br></span><span class="pun">}</span></pre>
+
+<p><a href="https://developers.google.com/maps/documentation/javascript/examples/place-search-pagination">
+  View example (place-search-pagination.html)</a></p>
+
+<h2 id="place_details">Place Details</h2>
+
+<p>In addition to providing a list of Places within an area, the Places
+  service can also return detailed information about a specific Place. Once
+  a Place has been returned in a Place Search response, its
+  <code>reference</code> property can be used to request additional details
+  about that Place, such as its complete address, phone number, user rating
+  and reviews, etc.</p>
+
+<h3 id="place_details_requests">Place Details Requests</h3>
+
+<p>Place Details are requested with a call to the service's
+  <code>getDetails()</code> method.</p>
+
+<pre class="prettyprint notranslate"><span class="pln">service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br>service</span><span class="pun">.</span><span class="pln">getDetails</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span></pre>
+
+<p>This method takes a request, containing the desired Place's
+  <code>reference</code> value.</p>
+<p>It also takes a callback method, which needs
+  to handle the status code passed in the
+  <code>google.maps.places.PlacesServiceStatus</code> response, as well as the
+  <code>google.maps.places.PlaceResult</code> object.</p>
+
+
+<pre class="prettyprint notranslate"><span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; reference</span><span class="pun">:</span><span class="pln"> </span><span class="str">'CnRkAAAAGnBVNFDeQoOQHzgdOpOqJNV7K9-c5IQrWFUYD9TNhUmz5-aHhfqyKH0zmAcUlkqVCrpaKcV8ZjGQKzB6GXxtzUYcP-muHafGsmW-1CwjTPBCmK43AZpAwW0FRtQDQADj3H2bzwwHVIXlQAiccm7r4xIQmjt_Oqm2FejWpBxLWs3L_RoUbharABi5FMnKnzmRL2TGju6UA4k'</span><span class="pln"><br></span><span class="pun">};</span><span class="pln"><br><br>service </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesService</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln"><br>service</span><span class="pun">.</span><span class="pln">getDetails</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span><span class="pln"><br><br></span><span class="kwd">function</span><span class="pln"> callback</span><span class="pun">(</span><span class="pln">place</span><span class="pun">,</span><span class="pln"> status</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">status </span><span class="pun">==</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">places</span><span class="pun">.</span><span class="typ">PlacesServiceStatus</span><span class="pun">.</span><span class="pln">OK</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; createMarker</span><span class="pun">(</span><span class="pln">place</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span></pre>
+
+
+<p><a href="https://developers.google.com/maps/documentation/javascript/examples/place-details">View
+  example (place-details.html)</a></p>
+
+<h3 id="place_details_responses">Place Details Responses</h3>
+
+<h4 id="place_details_status_codes">Status Codes</h4>
+
+<p>The <code>PlacesServiceStatus</code> response object contains the status of
+  the request, and may contain debugging information to help you track down
+  why the Place Details request failed. Possible status values are:</p>
+
+<ul>
+  <li><code>ERROR</code>: There was a problem contacting the Google
+    servers.</li>
+  <li><code>INVALID_REQUEST</code>: This request was invalid.</li>
+  <li><code>OK</code>: The response contains a valid result.</li>
+  <li><code>OVER_QUERY_LIMIT</code>: The webpage has gone over its request
+    quota.</li>
+  <li><code>NOT_FOUND</code> The referenced location was not
+    found in the Places database.</li>
+  <li><code>REQUEST_DENIED</code>: The webpage is not allowed to use the
+    PlacesService.</li>
+  <li><code>UNKNOWN_ERROR</code>: The PlacesService request could not be
+    processed due to a server error. The request may succeed if you try again.
+  </li>
+  <li><code>ZERO_RESULTS</code>: No result was found for this request.</li>
+</ul>
+
+<h4 id="place_details_results">Place Details Results</h4>
+
+<p>A successful <code>getDetails()</code> call returns a
+  <a href="https://developers.google.com/maps/documentation/javascript/reference#PlaceResult">
+  <code>PlaceResult</code></a> object with the following properties:</p>
+
+<ul>
+  <li><code>address_components</code>: The collection of address components
+    for this Place's location. See the Geocoding service's
+    <a href="https://developers.google.com/maps/documentation/geocoding/#Types">Address
+      Component Types</a> section for more details.</li>
+  
+  <li><code>formatted_address</code>: The Place's full address.</li>
+  <li><code>formatted_phone_number</code>: The Place's phone number, formatted
+    according to the
+    <a href="http://en.wikipedia.org/wiki/Local_conventions_for_writing_telephone_numbers">
+      number's regional convention</a>.</li>
+  <li><code>geometry</code>: The Place's geometry-related information. This
+    includes:
+    <ul>
+      <li><code>location</code> provides the latitude and longitude of the
+        Place.</li>
+      <li><code>viewport</code> defines the preferred viewport on the map when
+        viewing this Place.</li>
+    </ul>
+  </li>
+  <li><code>html_attributions</code>: Attribution text to be displayed for
+    this Place result.</li>
+  <li><code>icon</code>: URL to an image resource that can be used to
+    represent this Place's type.</li>
+  <li><code>id</code>: contains a unique identifier denoting this
+    place. This identifier may not be used to retrieve information about this
+    place, but can be used to consolidate data about this Place, and to verify
+    the identity of a Place across separate searches. As ids can occasionally
+    change, it's recommended that the stored id for a Place be compared with
+    the id returned in later Details requests for the same Place, and updated
+    if necessary.</li>
+  <li><code>international_phone_number</code> contains the Place's phone
+    number in international format. International format includes the country
+    code, and is prefixed with the plus (+) sign. For example, the
+    <code>international_phone_number</code> for Google's Sydney, Australia
+    office is <code>+61 2 9374 4000</code>.
+  </li><li><code>name</code>: The Place's name.</li>
+    <li><code>utc_offset</code> contains the number of minutes this Place’s
+    current timezone is offset from UTC. For example, for Places in Sydney,
+    Australia during daylight saving time this would be 660 (+11 hours from
+    UTC), and for Places in California outside of daylight saving time this
+    would be -480 (-8 hours from UTC).</li>
+  <li><code>opening_hours</code> contains the following information:
+    <ul>
+      <li><code>open_now</code> is a boolean value indicating if the Place is
+        open at the current time.</li>
+      <li><code>periods[]</code> is an array of opening periods covering seven
+        days, starting from Sunday, in chronological order. Each period
+        contains:
+        <ul>
+          <li><code>open</code> contains a pair of day and time objects
+            describing when the Place opens:
+          <ul>
+            <li><code>day</code> a number from 0–6, corresponding to the days
+              of the week, starting on Sunday. For example, 2 means
+              Tuesday.</li>
+            <li><code>time</code> may contain a time of day in 24-hour hhmm
+              format (values are in the range 0000–2359). The
+              <code>time</code> will be reported in the Place’s timezone.</li>
+          </ul>
+          </li>
+          <li><code>close</code> may contain a pair of day and time objects
+            describing when the Place closes. <strong>Note:</strong> If a Place
+            is <strong>always open</strong>, the <code>close</code> section will
+            be missing from the response. Applications can rely on always-open
+            being represented as an <code>open</code> period containing
+            <code>day</code> with value 0 and <code>time</code> with value 0000,
+            and no <code>close</code>.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code>photos[]</code>: an array of <code>PlacePhoto</code> objects.
+    A <code>PlacePhoto</code> can be used to obtain a photo with the
+    <code>getUrl()</code> method, or you can inspect the object for the
+    following values:
+    <ul>
+      <li><code>height</code>: the maximum height of the image, in pixels.</li>
+      <li><code>width</code>: the maximum width of the image, in pixels.</li>
+      <li><code>html_attributions</code>: Attribution text to be displayed
+        with this Place photo.</li>
+    </ul>
+  </li>
+  <li><code>rating</code>: The Place's rating, from 0.0 to 5.0, based on user
+    reviews.</li>
+  <li><code>reference</code> contains a token that can be used to query the
+    Details service in future. This token may differ from the reference used
+    in the request to the Details service. It is recommended that stored
+    references for Places be regularly updated. Although this token uniquely
+    identifies the Place, the converse is not true: a Place may have many
+    valid reference tokens.</li>
+  <li><code>reviews</code> an array of up to five reviews. Each review
+    consists of several components:
+    <ul>
+      <li><code>aspects[]</code> contains an array of
+        <code>PlaceAspectRating</code> objects, each of which provides a
+        rating of a single attribute of the establishment. The first object
+        in the array is considered the primary aspect. Each
+        <code>PlaceAspectRating</code> is defined as:
+        <ul>
+          <li><code>type</code> the name of the aspect that is being rated.
+            The following types are supported: <code>appeal</code>,
+            <code>atmosphere</code>, <code>decor</code>,
+            <code>facilities</code>, <code>food</code>, <code>overall</code>,
+            <code>quality</code> and <code>service</code>.</li>
+          <li><code>rating</code> the user's rating for this particular
+            aspect, from 0 to 3.</li>
+      </ul></li>
+      <li><code>author_name</code> the name of the user who submitted the
+        review. Anonymous reviews are attributed to "A Google user". If a
+        language parameter was set, then the phrase "A Google user" will
+        return a localized string.</li>
+      <li><code>author_url</code> the URL to the users Google+ profile, if
+        available.</li>
+      <li><code>language</code> an IETF language code indicating the language
+        used in the user's review. This field contains the main language tag
+        only, and not the secondary tag indicating country or region. For
+        example, all the English reviews are tagged as 'en', and not 'en-AU' or
+        'en-UK' and so on.</li>
+      <li><code>rating</code> the user's overall rating for this Place. This
+        is a whole number, ranging from 1 to 5.</li>
+      <li><code>text</code> the user's review. When reviewing a
+        location with Google Places, text reviews are considered optional;
+        therefore, this field may by empty.</li>
+    </ul>
+  </li>
+  <li><code>types</code>: An array of types for this Place (e.g.,
+    <code>["political", "locality"]</code> or <code>["restaurant",
+      "establishment"]</code>).</li>
+  <li><code>url</code>: URL of the associated Google Place Page.</li>
+  <li><code>vicinity</code>: A simplified address for the Place, including
+    the street name, street number, and locality, but not the
+    province/state, postal code, or country. For example, Google's Sydney,
+    Australia office has a <code>vicinity</code> value of <code>5/48 Pirrama
+    Road, Pyrmont</code>. The <code>vicinity</code> property is only returned
+    for a <a href="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/Places Library - Google Maps JavaScript API v3 — Google Developers.html">Nearby Search</a>.</li>
+  <li><code>website</code> lists the authoritative website for this Place, such
+    as a business' homepage.</li>
+</ul>
+
+<p class="note">Multidimensional ratings may not be available for
+  all locations. If there are too few reviews then the details response will
+  either include a legacy rating on a 0.0 to 5.0 scale (if available) or no
+  rating at all.</p>
+
+<h2 id="places_photos">Places Photos</h2>
+
+<p>The Places Photo feature allows you to easily add high quality photographic
+content to your site. The Photo service gives you access to the millions of
+photos stored in the Places and Google+ Local database. When you search for
+Places using either a Place Search or Place Details request, photo references
+will be returned for relevant photographic content. You can access the
+referenced photos, and resize the image to the optimal size for your
+application.</p>
+
+<p>An array of <code>PlacePhoto</code> objects will be returned as part of the
+<code>PlaceResult</code> object for any <code>getDetails()</code> or
+<code>nearbySearch()</code> request made against a <code>PlacesService</code>.
+You can request the url for the associated image by calling the
+<code>PlacePhoto.getUrl()</code> method, and passing a valid
+<code>PhotoOptions</code> object. The <code>PhotoOptions</code> object allows
+you to specify the maximum desired height and width of the image. If you
+specify a value for both <code>max_height</code> and a <code>max_width</code>,
+the photo service will resize the image to the smaller of the two sizes, while
+maintaining the original aspect ratio.</p>
+
+<p>The below code snippet accepts a Place object, and adds a marker
+  to the map if a photo exists. The default marker image is replaced
+  by a small version of the photo.</p>
+
+<pre class="prettyprint notranslate"><span class="kwd">function</span><span class="pln"> createPhotoMarker</span><span class="pun">(</span><span class="pln">place</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> photos </span><span class="pun">=</span><span class="pln"> place</span><span class="pun">.</span><span class="pln">photos</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">photos</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br><br>&nbsp; </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln"><br>&nbsp; &nbsp; map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; position</span><span class="pun">:</span><span class="pln"> place</span><span class="pun">.</span><span class="pln">geometry</span><span class="pun">.</span><span class="pln">location</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; title</span><span class="pun">:</span><span class="pln"> place</span><span class="pun">.</span><span class="pln">name</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; icon</span><span class="pun">:</span><span class="pln"> photos</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">getUrl</span><span class="pun">({</span><span class="str">'maxWidth'</span><span class="pun">:</span><span class="pln"> </span><span class="lit">35</span><span class="pun">,</span><span class="pln"> </span><span class="str">'maxHeight'</span><span class="pun">:</span><span class="pln"> </span><span class="lit">35</span><span class="pun">})</span><span class="pln"><br>&nbsp; </span><span class="pun">});</span><span class="pln"><br></span><span class="pun">}</span></pre>
+
+
+  </div>
+
+  
+        </div>
+        
+<div id="gc-content-footer">
+
+<div id="gc-content-license">
+
+    
+      
+        <p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="https://developers.google.com/site-policies">Site Policies</a>.</p>
+      
+    
+    
+    
+
+</div>
+
+
+
+<div itemprop="datePublished" content="2014-01-21T21:49:45.836120" id="gc-content-last-updated">Last updated January 21, 2014.</div>
+
+</div>
+
+
+
+
+      </div>
+  
+
+        
+      </div>
+        
+      
+
+      
+  
+      
+      <footer id="gc-footer">
+        <div id="gc-copyright">
+          <a href="https://developers.google.com/">
+            <img id="developers-logo-footer" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/developers-logo-footer.png" alt="Google Developers logo" style="vertical-align: center; float: left">
+          </a>
+          <ul>
+            <li><a href="http://www.google.com/">Google</a></li>
+            <li><a href="https://developers.google.com/site-terms">Terms of Service</a></li>
+            <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+            <li><a href="https://developers.google.com/jobs">Jobs</a></li>
+            <li><a class="google-feedback" data-p="81425" data-b="Documentation" data-v="devsite-20140218-rc00.default" href="">Report a bug</a></li>
+          </ul>
+        </div>
+        
+        <div id="gc-language">
+          <ul>
+            <li>
+              <form id="setlang" action="https://developers.google.com/i18n/setlang/" method="post">
+                <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="UdFIypF5B4MjP3KYRUOyIC7EdwsVlxpa"></div>
+                <select id="footer_language" name="language" style="display: none;">
+                  <option value="ar">
+                    العربيّة
+                  </option><option value="bg">
+                    български
+                  </option><option value="ca">
+                    català
+                  </option><option value="zh-cn">
+                    简体中文
+                  </option><option value="zh-tw">
+                    繁體中文
+                  </option><option value="hr">
+                    Hrvatski
+                  </option><option value="cs">
+                    česky
+                  </option><option value="da">
+                    Dansk
+                  </option><option value="nl">
+                    Nederlands
+                  </option><option value="en" selected="selected">
+                    English
+                  </option><option value="fa">
+                    فارسی
+                  </option><option value="fi">
+                    suomi
+                  </option><option value="fr">
+                    Français
+                  </option><option value="de">
+                    Deutsch
+                  </option><option value="el">
+                    Ελληνικά
+                  </option><option value="he">
+                    עברית
+                  </option><option value="hi">
+                    Hindi
+                  </option><option value="hu">
+                    Magyar
+                  </option><option value="id">
+                    Bahasa Indonesia
+                  </option><option value="it">
+                    italiano
+                  </option><option value="ja">
+                    日本語
+                  </option><option value="ko">
+                    한국어
+                  </option><option value="lv">
+                    latviešu
+                  </option><option value="lt">
+                    Lithuanian
+                  </option><option value="nb">
+                    Norsk (bokmål)
+                  </option><option value="nn">
+                    Norsk (nynorsk)
+                  </option><option value="pl">
+                    polski
+                  </option><option value="pt-br">
+                    Português Brasileiro
+                  </option><option value="pt">
+                    Português
+                  </option><option value="ro">
+                    Română
+                  </option><option value="ru">
+                    Русский
+                  </option><option value="sr">
+                    српски
+                  </option><option value="sk">
+                    slovenský
+                  </option><option value="sl">
+                    Slovenščina
+                  </option><option value="es">
+                    español
+                  </option><option value="sv">
+                    Svenska
+                  </option><option value="th">
+                    Thai
+                  </option><option value="tr">
+                    Türkçe
+                  </option><option value="uk">
+                    Українська
+                  </option><option value="vi">
+                    Vietnamese
+                  </option>
+                </select><span class="kd-button kd-menubutton kd-select"><div style="display: inline-block;"><div class="label" style="float: left;">
+                    English
+                  </div><div class="kd-disclosureindicator"></div></div></span>
+              </form>
+            </li>
+          </ul>
+        </div>
+        
+      </footer>
+      
+      
+  
+
+    </div>
+    <div id="needAuth" class="msgDialogContent">
+      
+      <h1>Authentication required</h1>
+      
+      <div>
+        You need to be signed in with <a href="http://www.google.com/+">Google+</a> to do that.
+      </div>
+      <button>Sign in</button>
+      <button>Cancel</button>
+    </div>
+    <div id="signingIn" class="msgDialogContent">
+      
+      <h1>Signing you in...</h1>
+      <div>
+        
+        Google Developers needs your permission to do that.
+      </div>
+      
+      <button>Try again</button>
+      
+      <button>Cancel</button>
+    </div>
+    <script type="text/javascript" async="" defer="" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/api.js"></script>
+    
+      <script>
+        (function($) {
+          var cssHref = $('#screen-foot').attr('data-href');
+          $('#screen-foot').attr('href', cssHref);
+        })(jQuery);
+      </script>
+    
+    <script id="jqueryui" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/jquery-ui.min.js"></script>
+    <script src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/script_foot.js"></script>
+    <script>
+      (function($) {
+        devsite.devsite.Init($, null, '',
+            'en', true,
+            'bbe5bfc230');
+      })(jQuery);
+
+      
+      devsite.localInit = function() {
+        
+      };
+    </script>
+    
+    <!-- Google Code for PXL - Developers - Codesite - HP - 90d Remarketing List -->
+    <script type="text/javascript">
+    $('#setlang select').each(function() {
+      if (navigator.userAgent.match(/msie/i)) {
+        $(this).change(function() {
+          $('#setlang').submit();
+        });
+      } else {
+        $(this).kdSelect({'change': function() {
+          $('#setlang').submit();
+        }});
+      }
+    });
+    </script><ul class="kd-menulist" style="position: absolute; left: 989px; top: 10893.03125px; display: none;"><li class="kd-menulistitem" style="">
+                    العربيّة
+                  </li><li class="kd-menulistitem">
+                    български
+                  </li><li class="kd-menulistitem">
+                    català
+                  </li><li class="kd-menulistitem">
+                    简体中文
+                  </li><li class="kd-menulistitem">
+                    繁體中文
+                  </li><li class="kd-menulistitem">
+                    Hrvatski
+                  </li><li class="kd-menulistitem">
+                    česky
+                  </li><li class="kd-menulistitem">
+                    Dansk
+                  </li><li class="kd-menulistitem">
+                    Nederlands
+                  </li><li class="kd-menulistitem selected" style="font-weight: normal;">
+                    English
+                  </li><li class="kd-menulistitem">
+                    فارسی
+                  </li><li class="kd-menulistitem">
+                    suomi
+                  </li><li class="kd-menulistitem">
+                    Français
+                  </li><li class="kd-menulistitem">
+                    Deutsch
+                  </li><li class="kd-menulistitem">
+                    Ελληνικά
+                  </li><li class="kd-menulistitem">
+                    עברית
+                  </li><li class="kd-menulistitem">
+                    Hindi
+                  </li><li class="kd-menulistitem">
+                    Magyar
+                  </li><li class="kd-menulistitem">
+                    Bahasa Indonesia
+                  </li><li class="kd-menulistitem">
+                    italiano
+                  </li><li class="kd-menulistitem">
+                    日本語
+                  </li><li class="kd-menulistitem">
+                    한국어
+                  </li><li class="kd-menulistitem">
+                    latviešu
+                  </li><li class="kd-menulistitem">
+                    Lithuanian
+                  </li><li class="kd-menulistitem">
+                    Norsk (bokmål)
+                  </li><li class="kd-menulistitem">
+                    Norsk (nynorsk)
+                  </li><li class="kd-menulistitem">
+                    polski
+                  </li><li class="kd-menulistitem">
+                    Português Brasileiro
+                  </li><li class="kd-menulistitem">
+                    Português
+                  </li><li class="kd-menulistitem">
+                    Română
+                  </li><li class="kd-menulistitem">
+                    Русский
+                  </li><li class="kd-menulistitem">
+                    српски
+                  </li><li class="kd-menulistitem">
+                    slovenský
+                  </li><li class="kd-menulistitem">
+                    Slovenščina
+                  </li><li class="kd-menulistitem">
+                    español
+                  </li><li class="kd-menulistitem">
+                    Svenska
+                  </li><li class="kd-menulistitem">
+                    Thai
+                  </li><li class="kd-menulistitem">
+                    Türkçe
+                  </li><li class="kd-menulistitem">
+                    Українська
+                  </li><li class="kd-menulistitem">
+                    Vietnamese
+                  </li></ul>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 992540712;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "qio2CKCPwQMQqPCj2QM";
+      var google_conversion_value = 0;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/conversion.js">
+    </script><img height="1" width="1" border="0" alt="" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/saved_resource">
+
+    
+
+    
+    
+    <script async="" defer="" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/async_survey"></script>
+    
+
+    
+    <script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="https://2507573.fls.doubleclick.net/activityi;src=2507573;type=other026;cat=googl875;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    </script><iframe src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/activityi;src=2507573;type=other026;cat=googl875.html" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    <noscript>
+    &lt;iframe src="https://2507573.fls.doubleclick.net/activityi;src=2507573;type=other026;cat=googl875;ord=1?" width="1" height="1" frameborder="0" style="display:none"&gt;&lt;/iframe&gt;
+    </noscript>
+    
+
+    <noscript>
+      &lt;div style="display:inline;"&gt;
+        &lt;img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992540712/?label=qio2CKCPwQMQqPCj2QM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+      &lt;/div&gt;
+    </noscript>
+    
+
+
+
+
+
+<script type="text/javascript" defer="">
+
+
+$(document).ready(function() {
+    contentTimer.name = 'content';
+    contentTimer.tick('ol');
+    window.jstiming.report(contentTimer);
+
+    // Boilerplate javascript to enable the plusone button
+    var po = document.createElement('script'); po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js?onload=devsite_plusoneLoaded';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+});
+</script>
+
+
+
+
+
+  
+
+  
+
+<div id="contain-402"></div><script src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/prompt"></script><iframe name="oauth2relay673739559" id="oauth2relay673739559" src="./Places Library - Google Maps JavaScript API v3 — Google Developers_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

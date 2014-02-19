@@ -40,6 +40,7 @@ var quietEars = require('./routes/quietEars');
 var reflect_life = require('./routes/reflect_life');
 var draw = require('./routes/draw');
 var article = require('./routes/article');
+var coffee = require('./routes/coffee');
 
 
 // Example route
@@ -100,6 +101,7 @@ app.get('/quietEars', quietEars.view);
 app.get('/reflect_life', reflect_life.view);
 app.get('/draw', draw.view);
 app.get('/article', article.view);
+app.get('/coffee', coffee.view);
 
 // Example route
 // app.get('/users', user.list);
