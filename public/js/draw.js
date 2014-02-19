@@ -83,7 +83,7 @@
             sigCanvas.addEventListener('touchstart', draw, false);
             sigCanvas.addEventListener('touchmove', draw, false);
             sigCanvas.addEventListener('touchend', draw, false);
-            clearBtn.addEventListener('onclick', clearCanvas, false);
+            //clearBtn.addEventListener('onclick', clearCanvas, false);
  
 
             //clearBtn.addEventListener ('touchend' clearCanvas, false);
@@ -112,13 +112,17 @@
                   finishDrawing(mouseEvent, sigCanvas, context);
                });
             });
+            
  
          }
+         $("#clearBtn").click(function (mouseEvent){
+            clearCanvas(mouseEvent, sigCanvas, context);
+         });
       }
 
-      function clearCanvas() {
+      function clearCanvas(mouseEvent, sigCanvas, context) {
          event.preventDefault();
-         context.clearRect(0,0,sigCanvas.width,sigCanvas.height);
+         context.clearRect(0,0, sigCanvas.width,sigCanvas.height);
 
       }
  
