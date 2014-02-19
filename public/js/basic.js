@@ -1,4 +1,4 @@
-//$.event.special.swipe.horizontalDistanceThreshold = 75;
+$.event.special.swipe.horizontalDistanceThreshold = 60;
 
 doBind();
 

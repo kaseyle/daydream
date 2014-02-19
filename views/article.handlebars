@@ -8,6 +8,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/basic.css" rel="stylesheet">
+    <link href="/css/article.css" rel="stylesheet">
     <meta name="viewport" content="width=320, initial-scale=1">
   </head>
 
@@ -25,7 +26,7 @@
   <div id="container">
     <p id="words">{{text}}</p>
     <h1 id="title">Upworthy</h1>
-    <object data="http://www.upworthy.com/random" width="310" height="300">Error: Embedded data could not be displayed.</object>
+    <div id="overflow"><object id="article" data="http://www.upworthy.com/random">Error: Embedded data could not be displayed.</object></div>
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
         <li class = "active">
