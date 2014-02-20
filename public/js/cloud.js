@@ -3,6 +3,8 @@ var data = {}
 var words = new Array();
 var maxWords = 4;
 
+var time_range = $("#time_range").text();
+
 $(document).ready(function() {
 	initializePage();
 })
@@ -63,9 +65,10 @@ function outListner(event, ui) {
 }
 
 function getActivities() {
-	var temp = data["tags"][words[0].toLowerCase()]
+	//var temp = data["times"][time_range];
+	var temp = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40];
 	var activities = temp.slice(0);
-	for (var i = 1; i < words.length; i++) {
+	for (var i = 0; i < words.length; i++) {
 		temp = data["tags"][words[i].toLowerCase()];
 		for (var j = activities.length-1; j >= 0; j--) {
 			if (temp.indexOf(activities[j]) == -1) {
@@ -90,8 +93,8 @@ function clickListener(event) {
 	console.log(rand);
 	var index = activities[Math.floor(rand * activities.length)];
 	var activity = data["activities_array"][index];
-	var url = "/" + activity + "?" + "word1=" + words[0];
-	for (var i = 1; i < 4; i++) {
+	var url = "/" + activity + "?" + "time_range=" + "2";
+	for (var i = 0; i < 4; i++) {
 		if (i < words.length) {
 			url += "&word" + (i+1) + "=" + words[i];	
 		} else {
