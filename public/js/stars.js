@@ -1,16 +1,16 @@
 var urls = [
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/aries20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/taurus20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/gemini20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/cancer20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/leo20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/virgo20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/libra20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/scorpio20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/sagittarius20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/capricorn20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/aquarius20.jpg",
-	"http://www.astrologyweekly.com/zodiac-pictures/constellation/pisces20.jpg"
+	"http://daydreaming.herokuapp.com/images/stars_1.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_2.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_3.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_4.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_5.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_6.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_7.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_8.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_9.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_10.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_11.jpg",
+	"http://daydreaming.herokuapp.com/images/stars_12.jpg"
 ]
 
 var index = 1;

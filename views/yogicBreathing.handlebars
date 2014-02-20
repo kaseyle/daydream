@@ -4,11 +4,10 @@
   <head>
     <title>Yogic Breathing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/basic.css" rel="stylesheet">
-    <link href="/css/yogicBreathing.css" rel="stylesheet">
+    <link href="/css/video.css" rel="stylesheet">
     <meta name="viewport" content="width=320, initial-scale=1">
   </head>
     
@@ -27,15 +26,12 @@
     <p id="words">{{text}}</p>
     <h1 id="title">Yogic Breathing</h1>
     <h2 id="instructions">Try this breathing excercise!</h2> 
-    <div>
+    <div class="video">
       <iframe 
       width="320" height="280" src="http://www.youtube.com/embed/hJxJ_jeGPJ4?rel=0"
       frameborder="0" allowfullscreen>
       </iframe>
     </div>
-
-
-    <h3 id="quote"></h3>
       
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
@@ -65,6 +61,7 @@
         $.mobile.loadingMessage = false;
       });
     </script>
-    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>    <script src="/js/basic.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>    
+    <script src="/js/basic.js"></script>
   </body>
 </html>
