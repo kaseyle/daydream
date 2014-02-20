@@ -23,6 +23,7 @@
          var context = sigCanvas.getContext("2d");
          var clear = document.getElementById("clearBtn");
          context.strokeStyle = 'Black';
+         sigCanvas.height = (window.innerHeight)/2;
          
          // This will be defined on a TOUCH device such as iPad or Android, etc.
          var is_touch_device = 'ontouchstart' in document.documentElement;
