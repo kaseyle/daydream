@@ -92,6 +92,7 @@
             sigCanvas.addEventListener('touchmove', function (event) {
                event.preventDefault();
             }, false); 
+            clearBtn.addEventListener('touchend', clearCanvas, false);
          }
          else {
  
