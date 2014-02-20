@@ -19,7 +19,6 @@ function initializePage() {
       out: outListner     
     });
     $( "#finish" ).button().click(clickListener);
-    //$( "#my_button" ).attr('disabled', 'disabled');
 
     $.getJSON("/data", function(json) {
     	data = json;
@@ -27,7 +26,6 @@ function initializePage() {
 }
 
 function dropListener(event, ui) {
-	//$( this ).find( "p" ).html( "Dropped!" );
 	var word = $(ui.draggable).find("p").text();
 	if (words.indexOf(word) == -1 && words.length < maxWords) {
 		words.push(word);
@@ -46,7 +44,6 @@ function dropListener(event, ui) {
 	}
 	console.log(words);
 	if (words.length > 0) {
-		//$( "#my_button" ).removeAttr('disabled');
 		$("#finish").removeClass("disabled");
 	}
 }
