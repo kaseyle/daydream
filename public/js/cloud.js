@@ -10,6 +10,8 @@ $(document).ready(function() {
 })
 
 function initializePage() {
+	console.log("time_range is " +time_range);
+
 	$( ".draggable" ).draggable();
 	$( ".draggable" ).draggable("option", "revert", "valid");
     $( ".droppable" ).droppable({
@@ -93,7 +95,7 @@ function clickListener(event) {
 	console.log(rand);
 	var index = activities[Math.floor(rand * activities.length)];
 	var activity = data["activities_array"][index];
-	var url = "/" + activity + "?" + "time_range=" + "2";
+	var url = "/" + activity + "?" + "time_range=" + time_range;
 	for (var i = 0; i < 4; i++) {
 		if (i < words.length) {
 			url += "&word" + (i+1) + "=" + words[i];	
