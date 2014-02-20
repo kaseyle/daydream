@@ -54,9 +54,9 @@
 <div>
   Current Time: <span id="jsalarm_ct"></span>
   Set Alarm:
-      <span>Hour<input type="time"/></span>
-      <span>Minutes<select></select></span> 
-      <span>Seconds<select></select></span>
+      Hour<select></select>
+      Minutes<select></select> 
+      Seconds<select></select>
 </div>
 
 </form>
@@ -68,6 +68,14 @@
 </div>
 <input type="submit" value="Set Alarm!" id="submitbutton" /> 
 <input type="reset" value="reset" id="resetbutton" />
+
+
+<audio id="alarm-ring" preload>
+    <source src="assets/audio/ticktac.mp3" type="audio/mpeg" />
+    <source src="assets/audio/ticktac.ogg" type="audio/ogg" />
+</audio>
+
+
 </div>
 </form>
 

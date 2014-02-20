@@ -1,4 +1,3 @@
-
 var jsalarm={
   padfield:function(f){
     return (f<10)? "0"+f : f
@@ -11,7 +10,10 @@ var jsalarm={
     if (typeof this.hourwake!="undefined"){ //if alarm is set
       if (this.ctref.title==(this.hourwake+":"+this.minutewake+":"+this.secondwake)){
         clearInterval(jsalarm.timer)
-        window.location=document.getElementById("musicloc").value
+        $.sound.enabled = true;
+        //$('#alarm_ring')[0].play();
+        window.location= "/";
+        //document.getElementById("musicloc").value
       }
     }
   },
