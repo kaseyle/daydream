@@ -77,6 +77,12 @@
                // pass the coordinates to the appropriate handler
                drawer[event.type](coors);
             }
+
+            function clearAll() {
+               context.clearRect(0,0, sigCanvas.width,sigCanvas.height);
+            }
+
+            
  
 
             // attach the touchstart, touchmove, touchend event listeners.
@@ -92,7 +98,7 @@
             sigCanvas.addEventListener('touchmove', function (event) {
                event.preventDefault();
             }, false); 
-            clearBtn.addEventListener('touchend', clearCanvas, false);
+            clear.addEventListener('touchend', clearAll, false);
          }
          else {
  
