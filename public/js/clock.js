@@ -5,7 +5,7 @@ $(document).ready(function() {
 	initializePage();
 })
 
-var time_range = 0;
+var time_range = 2;
 
 function initializePage() {
 	console.log("Javascript connected!");
