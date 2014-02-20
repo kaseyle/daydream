@@ -4,6 +4,16 @@ doBind();
 
 addBindings('#swipe');
 
+addBindings('.swipe');
+
+setTimeout( function() {hideArrows();}, 1200 );
+
+function hideArrows() {
+  if ( $( ".arrow").length > 0 ) {
+    $( ".arrow").css('visibility','hidden');
+  }
+}
+
 function addBindings(name) {
   if ($(name).length > 0) {
     $(name).on('touchstart', function(){
@@ -46,7 +56,6 @@ function doUnbind() {
 }
 
 function nextPage() {
-  console.log("YO");
   var nextpage = $('#forward').text();
   if (nextpage.charAt(1) != '?') {
     //$.mobile.changePage(nextpage, "slide", false, true);

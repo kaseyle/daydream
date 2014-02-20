@@ -73,3 +73,16 @@ ol {
 	background-color: rgba(53, 185, 247, 1);
 }
 
+.arrow {
+  position: absolute;
+  top: 200px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+#right-arrow {
+  right: 0px;
+}
+

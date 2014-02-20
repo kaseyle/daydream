@@ -29,10 +29,12 @@ module.exports = function(req) {
 		}
 		
 		var id = data["activities_object"][page_name];
+		var swipe = false;
 		var back = "";
 		var forward = "";
 
 		if (activities.length > 1) {
+			swipe = true;
 			var index = activities.indexOf(id)
 			if (index == 0) {
 				forward_id = activities[index+1];
@@ -52,6 +54,8 @@ module.exports = function(req) {
 			}
 		}
 
+
+
 		var results = {
 			"word1": word1,
 			"word2": word2,
@@ -62,6 +66,7 @@ module.exports = function(req) {
 			"id": id,
 			"back": back,
 			"forward": forward,
+			"swipe": swipe
 		};
 		return results;
 		

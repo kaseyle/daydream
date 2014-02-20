@@ -2,13 +2,13 @@
 
 <html>
   <head>
-    <title>Magical Places</title>
+    <title>Walk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/basic.css" rel="stylesheet">
-    <link href="/css/places.css" rel="stylesheet">
+    <link href="/css/walk.css" rel="stylesheet">
     <meta name="viewport" content="width=320, initial-scale=1">
   </head>
 
@@ -33,10 +33,10 @@
       </div>
     {{/if}}
     <p id="words">{{text}}</p>
-    <h1 id="title">Magical Places</h1>
-    <img id="image" src="http://media-cache-ak0.pinimg.com/736x/94/b0/4d/94b04d18777846902bccf184197ef0ec.jpg" />
-    <p id="name">Golden Gate Bridge, San Francisco, USA</p>
-    <div id="swipe">Swipe</div>
+    <h1 id="title">Go for a Walk</h1>
+    <h3>Here are some nearby parks!</h3>
+    <div><div id="map-canvas"/></div></div>
+
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
         <li class = "active">
@@ -57,6 +57,8 @@
   </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=true">
+    </script>
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script>
@@ -65,7 +67,7 @@
       });
     </script>
     <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
-    <script src="/js/places.js"></script>
     <script src="/js/basic.js"></script>
+    <script src="/js/walk.js"></script>
   </body>
 </html>

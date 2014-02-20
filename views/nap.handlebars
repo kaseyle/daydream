@@ -18,6 +18,14 @@
   <p hidden id="back">/{{back}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <p hidden id="forward">/{{forward}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <div id="container">
+    {{#if swipe}}
+      <div class="arrow" id="left-arrow">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </div>
+      <div class="arrow" id="right-arrow">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </div>
+    {{/if}}
     <p id="words">{{text}}</p>
     <h1 id="title">Nap</h1>
     <h2 id="instructions">Close your eyes and take a nap!</h2>
