@@ -21,8 +21,8 @@
   
     
   <body>
-  <p hidden id="back">/{{back}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
-  <p hidden id="forward">/{{forward}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
+  <p hidden id="back">/{{back}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
+  <p hidden id="forward">/{{forward}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <div id="container">
     {{#if swipe}}
       <div class="arrow" id="left-arrow">
@@ -49,7 +49,7 @@
           </a>
         </li>
         <li class = "active">
-          <a href="/cloud" data-ajax="false">
+          <a href="/cloud?time_range={{time_range}}" data-ajax="false">
             <span class="glyphicon glyphicon-cloud"></span>
             Change Words
           </a>

@@ -15,62 +15,62 @@
 }
 
 #word1 {
-	top: 5px;
+	top: 35px;
 	left: 5px;
 }
 
 #word2 {
-	top: 50px;
+	top: 80px;
 	left: 45px;
 }
 
 #word3 {
-	top: 15px;
+	top: 45px;
 	left: 100px;
 }
 
 #word4 {
-	top: 70px;
+	top: 100px;
 	left: 130px;
 }
 
 #word5 {
-	top: 10px;
+	top: 40px;
 	left: 185px;
 }
 
 #word6 {
-	top: 50px;
+	top: 80px;
 	left: 230px;
 }
 
 #word7 {
-	top: 95px;
+	top: 125px;
 	left: 5px;
 }
 
 #word8 {
-	top: 180px;
+	top: 210px;
 	left: 20px;
 }
 
 #word9 {
-	top: 130px;
+	top: 160px;
 	left: 70px;
 }
 
 #word10 {
-	top: 140px;
+	top: 170px;
 	left: 150px;
 }
 
 #word11 {
-	top: 100px;
+	top: 130px;
 	left: 200px;
 }
 
 #word12 {
-	top: 160px;
+	top: 190px;
 	left: 225px;
 }
 
@@ -78,8 +78,8 @@
 	position: relative;
 	margin: 0px auto;
 	text-align: center;
-	font-size: 14px;
-	top: 355px;
+	font-size: 15px;
+	font-weight: 150px;
 }
 
 .rainy-weather {

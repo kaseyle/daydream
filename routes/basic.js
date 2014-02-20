@@ -5,6 +5,7 @@ module.exports = function(req) {
 		var url = req.url;
 		var pathname_length = url.indexOf('?');
 		var page_name = url.substring(1, pathname_length);
+		var time_range = req.query.time_range;
 		var word1 = req.query.word1;
 		var word2 = req.query.word2;
 		var word3 = req.query.word3;
@@ -66,7 +67,8 @@ module.exports = function(req) {
 			"id": id,
 			"back": back,
 			"forward": forward,
-			"swipe": swipe
+			"swipe": swipe,
+			"time_range": time_range
 		};
 		return results;
 		
