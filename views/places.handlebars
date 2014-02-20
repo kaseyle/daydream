@@ -24,6 +24,14 @@
   <p hidden id="back">/{{back}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <p hidden id="forward">/{{forward}}?word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <div id="container">
+    {{#if swipe}}
+      <div class="arrow" id="left-arrow">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </div>
+      <div class="arrow" id="right-arrow">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </div>
+    {{/if}}
     <p id="words">{{text}}</p>
     <h1 id="title">Magical Places</h1>
     <img id="image" src="http://media-cache-ak0.pinimg.com/736x/94/b0/4d/94b04d18777846902bccf184197ef0ec.jpg" />
