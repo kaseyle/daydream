@@ -39,7 +39,7 @@ function search(latlong) {
 
   infowindow = new google.maps.InfoWindow();
   service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback)
+  service.textSearch(request, callback)
 }
 
 function handleNoGeolocation(errorFlag) {

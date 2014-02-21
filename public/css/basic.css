@@ -80,6 +80,7 @@ ol {
   width: 35px;
   height: 35px;
   background-color: rgba(0, 0, 0, 0.15);
+  z-index: 100;
 }
 
 #right-arrow {

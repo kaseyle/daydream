@@ -42,6 +42,9 @@ var draw = require('./routes/draw');
 var article = require('./routes/article');
 var coffee = require('./routes/coffee');
 var walk = require('./routes/walk');
+var travel = require('./routes/travel');
+var secret = require('./routes/secret');
+var puzzle = require('./routes/puzzle');
 
 
 // Example route
@@ -104,6 +107,9 @@ app.get('/draw', draw.view);
 app.get('/article', article.view);
 app.get('/coffee', coffee.view);
 app.get('/walk', walk.view);
+app.get('/travel', travel.view);
+app.get('/secret', secret.view);
+app.get('/puzzle', puzzle.view);
 
 // Example route
 // app.get('/users', user.list);
