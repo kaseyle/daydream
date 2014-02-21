@@ -1,21 +1,5 @@
-#jsalarmclock{
-font-weight: bold;
-font-size: 16px;
+#nap {
+	background-position: center;
+	width: 300px;
+	height: 300px;
 }
-
-#jsalarmclock div{
-margin-bottom: 0.8em;
-}
-
-#jsalarmclock div.leftcolumn{
-float: left;
-width: 150px;
-font-size: 16px;
-clear: left;
-}
-
-#jsalarmclock span{
-margin-right: 5px;
-}
-
-
