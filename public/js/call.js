@@ -2,7 +2,8 @@ var prompts = [
 	"Call someone you haven't talked to in a while.",
 	"Call an old friend from highschool.",
 	"Call a relative that you don't usually talk to.",
-	"Call someone that reminds you of your childhood.",
+	"Call someone that reminds you of your childhood."
+]
 	
 
 var index = 1;
