@@ -2,13 +2,13 @@
 
 <html>
   <head>
-    <title>Gum</title>
+    <title>Call Someone/title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/basic.css" rel="stylesheet">
-    <link href="/css/gum.css" rel="stylesheet">
+    <link href="/css/call.css" rel="stylesheet">
     <meta name="viewport" content="width=320, initial-scale=1">
   </head>
 
@@ -18,7 +18,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-  
+
+
   <body>
   <p hidden id="back">/{{back}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <p hidden id="forward">/{{forward}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
@@ -32,12 +33,11 @@
       </div>
     {{/if}}
     <p id="words">{{text}}</p>
-    <h1 id="title">Gum</h1>
-    <h2 id="instructions">Chew some gum.</h2> 
-
-    <img class=image id = "face" src="http://icons.iconarchive.com/icons/icontexto/emoticons/256/icontexto-emoticons-10-icon.png" ></img>
-    <img class=image id = "gum" src="http://www.clker.com/cliparts/9/Y/j/x/F/k/pink-circle-md.png" ></img>
-      
+    <h1 id="title">Talk to Someone</h1>
+    <br/>
+    <h2 id="directions">Call someone you haven't talked to in a while.</h2>
+    <br/>
+    <div id="swipe">Swipe</div>
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
         <li class = "active">
@@ -55,11 +55,10 @@
       </ol>
     </div>
 
-
   </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->	
-    <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script>
       $(document).bind("mobileinit", function(){
@@ -67,7 +66,7 @@
       });
     </script>
     <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
-    <script src="/js/gum_1.js"></script>
+    <script src="/js/positiveThinking.js"></script>
     <script src="/js/basic.js"></script>
   </body>
 </html>
