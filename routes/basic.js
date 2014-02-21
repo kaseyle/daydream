@@ -17,10 +17,12 @@ module.exports = function(req) {
 
 		//get activities
 		var text = word1;
-		var temp = data["tags"][words[0].toLowerCase()]
+		var temp = data["times"][time_range];
 		var activities = temp.slice(0);
-		for (var i = 1; i < words.length; i++) {
-			text += " · " + words[i];
+		for (var i = 0; i < words.length; i++) {
+			if (i > 0) {
+				text += " · " + words[i];
+			}
 			temp = data["tags"][words[i].toLowerCase()];
 			for (var j = activities.length-1; j >= 0; j--) {
 				if (temp.indexOf(activities[j]) == -1) {
