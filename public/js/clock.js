@@ -25,24 +25,51 @@ function initializePage() {
 		var boxWidth = .9*cwidth;
 		var mouseXAdj = mouseX-(buffer+boxStart);
 
-			if (mouseXAdj < 0.16*boxWidth) {
+			if (mouseXAdj < 0.08*boxWidth) {
 				time_range = 2;
-				$("#timechosen").text("0-2 minutes");
-			} else if (mouseXAdj < 0.32*boxWidth) {
+				$("#timechosen").text("1 minute");
+			} else if (mouseXAdj < 0.16*boxWidth) {
+				time_range = 2;
+				$("#timechosen").text("2 minutes");
+			} else if (mouseXAdj < 0.24*boxWidth) {
 				time_range = 5;
-				$("#timechosen").text("2-5 minutes");
-			} else if (mouseXAdj < 0.46*boxWidth) {
+				$("#timechosen").text("3 minutes");
+			} else if (mouseXAdj < 0.28*boxWidth) {
+				time_range = 5;
+				$("#timechosen").text("4 minutes");
+			} else if (mouseXAdj < 0.36*boxWidth) {
+				time_range = 5;
+				$("#timechosen").text("5 minutes"); 
+			} else if (mouseXAdj < 0.40*boxWidth) {
 				time_range = 10;
-				$("#timechosen").text("5-10 minutes"); 
-			} else if (mouseXAdj < 0.65*boxWidth) {
+			 	$("#timechosen").text("7 minutes");
+			} else if (mouseXAdj < 0.50*boxWidth) {
+				time_range = 10;
+				$("#timechosen").text("10 minutes");
+			} else if (mouseXAdj < 0.58*boxWidth) {
 				time_range = 15;
-			 	$("#timechosen").text("10-15 minutes");
-			} else if (mouseXAdj < 0.8 *boxWidth) {
+				$("#timechosen").text("13 minutes");
+			} else if (mouseXAdj < 0.68 *boxWidth) {
+				time_range = 15;
+				$("#timechosen").text("15 minutes");
+			} else if (mouseXAdj < 0.73*boxWidth) {
 				time_range = 30;
-				$("#timechosen").text("15-30 minutes");
+				$("#timechosen").text("20 minutes");
+			} else if (mouseXAdj < 0.78*boxWidth) {
+				time_range = 30;
+				$("#timechosen").text("25 minutes");
+			} else if (mouseXAdj < 0.85*boxWidth) {
+				time_range = 30;
+				$("#timechosen").text("30 minutes");
+			} else if (mouseXAdj < 0.90*boxWidth) {
+				time_range = 60;
+				$("#timechosen").text("40 minutes");
+			} else if (mouseXAdj < 0.95*boxWidth) {
+				time_range = 60;
+				$("#timechosen").text("50 minutes");
 			} else if (mouseXAdj < boxWidth) {
 				time_range = 60;
-				$("#timechosen").text("30-60 minutes");
+				$("#timechosen").text("60 minutes");
 			}
 
 		if (firstClick) {
