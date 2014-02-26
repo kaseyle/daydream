@@ -23,7 +23,7 @@ module.exports = function(req) {
 		var date = new Date();
 		var current_hour = date.getHours();
 		var time;
-		if (current_hour < 18) {
+		if (current_hour < 18 && current_hour > 6) {
 			time = data["day"];
 		} else {
 			time = data["night"];
