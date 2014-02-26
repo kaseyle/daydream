@@ -21,7 +21,7 @@
          // get references to the canvas element as well as the 2D drawing context
          var sigCanvas = document.getElementById("canvasSignature");
          var context = sigCanvas.getContext("2d");
-         var clear = document.getElementById("clearBtn");
+         //var clear = document.getElementById("clearBtn");
          context.strokeStyle = 'Black';
          sigCanvas.height = (window.innerHeight)/2;
          
@@ -99,7 +99,7 @@
             sigCanvas.addEventListener('touchmove', function (event) {
                event.preventDefault();
             }, false); 
-            clear.addEventListener('touchend', clearAll, false);
+            //clear.addEventListener('touchend', clearAll, false);
          }
          else {
  
