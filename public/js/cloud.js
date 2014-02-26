@@ -115,5 +115,6 @@ function clickListener(event) {
 			url += "&word" + (i+1) + "=";
 		}
 	}
+	url += "&first=1";
 	window.location = url;
 }

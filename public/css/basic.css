@@ -87,3 +87,13 @@ ol {
   right: 0px;
 }
 
+#message {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  color: rgba(53, 185, 247, 1);
+  height: 40px;
+  width: 310px;
+  font-weight: 200;
+}
+
