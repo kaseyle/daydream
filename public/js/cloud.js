@@ -52,7 +52,7 @@ function dropListener(event, ui) {
 			if (activities.length == 0) {
 				words.pop();
 				//$("#directions").slideUp(0);
-				$( "#directions ").text("Sorry! There are no daydreams for that combo.");
+				$( "#directions ").text("Sorry! No daydreams for that combination.");
 				$("#directions").slideDown(500);
 	    		setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
 			} else {
