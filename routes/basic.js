@@ -19,6 +19,22 @@ module.exports = function(req) {
 		var text = word1;
 		var temp = data["times"][time_range];
 		var activities = temp.slice(0);
+
+		var date = new Date();
+		var current_hour = date.getHours();
+		var time;
+		if (current_hour < 18 && current_hour > 6) {
+			time = data["day"];
+		} else {
+			time = data["night"];
+		}
+
+		for (var j = activities.length-1; j >= 0; j--) {
+			if (time.indexOf(activities[j]) == -1) {
+				activities.splice(j,1);
+			}	
+		}
+
 		for (var i = 0; i < words.length; i++) {
 			if (i > 0) {
 				text += " · " + words[i];
@@ -57,7 +73,9 @@ module.exports = function(req) {
 			}
 		}
 
-
+		if (req.query.first == 0) {
+			swipe = false;
+		}
 
 		var results = {
 			"word1": word1,

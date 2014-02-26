@@ -14,6 +14,11 @@ function hideArrows() {
   }
 }
 
+$("#message").slideUp(0);
+$("#message").slideDown(1000);
+
+setTimeout( function() {$("#message").slideUp(1000);}, 3000 );
+
 function addBindings(name) {
   if ($(name).length > 0) {
     $(name).on('touchstart', function(){
@@ -43,20 +48,18 @@ function addBindings(name) {
 }
 
 function doBind() {
-  console.log("Binded!");
-  console.log($('#forward').text());
   $(window).on("swipeleft", nextPage);
   $(window).on("swiperight", prevPage);
 }
 
 function doUnbind() {
-    console.log("Unbinded!");
     $(window).off("swipeleft", nextPage);
     $(window).off("swiperight", prevPage);
 }
 
 function nextPage() {
-  var nextpage = $('#forward').text();
+  var first = false;
+  var nextpage = $('#forward').text() + "&first=0";
   if (nextpage.charAt(1) != '?') {
     //$.mobile.changePage(nextpage, "slide", false, true);
     window.location = nextpage;
@@ -64,8 +67,7 @@ function nextPage() {
 }
 
 function prevPage() {
-  //var prevpage = '/';
-  var prevpage = $('#back').text();
+  var prevpage = $('#back').text() + "&first=0";
   if (prevpage.charAt(1) != '?') {
     //$.mobile.changePage(prevpage, {transition: "slide", reverse: true}, true, true);
     window.location = prevpage;

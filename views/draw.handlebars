@@ -16,12 +16,7 @@
 <p hidden id="forward">/{{forward}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
 <div id="container">
   {{#if swipe}}
-      <div class="arrow" id="left-arrow">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </div>
-      <div class="arrow" id="right-arrow">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </div>
+    <div id="message">Swipe screen left/right for more activities!</div>
   {{/if}}
    <p id="words">{{text}}</p>
    <h1 id="title">Draw</h1>
@@ -44,16 +39,19 @@
     </div>
    </div>
 
-    <div id="canvasDiv">      <!-- It's bad practice (to me) to put your CSS here.  I'd recommend the use of a CSS file! -->
+    <div class="swipe" id="canvasDiv">      <!-- It's bad practice (to me) to put your CSS here.  I'd recommend the use of a CSS file! -->
       <canvas id="canvasSignature"></canvas>
    </div>
 
-   <p><input type="button" value="Clear" id="clearBtn"/></p>
+   <button id="clearBtn">Clear</button>
 
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+      $(document).bind("mobileinit", function(){
+        $.mobile.loadingMessage = false;
+      });
+  </script>
    <script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
    <script src="/js/basic.js"></script>
    <script src="/js/draw.js"></script>
 </body>

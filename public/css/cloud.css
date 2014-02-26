@@ -75,18 +75,20 @@
 }
 
 #directions {
-	position: relative;
-	margin: 0px auto;
-	text-align: center;
-	font-size: 15px;
-	font-weight: 150px;
+	font-weight: 200;
+	position: fixed;
+  	top: 0;
+  	background-color: white;
+  	color: rgba(53, 185, 247, 1);
+  	height: 40px;
+  	width: 310px;
 }
 
 .rainy-weather {
   	position: relative;
   	width: 300px;
   	margin: 0px auto;
-  	top: 265px;
+  	top: 300px;
   }
  
 .cloud-main {

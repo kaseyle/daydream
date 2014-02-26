@@ -7,8 +7,8 @@
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/run.css" rel="stylesheet">
     <link href="/css/basic.css" rel="stylesheet">
-    <link href="/css/yoga.css" rel="stylesheet">
     <meta name="viewport" content="width=320, initial-scale=1">
   </head>
 
@@ -24,17 +24,12 @@
   <p hidden id="forward">/{{forward}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
   <div id="container">
     {{#if swipe}}
-      <div class="arrow" id="left-arrow">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </div>
-      <div class="arrow" id="right-arrow">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </div>
+      <div id="message">Swipe screen left/right for more activities!</div>
     {{/if}}
     <p id="words">{{text}}</p>
     <h1 id="title">Run</h1>
     <h2 id="instructions">Take a short jog around the block...</h2> 
-    <h3 id="quote">Raise your heart rate for at least 2 minutes.</h3>
+    <h2 id="quote">Raise your heart rate for at least 2 minutes.</h2>
 
     <img class=image src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/running_man.png" width=310px height=300px >
       

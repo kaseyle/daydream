@@ -6,6 +6,10 @@
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	background: linear-gradient(#F2F2F2 70%, #E5E5E5);
+	color: black;
+	position: relative;
+	margin: 0px auto;
+	font-weight: 100;
 }
 
 #button_div {
