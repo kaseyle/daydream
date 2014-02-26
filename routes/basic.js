@@ -29,6 +29,8 @@ module.exports = function(req) {
 			time = data["night"];
 		}
 
+		time = data["day"];
+
 		for (var j = activities.length-1; j >= 0; j--) {
 			if (time.indexOf(activities[j]) == -1) {
 				activities.splice(j,1);
