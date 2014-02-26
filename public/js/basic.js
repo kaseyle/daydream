@@ -17,7 +17,7 @@ function hideArrows() {
 $("#message").slideUp(0);
 $("#message").slideDown(1000);
 
-setTimeout( function() {$("#message").slideUp(2000);}, 2500 );
+setTimeout( function() {$("#message").slideUp(1000);}, 3000 );
 
 function addBindings(name) {
   if ($(name).length > 0) {

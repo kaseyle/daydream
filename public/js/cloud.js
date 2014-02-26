@@ -23,23 +23,41 @@ function initializePage() {
     $.getJSON("/data", function(json) {
     	data = json;
     });
+
+    $(".word").on('touchstart', function(){
+        // When user touches the slider handle, temporarily unbind the page turn handlers
+        $("#directions").slideUp(0);
+    });
+
+    $(".word").on('mousedown', function(){
+        // When user touches the slider handle, temporarily unbind the page turn handlers
+        $("#directions").slideUp(0);
+    });
+
+    $("#directions").slideUp(0);
+	$("#directions").slideDown(1000);
+    setTimeout( function() {$("#directions").slideUp(1000);}, 2500 );
 }
 
 function dropListener(event, ui) {
 	var word = $(ui.draggable).find("p").text();
-	if (words.indexOf(word) == -1 && words.length < maxWords) {
-		words.push(word);
-		var activities = getActivities();
-		if (activities.length == 0) {
-			words.pop();
-			$( "#directions ").text("Sorry! There are no daydreams for that combo.");
-			$( "#directions ").css('color', 'black');
-			$( "#directions ").css('font-weight', '200');
+	if (words.indexOf(word) == -1) {
+		if (words.length >= maxWords) {
+			$( "#directions ").text("Sorry! There are too many words.");
+			$("#directions").slideDown(500);
+			setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
 		} else {
-			$(ui.draggable).draggable("option", "revert", "false");
-			$( "#directions ").text("Drag in up to four words to start daydreaming...");
-			$( "#directions ").css('color', 'white');
-			$( "#directions ").css('font-weight', '100');
+			words.push(word);
+			var activities = getActivities();
+			if (activities.length == 0) {
+				words.pop();
+				//$("#directions").slideUp(0);
+				$( "#directions ").text("Sorry! There are no daydreams for that combo.");
+				$("#directions").slideDown(500);
+	    		setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+			} else {
+				$(ui.draggable).draggable("option", "revert", "false");
+			}
 		}
 	}
 	console.log(words);
@@ -52,9 +70,6 @@ function outListner(event, ui) {
 	var word = $(ui.draggable).find("p").text();
 	if (words.indexOf(word) > -1) {
 		words.splice( words.indexOf(word), 1 );
-		$( "#directions ").text("Drag in up to four words to start daydreaming...");
-		$( "#directions ").css('color', 'white');
-		$( "#directions ").css('font-weight', '100');
 	}
 	$(ui.draggable).draggable("option", "revert", "valid");
 	if (words.length == 0) {
@@ -97,9 +112,9 @@ function getActivities() {
 function clickListener(event) {
 	event.preventDefault();
 	if (words.length == 0) {
-		$( "#directions ").css('color', 'black');
-		$( "#directions ").css('font-weight', '200');
 		$( "#directions ").text("Please drag in at least one word.");
+		$("#directions").slideDown(500);
+		setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
 		return;
 	}
 	var activities = getActivities();
