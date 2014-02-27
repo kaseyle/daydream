@@ -47,7 +47,7 @@ function dropListener(event, ui) {
 	var word = $(ui.draggable).find("p").text();
 	if (words.indexOf(word) == -1) {
 		if (words.length >= maxWords) {
-			$( "#directions ").text("Sorry! There are too many words.");
+			$( "#directions ").text("Sorry! You can have at most four words.");
 			$("#directions").slideDown(500);
 			setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
 		} else {
