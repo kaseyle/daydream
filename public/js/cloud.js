@@ -36,7 +36,11 @@ function initializePage() {
 
     $("#directions").slideUp(0);
 	$("#directions").slideDown(1000);
-    setTimeout( function() {$("#directions").slideUp(1000);}, 2500 );
+    //setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+
+    $("#question").click( function() {
+    	alert("Drag up to four words into the cloud and click 'Finish' to select an activity. Some words may fly out of the cloud if there are no activities for that combination of words.");
+    });
 }
 
 function dropListener(event, ui) {

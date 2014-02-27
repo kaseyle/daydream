@@ -1,3 +1,9 @@
+#question {
+	position: absolute;
+  	right: 4px;
+  	top: 4px;
+}
+
 #my_button {
 	text-align: center;
 	width: 130px;
@@ -75,13 +81,13 @@
 }
 
 #directions {
-	font-weight: 200;
+	font-weight: 180;
 	position: fixed;
   	top: 0;
   	background-color: white;
   	color: rgba(53, 185, 247, 1);
   	height: 40px;
-  	width: 310px;
+  	width: 280px;
 }
 
 .rainy-weather {
