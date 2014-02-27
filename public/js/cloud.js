@@ -24,19 +24,18 @@ function initializePage() {
     	data = json;
     });
 
+    /**
     $(".word").on('touchstart', function(){
-        // When user touches the slider handle, temporarily unbind the page turn handlers
         $("#directions").slideUp(0);
     });
 
     $(".word").on('mousedown', function(){
-        // When user touches the slider handle, temporarily unbind the page turn handlers
         $("#directions").slideUp(0);
     });
+	**/
 
-    $("#directions").slideUp(0);
-	$("#directions").slideDown(1000);
-    //setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+    //$("#directions").slideUp(0);
+	//$("#directions").slideDown(1000);
 
     $("#question").click( function() {
     	alert("Drag up to four words into the cloud and click 'Finish' to select an activity. Some words may fly out of the cloud if there are no activities for that combination of words.");
@@ -48,8 +47,9 @@ function dropListener(event, ui) {
 	if (words.indexOf(word) == -1) {
 		if (words.length >= maxWords) {
 			$( "#directions ").text("Sorry! You can have at most four words.");
-			$("#directions").slideDown(500);
-			setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+			$( "#directions ").css('color', 'black');
+			//$("#directions").slideDown(500);
+			//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
 		} else {
 			words.push(word);
 			var activities = getActivities();
@@ -57,10 +57,13 @@ function dropListener(event, ui) {
 				words.pop();
 				//$("#directions").slideUp(0);
 				$( "#directions ").text("Sorry! No daydreams for that combination.");
-				$("#directions").slideDown(500);
-	    		setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+				$( "#directions ").css('color', 'black');
+				//$("#directions").slideDown(500);
+	    		//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
 			} else {
 				$(ui.draggable).draggable("option", "revert", "false");
+				$( "#directions ").text("Drag a few words into the cloud to start.");
+				$( "#directions ").css('color', 'white');
 			}
 		}
 	}
@@ -117,8 +120,9 @@ function clickListener(event) {
 	event.preventDefault();
 	if (words.length == 0) {
 		$( "#directions ").text("Please drag in at least one word.");
-		$("#directions").slideDown(500);
-		setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+		$( "#directions ").css('color', 'black');
+		//$("#directions").slideDown(500);
+		//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
 		return;
 	}
 	var activities = getActivities();
