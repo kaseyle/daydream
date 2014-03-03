@@ -21,12 +21,25 @@
 
 
   <body>
-  <p hidden id="back">/{{back}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
-  <p hidden id="forward">/{{forward}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
+  <p hidden id="back">{{back}}</p>
+  <p hidden id="forward">{{forward}}</p>
   <div id="container">
-    {{#if swipe}}
+  {{#if swipe}}
+    <div id="links" style="margin-left:{{margin}}px;">
+      <span class="space">_</span>
+      {{#each links}}
+        {{#if bool}}
+        <a class="link" id="my_link" href={{link}} data-ajax="false"><span class="glyphicon glyphicon-cloud"></span></a>
+        {{else}}
+        <a class="link" href={{link}} data-ajax="false"><span class="glyphicon glyphicon-cloud"></span></a>
+        {{/if}}
+        <span class="space">_</span>
+      {{/each}}
+    </div>
+    {{#if first}}
       <div id="message">Swipe screen left/right for more activities!</div>
     {{/if}}
+  {{/if}}
     <p id="words">{{text}}</p>
     <h1 id="title">Try a riddle...</h1>
     <br/>

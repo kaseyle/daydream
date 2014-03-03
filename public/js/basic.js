@@ -59,7 +59,7 @@ function doUnbind() {
 
 function nextPage() {
   var first = false;
-  var nextpage = $('#forward').text() + "&first=0";
+  var nextpage = $('#forward').text();
   if (nextpage.charAt(1) != '?') {
     //$.mobile.changePage(nextpage, "slide", false, true);
     window.location = nextpage;
@@ -67,7 +67,7 @@ function nextPage() {
 }
 
 function prevPage() {
-  var prevpage = $('#back').text() + "&first=0";
+  var prevpage = $('#back').text();
   if (prevpage.charAt(1) != '?') {
     //$.mobile.changePage(prevpage, {transition: "slide", reverse: true}, true, true);
     window.location = prevpage;

@@ -21,17 +21,31 @@
 
 
   <body>
-  <p hidden id="back">/{{back}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
-  <p hidden id="forward">/{{forward}}?time_range={{time_range}}&word1={{word1}}&word2={{word2}}&word3={{word3}}&word4={{word4}}</p>
+  <p hidden id="back">{{back}}</p>
+  <p hidden id="forward">{{forward}}</p>
   <div id="container">
-    {{#if swipe}}
+  {{#if swipe}}
+    <div id="links" style="margin-left:{{margin}}px;">
+      <span class="space">_</span>
+      {{#each links}}
+        {{#if bool}}
+        <a class="link" id="my_link" href={{link}} data-ajax="false"><span class="glyphicon glyphicon-cloud"></span></a>
+        {{else}}
+        <a class="link" href={{link}} data-ajax="false"><span class="glyphicon glyphicon-cloud"></span></a>
+        {{/if}}
+        <span class="space">_</span>
+      {{/each}}
+    </div>
+    {{#if first}}
       <div id="message">Swipe screen left/right for more activities!</div>
     {{/if}}
+  {{/if}}
     <p id="words">{{text}}</p>
     <h1 id="title">Daily Reflect</h1>
     <br/>
     <h2 id="directions">Think of one good thing that happened today.</h2>
     <br/>
+
     <div id="swipe">Swipe</div>
     <div id="nagivation_bar">
       <ol class="nav nav-pills">
@@ -51,6 +65,7 @@
     </div>
 
   </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>

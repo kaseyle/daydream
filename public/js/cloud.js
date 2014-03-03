@@ -2,6 +2,7 @@ var data = {}
 
 var words = new Array();
 var maxWords = 4;
+var maxActivities = 4;
 
 var time_range = $("#time_range").text();
 
@@ -128,14 +129,26 @@ function clickListener(event) {
 	var activities = getActivities();
 	var rand = Math.random();
 	console.log(rand);
-	var index = activities[Math.floor(rand * activities.length)];
-	var activity = data["activities_array"][index];
+	var index = Math.floor(rand * activities.length);
+	var activity_id = activities[index];
+	var activity = data["activities_array"][activity_id];
 	var url = "/" + activity + "?" + "time_range=" + time_range;
 	for (var i = 0; i < 4; i++) {
 		if (i < words.length) {
 			url += "&word" + (i+1) + "=" + words[i];	
 		} else {
 			url += "&word" + (i+1) + "=";
+		}
+	}
+	for (var i = 0; i < 4; i++) {
+		if (i < activities.length) {
+			if (index+i >= activities.length) {
+				url += "&act" + (i+1) + "=" + data["activities_array"][activities[index+i-activities.length]];	
+			} else {
+				url += "&act" + (i+1) + "=" + data["activities_array"][activities[index+i]];	
+			}
+		} else {
+			url += "&act" + (i+1) + "=";
 		}
 	}
 	url += "&first=1";

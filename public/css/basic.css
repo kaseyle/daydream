@@ -53,9 +53,9 @@ p {
 ol {
 	position: fixed;
 	bottom: 0;
-  	font-size: 16px;
-  	text-align: center;
-  	width: 100%;
+	font-size: 16px;
+	text-align: center;
+	width: 100%;
 }
 
 .active {
@@ -73,18 +73,22 @@ ol {
 	background-color: rgba(53, 185, 247, 1);
 }
 
-.arrow {
-  position: absolute;
-  top: 200px;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  background-color: rgba(0, 0, 0, 0.15);
+#links {
+  position: fixed;
+  bottom: 50px;
   z-index: 100;
 }
 
-#right-arrow {
-  right: 0px;
+.space {
+  color: rgba(0, 0, 0, 0);
+}
+
+.link>span {
+  color: white;
+}
+
+#my_link>span {
+  color: rgba(53, 185, 247, 1);
 }
 
 #message {
