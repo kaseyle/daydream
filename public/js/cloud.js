@@ -6,6 +6,11 @@ var maxActivities = 4;
 
 var time_range = $("#time_range").text();
 
+var alt = false;
+if ($("#alt").text() == "true") {
+	alt = true;
+}
+
 $(document).ready(function() {
 	initializePage();
 })
@@ -25,20 +30,21 @@ function initializePage() {
     	data = json;
     });
 
-    /**
-    $(".word").on('touchstart', function(){
-        $("#directions").slideUp(0);
-    });
+    if (alt) {
+	    $(".word").on('touchstart', function(){
+	        $("#directions").slideUp(500);
+	    });
 
-    $(".word").on('mousedown', function(){
-        $("#directions").slideUp(0);
-    });
-	**/
-
-    //$("#directions").slideUp(0);
-	//$("#directions").slideDown(1000);
+	    $(".word").on('mousedown', function(){
+	        $("#directions").slideUp(500);
+	    });
+	
+    	$("#directions").slideUp(0);
+		$("#directions").slideDown(1000);
+	}
 
     $("#question").click( function() {
+    	ga("send", "event", "help", "click");
     	alert("Drag up to four words into the cloud and click 'Finish' to select an activity. Some words may fly out of the cloud if there are no activities for that combination of words.");
     });
 }
@@ -47,24 +53,33 @@ function dropListener(event, ui) {
 	var word = $(ui.draggable).find("p").text();
 	if (words.indexOf(word) == -1) {
 		if (words.length >= maxWords) {
+			ga("send", "event", "error", "max-limit");
 			$( "#directions ").text("Sorry! You can have at most four words.");
-			$( "#directions ").css('color', 'black');
-			//$("#directions").slideDown(500);
-			//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+			if (alt) {
+				$("#directions").slideDown(500);
+				//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+			} else {
+				$( "#directions ").css('color', 'black');
+			}
 		} else {
 			words.push(word);
 			var activities = getActivities();
 			if (activities.length == 0) {
 				words.pop();
-				//$("#directions").slideUp(0);
+				ga("send", "event", "error", "no-activities");
 				$( "#directions ").text("Sorry! No daydreams for that combination.");
-				$( "#directions ").css('color', 'black');
-				//$("#directions").slideDown(500);
-	    		//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+				if (alt) {
+					$("#directions").slideDown(500);
+	    			//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+				} else {
+					$( "#directions ").css('color', 'black');
+				}
 			} else {
 				$(ui.draggable).draggable("option", "revert", "false");
-				$( "#directions ").text("Drag a few words into the cloud to start.");
-				$( "#directions ").css('color', 'white');
+				if (!alt) {
+					$( "#directions ").text("Drag a few words into the cloud to start.");
+					$( "#directions ").css('color', 'white');
+				}
 			}
 		}
 	}
@@ -81,7 +96,6 @@ function outListner(event, ui) {
 	}
 	$(ui.draggable).draggable("option", "revert", "valid");
 	if (words.length == 0) {
-		//$( "#my_button" ).attr('disabled', 'disabled');
 		$("#finish").addClass("disabled");
 	}
 }
@@ -120,10 +134,14 @@ function getActivities() {
 function clickListener(event) {
 	event.preventDefault();
 	if (words.length == 0) {
+		ga("send", "event", "error", "min-limit");
 		$( "#directions ").text("Please drag in at least one word.");
-		$( "#directions ").css('color', 'black');
-		//$("#directions").slideDown(500);
-		//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+		if (alt) {
+			$("#directions").slideDown(500);
+			//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
+		} else {
+			$( "#directions ").css('color', 'black');
+		}
 		return;
 	}
 	var activities = getActivities();

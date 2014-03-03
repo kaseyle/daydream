@@ -78,6 +78,7 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/clock', clock.view);
 app.get('/cloud', cloud.view);
+app.get('/cloud/alt', cloud.viewAlt);
 app.get('/yoga', yoga.view);
 app.get('/cloudGazing', cloudGazing.view);
 app.get('/reflect_day', reflect_day.view);
