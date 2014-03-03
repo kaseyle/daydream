@@ -1,6 +1,6 @@
 var riddles = [
 	"Name four days of the week that start with the letter T.",
-	"A magician claims holding an egg above a concrete floor claims he can drop it two feet without breaking it. How?",
+	"A magician holding an egg above a concrete floor claims he can drop it two feet without breaking it. How?",
 	"A boy is locked in a room with only a piano and and a calendar. What does he eat, and how does he escape?",
 	"From what heavy seven-letter word can you take away two letters and still have eight left?",
 	"What walks all day on its head?", 
@@ -9,7 +9,7 @@ var riddles = [
 
 var answers = [
 	"Tuesday, Thursday, Today and Tomorrow!",
-	"He drops it from more than 2 feet above the floor.",
+	"He drops it from three feet above the floor.",
 	"He eats the dates on the calendar and escapes with a piano key.",
 	"Weight.",
 	"A horse-shoe nail.",
@@ -36,7 +36,7 @@ function initializePage() {
 
     	if (init == true) {
     		$("#answer").fadeIn();
-    		$("#swipe").text("Next");
+    		$("#swipe").text("Swipe for next");
     	}
     	init = false;
     }

@@ -36,7 +36,7 @@ function initializePage() {
 
     	if (init == true) {
     		$("#answer").fadeIn();
-    		$("#swipe").text("Next");
+    		$("#swipe").text("Swipe for next");
     	}
     	init = false;
     }
