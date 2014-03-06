@@ -57,10 +57,24 @@ function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
+      if (i >= 5) {
+        break;
+      }
     }
   } else {
     console.log("Nada..." + status);
   }
+  var marker = new google.maps.Marker({
+    map: map,
+    position: initialLocation,
+    icon: "https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin%7Chome%7C00FFFF%7CFF0000"
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent("Current Location");
+    infowindow.open(map, this);
+    infowindow.css
+  });
 }
 
 function createMarker(place) {
