@@ -10,12 +10,24 @@
   margin-left: 5%
 }
 
-.dragbox {
+#slider {
   position: absolute;
-  border: 2px solid #82addb;
-  height: 71px;
-  width: 20px;
-  background-color: #82addb;
+  height:75px; 
+  width:90%;
+  border: 2px solid black; 
+  border-radius: 2px;
+  margin-left:5%;
+  background: inherit;
+}
+
+#slider .ui-slider-range {
+  background: #82addb;
+  border-radius: 0px;
+  border-right: 3px solid black;
+}
+
+#slider .ui-slider-handle {
+  visibility: hidden
 }
 
 .simpletext {
@@ -32,7 +44,7 @@
   font-weight: 300;
   color: inherit;
   text-align: center;
-  word-spacing: 15px;
+  word-spacing: 25px;
 }
 
 .apptitle {
