@@ -23,7 +23,7 @@
 #slider .ui-slider-range {
   background: #82addb;
   border-radius: 0px;
-  border-right: 3px solid black;
+  border-right: 4px solid black;
 }
 
 #slider .ui-slider-handle {
@@ -31,8 +31,8 @@
 }
 
 .simpletext {
-	font-size: 20px;
-	font-weight: 300;
+	font-size: 18px;
+	font-weight: 100;
 	color: inherit;
 	text-align: center;
   font-style: italic;

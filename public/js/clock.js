@@ -9,7 +9,7 @@ var time_range = 2;
 
 function initializePage() {
 	console.log("Javascript connected!");
-	var firstClick = true;
+	//var firstClick = true;
 	$("#timechosen").hide();
 
 	$( ".draggable" ).draggable({containment: "parent"});
@@ -19,12 +19,13 @@ function initializePage() {
 		min: 0,
 		max: 60,
 		slide: function(event, ui) {
-			if (firstClick) {
-				firstClick = false;
-				$("#timechosen").fadeIn();
-			}
+			//if (firstClick) {
+			//	firstClick = false;
+			//	$("#timechosen").fadeIn();
+			//}
 			var timevalue = $("#slider").slider("value");
-			$("#time").text(timevalue + " minutes");
+			//$("#time").text(timevalue + " minutes");
+			$("#instructions").text(timevalue + " minutes");
 			if(timevalue<3) {
 				time_range = 2;
 			}else if (timevalue < 6) {
