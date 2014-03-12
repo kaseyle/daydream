@@ -45,7 +45,7 @@ function initializePage() {
 
     $("#question").click( function() {
     	ga("send", "event", "help", "click");
-    	alert("Drag up to four words into the cloud and click 'Finish' to select an activity. Some words may fly out of the cloud if there are no activities for that combination of words.");
+    	alert("Drag up to 3 words into the cloud and click 'Finish' to select an activity. Some words may fly out of the cloud if there are no activities for that combination of words.");
     });
 }
 
@@ -77,7 +77,7 @@ function dropListener(event, ui) {
 			} else {
 				$(ui.draggable).draggable("option", "revert", "false");
 				if (!alt) {
-					$( "#directions ").text("Drag a few words into the cloud to start.");
+					$( "#directions ").text("Drag up to 3 words into the cloud to start.");
 					$( "#directions ").css('color', 'white');
 				}
 			}
