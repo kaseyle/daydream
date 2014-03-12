@@ -1,7 +1,7 @@
 var data = {}
 
 var words = new Array();
-var maxWords = 4;
+var maxWords = 3;
 var maxActivities = 4;
 
 var time_range = $("#time_range").text();
