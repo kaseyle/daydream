@@ -54,7 +54,7 @@ function dropListener(event, ui) {
 	if (words.indexOf(word) == -1) {
 		if (words.length >= maxWords) {
 			ga("send", "event", "error", "max-limit");
-			$( "#directions ").text("Sorry! You can have at most four words.");
+			$( "#directions ").text("Sorry! You can have at most 3 words.");
 			if (alt) {
 				$("#directions").slideDown(500);
 				//setTimeout( function() {$("#directions").slideUp(1000);}, 3000 );
