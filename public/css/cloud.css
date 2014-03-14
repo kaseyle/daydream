@@ -81,11 +81,12 @@
 }
 
 #directions {
-	font-weight: 190;
+	font-weight: 400px;
 	position: fixed;
   	top: 0;
   	height: 40px;
   	width: 280px;
+  	font-size: 15px;
 }
 
 .rainy-weather {
