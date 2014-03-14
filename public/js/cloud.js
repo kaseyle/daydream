@@ -3,6 +3,7 @@ var data = {}
 var words = new Array();
 var maxWords = 3;
 var maxActivities = 4;
+var allWords;
 
 var time_range = $("#time_range").text();
 
@@ -28,7 +29,10 @@ function initializePage() {
 
     $.getJSON("/data", function(json) {
     	data = json;
+    	//allWords = data["times"];
+    	allWords = ["Alone", "Friends", "Inside", "Outside", "Active", "Quiet", "Tactile", "Explore", "Reflect", "Think", "Learn", "Calm"];
     });
+
 
     if (alt) {
 	    $(".word").on('touchstart', function(){
@@ -76,10 +80,8 @@ function dropListener(event, ui) {
 				}
 			} else {
 				$(ui.draggable).draggable("option", "revert", "false");
-				if (!alt) {
-					$( "#directions ").text("Drag up to 3 words into the cloud to start.");
-					$( "#directions ").css('color', 'white');
-				}
+				//New word added
+				highlightWords();
 			}
 		}
 	}
@@ -89,12 +91,33 @@ function dropListener(event, ui) {
 	}
 }
 
+function highlightWords() {
+	for (var i = 0; i < allWords.length; i++) {
+		var temp = allWords[i];
+		//if word not in cloud
+		if (words.indexOf(temp) == -1) {
+			words.push(temp);
+			var tempActivities = getActivities();
+			if (tempActivities.length == 0) {
+				console.log("Temp: " + temp);
+				console.log("Bad: " + $( "#word" + (i+1) ).text());
+				//$( "#word" + (i+1) + " .word" ).css({"color": "red"});
+				$( "#word" + (i+1) ).addClass("inactive");
+			} else {
+				$( "#word" + (i+1) ).removeClass("inactive");
+			}
+			words.pop(temp);
+		}
+	}
+}
+
 function outListner(event, ui) {
 	var word = $(ui.draggable).find("p").text();
 	if (words.indexOf(word) > -1) {
 		words.splice( words.indexOf(word), 1 );
 	}
 	$(ui.draggable).draggable("option", "revert", "valid");
+	highlightWords();
 	if (words.length == 0) {
 		$("#finish").addClass("disabled");
 	}
@@ -127,7 +150,7 @@ function getActivities() {
 			}	
 		}
 	}
-	console.log(activities);
+	//console.log(activities);
 	return activities;
 }
 
