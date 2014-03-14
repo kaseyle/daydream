@@ -29,8 +29,8 @@ function initializePage() {
 
     $.getJSON("/data", function(json) {
     	data = json;
-    	//allWords = data["times"];
-    	allWords = ["Alone", "Friends", "Inside", "Outside", "Active", "Quiet", "Tactile", "Explore", "Reflect", "Think", "Learn", "Calm"];
+    	allWords = data["words"].slice(0);
+    	//allWords = ["Alone", "Friends", "Inside", "Outside", "Active", "Quiet", "Tactile", "Explore", "Reflect", "Think", "Learn", "Calm"];
     	highlightWords();
     });
 
