@@ -31,6 +31,7 @@ function initializePage() {
     	data = json;
     	//allWords = data["times"];
     	allWords = ["Alone", "Friends", "Inside", "Outside", "Active", "Quiet", "Tactile", "Explore", "Reflect", "Think", "Learn", "Calm"];
+    	highlightWords();
     });
 
 
@@ -50,7 +51,7 @@ function initializePage() {
     $("#question").click( function() {
     	ga("send", "event", "help", "click");
     	alert("Drag up to 3 words into the cloud and click 'Finish' to select an activity. Some words may fly out of the cloud if there are no activities for that combination of words.");
-    });
+    })
 }
 
 function dropListener(event, ui) {
@@ -118,6 +119,7 @@ function outListner(event, ui) {
 	}
 	$(ui.draggable).draggable("option", "revert", "valid");
 	highlightWords();
+	console.log(words);
 	if (words.length == 0) {
 		$("#finish").addClass("disabled");
 	}
